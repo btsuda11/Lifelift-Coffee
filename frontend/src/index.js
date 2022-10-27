@@ -6,12 +6,17 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import csrfFetch, { restoreSession } from './store/csrf';
+import * as sessionActions from "./actions/sessionActions";
+import sessionReducer from './reducers/sessionReducer';
+
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
+  window.sessionReducer = sessionReducer;
 }
 
 const Root = () => {
