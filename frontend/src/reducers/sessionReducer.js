@@ -1,11 +1,13 @@
 import * as sessionActions from "../actions/sessionActions";
 
-const sessionReducer = (state = { currentUser: null }, action) => {
+const initialState = { currentUser: sessionStorage.getItem('currentUser') }
+
+const sessionReducer = (state = initialState, action) => {
     switch(action.type) {
         case sessionActions.RECEIVE_USER:
-            return { currentUser: action.user.id };
+            return { ...state, currentUser: action.user.id };
         case sessionActions.REMOVE_USER:
-            return { currentUser: null };
+            return { ...state, currentUser: null };
         default:
             return state;
     }

@@ -15,6 +15,7 @@ const store = configureStore();
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
+  window.restoreSession = restoreSession;
   window.sessionActions = sessionActions;
   window.sessionReducer = sessionReducer;
 }
@@ -39,8 +40,10 @@ const renderApplication = () => {
 }
 
 if (
-  sessionStorage.getItem('X-CSRFToken') === null) {
-    restoreSession().then(renderApplication);
-  } else {
-    renderApplication();
-  }
+  sessionStorage.getItem('X-CSRFToken') === null || 
+  sessionStorage.getItem('currentUser') === null
+) {
+  store.dispatch(restoreSession()).then(renderApplication);
+} else {
+  renderApplication();
+}

@@ -1,0 +1,11 @@
+.errors > li {
+    color: rgba(220, 38, 38);
+}
+
+.text-field {
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}

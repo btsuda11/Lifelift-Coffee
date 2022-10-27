@@ -19,5 +19,5 @@ export const loginUser = user => async dispatch => {
 
     const data = await response.json();
     dispatch(receiveCurrentUser(data.user));
-    return data;
+    return response;
 }
