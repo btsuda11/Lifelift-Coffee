@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../../actions/sessionActions';
+import { loginUser } from '../../../../actions/sessionActions';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
@@ -11,7 +11,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (currentUserId) return <Redirect to='/' />;
+    if (currentUserId) return <Redirect to='/account' />;
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -32,20 +32,20 @@ const LoginForm = () => {
     }
 
     return (
-        <>
-            <h2>Sign In</h2>
-            <p>Log in to your Lifelift account</p>
-            <div>
-                <ul className='errors'>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-            </div>
+        <div className='login-form-div'>
             <form onSubmit={handleLogin}>
-                <input className='text-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
-                <input className='text-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
-                <button className='red-btn' type='submit'>Sign in</button>
+                <h2>Sign In</h2>
+                <p>Log in to your Lifelift account</p>
+                <div>
+                    <ul className='errors'>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                </div>
+                <input className='login-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
+                <input className='login-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
+                <button className='red-btn sign-in' type='submit'>Sign in</button>
             </form>
-        </>
+        </div>
     )
 }
 

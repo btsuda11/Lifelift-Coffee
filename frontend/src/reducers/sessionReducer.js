@@ -1,12 +1,14 @@
-import * as sessionActions from "../actions/sessionActions";
+import { RECEIVE_USER, REMOVE_USER } from "../actions/sessionActions";
 
-const initialState = { currentUser: sessionStorage.getItem('currentUser') }
+const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+const initialState = currentUser ? { currentUser: currentUser.id } : { currentUser: null };
 
 const sessionReducer = (state = initialState, action) => {
     switch(action.type) {
-        case sessionActions.RECEIVE_USER:
+        case RECEIVE_USER:
             return { ...state, currentUser: action.user.id };
-        case sessionActions.REMOVE_USER:
+        case REMOVE_USER:
             return { ...state, currentUser: null };
         default:
             return state;

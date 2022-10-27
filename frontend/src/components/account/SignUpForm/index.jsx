@@ -13,7 +13,7 @@ const SignUpForm = () => {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (currentUserId) return <Redirect to='/' />;
+    if (currentUserId) return <Redirect to='/account' />;
 
     const handleSignUp = (e) => {
         e.preventDefault();

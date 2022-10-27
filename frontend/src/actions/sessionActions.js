@@ -1,14 +1,14 @@
 import csrfFetch, { storeCurrentUser } from "../store/csrf";
 
-export const RECEIVE_USER = 'session/RECEIVE_USER';
-export const REMOVE_USER = 'session/REMOVE_USER';
+export const RECEIVE_USER = 'user/RECEIVE_USER';
+export const REMOVE_USER = 'user/REMOVE_USER';
 
 export const receiveCurrentUser = user => (
     { type: RECEIVE_USER, user }
 )
 
-export const removeCurrentUser = () => (
-    { type: REMOVE_USER }
+export const removeCurrentUser = userId => (
+    { type: REMOVE_USER, userId }
 )
 
 export const loginUser = user => async dispatch => {
@@ -35,12 +35,12 @@ export const signUpUser = user => async dispatch => {
     return response;
 }
 
-export const logOutUser = () => async dispatch => {
+export const logOutUser = userId => async dispatch => {
     const response = await csrfFetch(`/api/session`, {
         method: 'DELETE'
     });
 
     storeCurrentUser(null);
-    dispatch(removeCurrentUser());
+    dispatch(removeCurrentUser(userId));
     return response;
 }

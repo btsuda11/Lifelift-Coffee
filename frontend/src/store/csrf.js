@@ -7,7 +7,7 @@ export const restoreSession = () => async dispatch => {
 }
 
 export const storeCurrentUser = user => {
-    if (user) sessionStorage.setItem("currentUser", user.id);
+    if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
     else sessionStorage.removeItem("currentUser");
 }
 

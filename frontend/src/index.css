@@ -1,4 +1,32 @@
-/* TODO Add site wide styles */
+/* Site wide styling */
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+    border: 0;
+    border-radius: 30px;
+    padding: 14px 28px 14px 28px;
+}
+
+.red-btn {
+    color: white;
+    background-color: rgba(241, 87, 75);
+}
+
+.red-btn:hover {
+    opacity: 0.8;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.errors>li {
+    color: rgba(220, 38, 38);
+}
+
+/* CSS Reset */
+
 html,
 body,
 header,
@@ -41,9 +69,4 @@ img {
     display: block;
     width: 100%;
     height: auto;
-}
-
-button,
-input[type="submit"] {
-    cursor: pointer;
 }
