@@ -7,8 +7,8 @@ export const receiveCurrentUser = user => (
     { type: RECEIVE_USER, user }
 )
 
-export const removeCurrentUser = userId => (
-    { type: REMOVE_USER, userId }
+export const removeCurrentUser = () => (
+    { type: REMOVE_USER }
 )
 
 export const loginUser = user => async dispatch => {
@@ -32,5 +32,15 @@ export const signUpUser = user => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(receiveCurrentUser(data.user));
+    return response;
+}
+
+export const logOutUser = () => async dispatch => {
+    const response = await csrfFetch(`/api/session`, {
+        method: 'DELETE'
+    });
+
+    storeCurrentUser(null);
+    dispatch(removeCurrentUser());
     return response;
 }
