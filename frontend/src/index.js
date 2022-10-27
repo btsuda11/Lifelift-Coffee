@@ -5,11 +5,13 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import configureStore from './store';
+import csrfFetch, { restoreSession } from './store/csrf';
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
+  window.csrfFetch = csrfFetch;
 }
 
 const Root = () => {
@@ -22,9 +24,18 @@ const Root = () => {
   );
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const renderApplication = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Root />
+    </React.StrictMode>,
+    document.getElementById('root')
+  )
+}
+
+if (
+  sessionStorage.getItem('X-CSRFToken') === null) {
+    restoreSession().then(renderApplication);
+  } else {
+    renderApplication();
+  }
