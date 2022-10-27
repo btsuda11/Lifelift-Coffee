@@ -1,22 +1,24 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../../actions/sessionActions';
+import { signUpUser } from '../../../actions/sessionActions';
 import { Redirect } from 'react-router-dom';
-import './LoginForm.css';
+import './SignUpForm.css';
 
-const LoginForm = () => {
+const SignUpForm = () => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
     if (currentUserId) return <Redirect to='/' />;
 
-    const handleLogin = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(loginUser({ email, password }))
+        return dispatch(signUpUser({ user: {firstName, lastName, email, password} }))
             .catch(async (res) => {
                 let data;
                 try {
@@ -33,20 +35,22 @@ const LoginForm = () => {
 
     return (
         <>
-            <h2>Sign In</h2>
-            <p>Log in to your Lifelift account</p>
+            <h2>Sign Up</h2>
+            <p>Create your Lifelift account</p>
             <div>
                 <ul className='errors'>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
             </div>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignUp}>
+                <input className='text-field' type='text' placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} required />
+                <input className='text-field' type='text' placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} required />
                 <input className='text-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
                 <input className='text-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
-                <button className='red-btn' type='submit'>Sign in</button>
+                <button className='red-btn' type='submit'>Register now</button>
             </form>
         </>
     )
 }
 
-export default LoginForm;
+export default SignUpForm;
