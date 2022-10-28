@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../../../actions/sessionActions';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm = () => {
@@ -13,7 +13,7 @@ const LoginForm = () => {
 
     if (currentUserId) return <Redirect to='/account' />;
 
-    const handleLogin = (e) => {
+    const handleLogin = e => {
         e.preventDefault();
         setErrors([]);
         return dispatch(loginUser({ email, password }))
@@ -31,6 +31,11 @@ const LoginForm = () => {
             });
     }
 
+    const handleDemo = e => {
+        e.preventDefault();
+        dispatch(loginUser({ email: 'demo@user.io', password: 'password' }));
+    }
+
     return (
         <div className='login-box'>
             <form onSubmit={handleLogin}>
@@ -44,6 +49,7 @@ const LoginForm = () => {
                 <input className='login-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
                 <input className='login-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
                 <button className='red-btn sign-in' type='submit'>Sign in</button>
+                <Link className='underline-on-hover' onClick={handleDemo}>Log in as Demo User</Link>
             </form>
         </div>
     )

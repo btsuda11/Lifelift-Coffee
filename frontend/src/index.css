@@ -49,8 +49,18 @@ img {
     src: url(./fonts/wigrum.otf);
 }
 
+@font-face {
+    font-family: WigrumWeb;
+    src: url(./fonts/wigrum-medium.otf);
+    font-weight: bold;
+}
+
 body {
     font-family: WigrumWeb;
+}
+
+h2 {
+    font-size: 30px;
 }
 
 button,
