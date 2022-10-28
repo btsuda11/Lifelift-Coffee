@@ -49,7 +49,7 @@ const LoginForm = () => {
                 <input className='login-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
                 <input className='login-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
                 <button className='red-btn sign-in' type='submit'>Sign in</button>
-                <Link className='underline-on-hover' onClick={handleDemo}>Log in as Demo User</Link>
+                <Link className='underline-on-hover spaced' to='#' onClick={handleDemo}>Log in as Demo User</Link>
             </form>
         </div>
     )

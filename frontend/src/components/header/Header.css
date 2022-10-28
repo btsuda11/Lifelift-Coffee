@@ -1,0 +1,43 @@
+header {
+    background-color: #f2f2f2;
+    height: 14vh;
+}
+
+.header-div > div {
+    width: 20%;
+}
+
+.header-div {
+    padding: 0 7% 0 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-div > nav {
+    font-size: 18px;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.icon-bar {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-bar > a {
+    margin-left: 13%;
+}
+
+.shop img {
+    margin-left: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}

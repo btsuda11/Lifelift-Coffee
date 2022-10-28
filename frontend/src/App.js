@@ -2,11 +2,12 @@ import { Switch, Route } from 'react-router-dom';
 import LoginPage from "./components/account/LoginPage";
 import Profile from './components/account/Profile';
 import SignUpPage from './components/account/SignUpPage';
+import Header from './components/header';
 
 function App() {
   return (
     <>
-      {/* <h1>Hello from App</h1> */}
+      <Header />
       <Switch>
         <Route exact path='/account' component={Profile} />
         <Route exact path='/account/login' component={LoginPage} />

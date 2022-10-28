@@ -19,7 +19,7 @@ const Profile = () => {
         <section>
             <div>
                 <h3>{currentUser.firstName + ' ' + currentUser.lastName}</h3>
-                <Link className='underline-on-hover' onClick={handleLogOut}>Log Out</Link>
+                <Link className='underline-on-hover' to='#' onClick={handleLogOut}>Log Out</Link>
             </div>
         </section>
     )
