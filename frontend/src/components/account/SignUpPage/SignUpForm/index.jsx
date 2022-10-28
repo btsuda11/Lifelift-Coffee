@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUpUser } from '../../../actions/sessionActions';
+import { signUpUser } from '../../../../actions/sessionActions';
 import { Redirect } from 'react-router-dom';
 import './SignUpForm.css';
 
@@ -35,14 +35,14 @@ const SignUpForm = () => {
 
     return (
         <>
-            <h2>Sign Up</h2>
-            <p>Create your Lifelift account</p>
-            <div>
-                <ul className='errors'>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-            </div>
-            <form onSubmit={handleSignUp}>
+            <form className='signup-form' onSubmit={handleSignUp}>
+                <h2>Sign Up</h2>
+                <p>Create your Lifelift account</p>
+                <div>
+                    <ul className='errors'>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                </div>
                 <input className='text-field' type='text' placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} required />
                 <input className='text-field' type='text' placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} required />
                 <input className='text-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />

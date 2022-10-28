@@ -32,7 +32,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div className='login-form-div'>
+        <div className='login-box'>
             <form onSubmit={handleLogin}>
                 <h2>Sign In</h2>
                 <p>Log in to your Lifelift account</p>

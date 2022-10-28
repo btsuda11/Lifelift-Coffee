@@ -1,4 +1,10 @@
 .login-section {
     background-image: url(https://cdn.shopify.com/s/files/1/0838/4525/files/n__cw_2x_e7315f16-3345-4e05-b777-832eb72f6ad7_2592x1136.png?v=1628880304);
     background-position: center;
+    background-size: 100% 100%;
+}
+
+.login-section > div {
+    display: flex;
+    justify-content: center;
 }

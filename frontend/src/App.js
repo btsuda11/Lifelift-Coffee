@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
-import LoginFormPage from "./components/account/LoginFormPage";
+import LoginPage from "./components/account/LoginPage";
 import Profile from './components/account/Profile';
-import SignUpForm from './components/account/SignUpForm';
+import SignUpPage from './components/account/SignUpPage';
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
       <h1>Hello from App</h1>
       <Switch>
         <Route exact path='/account' component={Profile} />
-        <Route exact path='/account/login' component={LoginFormPage} />
-        <Route exact path='/account/register' component={SignUpForm} />
+        <Route exact path='/account/login' component={LoginPage} />
+        <Route exact path='/account/register' component={SignUpPage} />
       </Switch>
     </>
   );
