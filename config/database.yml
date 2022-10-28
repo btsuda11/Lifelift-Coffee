@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: lifelift_coffee_production
-  username: lifelift_coffee
-  password: <%= ENV["LIFELIFT_COFFEE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
