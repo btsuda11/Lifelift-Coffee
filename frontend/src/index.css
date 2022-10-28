@@ -37,12 +37,6 @@ ul {
     list-style: none;
 }
 
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
 /* Site wide styling */
 @font-face {
     font-family: WigrumWeb;
@@ -93,6 +87,11 @@ input[type="submit"] {
     text-align: center;
 }
 
+.errors {
+    line-height: 25px;
+}
+
 .errors > li {
     color: rgba(220, 38, 38);
+    text-align: center;
 }

@@ -10,8 +10,28 @@
     margin: 0 2% 0 2%;
 }
 
-.narrow-text {
+.icon-box {
+    display: flex;
+    margin: 5%;
+}
+
+.icon-box img {
+    margin-bottom: 7%;
+}
+
+.icon-box > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.3%;
+}
+
+.narrow {
     width: 65%;
-    font-size: 17px;
+    font-size: 18px;
     text-align: center;
+}
+
+.spaced {
+    line-height: 30px;
 }

@@ -1,4 +1,7 @@
 import './WelcomeComponent.css';
+import subscription from '../../../../images/LoginPage/subscription.svg';
+import shipping from '../../../../images/LoginPage/shipping.svg';
+import access from '../../../../images/LoginPage/access.svg';
 import { Link } from 'react-router-dom';
 
 const WelcomeComponent = () => {
@@ -6,19 +9,22 @@ const WelcomeComponent = () => {
     return (
         <div className='welcome-box'>
             <h2>Welcome to Lifelift</h2>
-            <p className='narrow-text'>Sign up to receive early access and the latest news on all things Lifelift related.</p>
-            <div>
+            <p className='narrow spaced'>Sign up to receive early access and the latest news on all things Lifelift related.</p>
+            <div className='icon-box'>
                 <div>
-                    <p>Customizable Subscription</p>
+                    <img src={subscription} />
+                    <p className='narrow spaced'>Customizable Subscription</p>
                 </div>
                 <div>
-                    <p>Faster Shipping</p>
+                    <img src={shipping} />
+                    <p className='narrow spaced'>Faster Shipping</p>
                 </div>
                 <div>
-                    <p>Early Access</p>
+                    <img src={access} />
+                    <p className='narrow spaced'>Early Access</p>
                 </div>
             </div>
-            <p>Not a Lifelift member? Register now</p>
+            <p className='narrow spaced'>Not a Lifelift member? Register now</p>
             <Link className='red-btn' to='/account/register'>Register your Account</Link>
         </div>
     )
