@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signUpUser } from '../../../../actions/sessionActions';
 import { Redirect } from 'react-router-dom';
 import './SignUpForm.css';
-// test branch
+
 const SignUpForm = () => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);

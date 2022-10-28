@@ -16,7 +16,7 @@
 
 .login-field {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     font-family: inherit;
     border-radius: 0;
     border: solid 1px black;
@@ -24,5 +24,9 @@
     padding: 15px;
     margin: 10px;
     width: 70%;
+}
+
+.textp {
+    margin-bottom: 40px;
 }
 

@@ -40,7 +40,7 @@ const LoginForm = () => {
         <div className='login-box'>
             <form onSubmit={handleLogin}>
                 <h2>Sign In</h2>
-                <p>Log in to your Lifelift account</p>
+                <p className='textp'>Log in to your Lifelift account</p>
                 <div>
                     <ul className='errors'>
                         {errors.map(error => <li key={error}>{error}</li>)}
