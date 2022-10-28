@@ -37,16 +37,16 @@ const SignUpForm = () => {
         <>
             <form className='signup-form' onSubmit={handleSignUp}>
                 <h2>Sign Up</h2>
-                <p>Create your Lifelift account</p>
+                <p className='textp'>Create your Lifelift account</p>
                 <div>
                     <ul className='errors'>
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
                 </div>
-                <input className='text-field' type='text' placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} required />
-                <input className='text-field' type='text' placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} required />
-                <input className='text-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
-                <input className='text-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
+                <input className='signup-field' type='text' placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} required />
+                <input className='signup-field' type='text' placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} required />
+                <input className='signup-field' type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
+                <input className='signup-field' type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
                 <button className='red-btn' type='submit'>Register now</button>
             </form>
         </>
