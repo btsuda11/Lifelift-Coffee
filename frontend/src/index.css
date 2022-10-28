@@ -1,5 +1,4 @@
 /* CSS Reset */
-
 html,
 body,
 header,
@@ -45,11 +44,20 @@ img {
 }
 
 /* Site wide styling */
+@font-face {
+    font-family: WigrumWeb;
+    src: url(./fonts/wigrum.otf);
+}
+
+body {
+    font-family: WigrumWeb;
+}
 
 button,
 a,
 input[type="submit"] {
     cursor: pointer;
+    font-family: inherit;
     border: 0;
     border-radius: 30px;
     padding: 14px 28px 14px 28px;
@@ -65,9 +73,10 @@ input[type="submit"] {
 }
 
 ::-webkit-input-placeholder {
+    font-family: WigrumWeb;
     text-align: center;
 }
 
-.errors>li {
+.errors > li {
     color: rgba(220, 38, 38);
 }

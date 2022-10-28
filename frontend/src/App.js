@@ -6,7 +6,7 @@ import SignUpPage from './components/account/SignUpPage';
 function App() {
   return (
     <>
-      <h1>Hello from App</h1>
+      {/* <h1>Hello from App</h1> */}
       <Switch>
         <Route exact path='/account' component={Profile} />
         <Route exact path='/account/login' component={LoginPage} />
