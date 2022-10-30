@@ -16,11 +16,14 @@ header {
     align-items: center;
 }
 
-.header-div > nav {
+.dropdown {
     font-size: 18px;
     width: 20%;
-    display: flex;
-    justify-content: flex-start;
+    position: relative;
+}
+
+.shop {
+    position: relative;
 }
 
 .icon-bar {
@@ -33,11 +36,14 @@ header {
     margin-left: 13%;
 }
 
-.shop img {
+.shop-btn > img {
     margin-left: 10px;
 }
 
 .logo {
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
     display: flex;
-    justify-content: center;
 }

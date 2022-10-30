@@ -1,0 +1,12 @@
+.dropdown-content {
+    position: absolute;
+    z-index: 30;
+    display: none;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    margin-top: 40px;
+}
+
+.categories {
+    display: flex;
+}

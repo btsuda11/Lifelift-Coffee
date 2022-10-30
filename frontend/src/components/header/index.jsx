@@ -4,20 +4,22 @@ import account from '../../images/Header/account.svg';
 import search from '../../images/Header/search.svg';
 import cart from '../../images/Header/cart.svg';
 import openBar from '../../images/Header/open-bar.svg';
+import DropDownMenu from './DropDownMenu';
 
 const Header = () => {
     return (
         <header>
             <div className='header-div'>
-                <nav>
-                    <div className='shop'>
-                        <Link to='#'>Shop
+                <nav className='dropdown'>
+                    <div>
+                        <Link to='#' className='shop-btn'>Shop
                             <img src={openBar}/>
                         </Link>
                     </div>
+                    <DropDownMenu />
                 </nav>
                 <div className='logo'>
-                    <Link to='/'>Lifelift Coffee</Link>
+                    <Link to='/'><h1>Lifelift Coffee</h1></Link>
                 </div>
                 <div className='icon-bar'>
                     <Link to='/account'>
