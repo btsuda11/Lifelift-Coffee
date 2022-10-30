@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import toxin from '../../../images/Splash/toxin.svg';
 import environment from '../../../images/Splash/environment.svg';
 import shipping from '../../../images/Splash/shipping.svg';
+import SpotlightSection from './SpotlightSection';
 
 const SplashPage = () => {
     return (
@@ -34,9 +35,9 @@ const SplashPage = () => {
                             <p>We offer free shipping on all orders over $50, and we’re so confident you’ll love Lifelift Coffee that we guarantee your satisfaction. We will refund you if you’re unhappy (but you won’t be).</p>
                         </div>
                     </div>
-                        
                 </div>
             </section>
+            <SpotlightSection />
         </>
     )
 }
