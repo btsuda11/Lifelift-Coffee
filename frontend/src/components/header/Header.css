@@ -43,7 +43,3 @@ header {
 .logo {
     text-align: center;
 }
-
-.dropdown:hover .dropdown-content {
-    display: flex;
-}
