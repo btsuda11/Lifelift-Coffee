@@ -1,0 +1,50 @@
+.shop-section {
+    background-image: url('../../../images/Splash/splash-shop-section.jpeg');
+    background-size: 100% 100%;
+    height: 69vh;
+}
+
+.shop-section > div {
+    width: 35%;
+    height: 100%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.splash-shop-btn {
+    color: white;
+    background-color: rgba(241, 87, 75);
+    font-size: 17px;
+    padding: 20px 35px 20px 35px;
+    margin-top: 25px;
+    border-radius: 30px;
+}
+
+.deserve-section {
+    height: 78vh;
+    text-align: center;
+}
+
+.deserve-section > div {
+    height: 100%;
+    margin: 0 12.5% 0 12.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-div {
+    display: flex;
+    margin-top: 5%;
+}
+
+.info-div > div {
+    margin: 0 30px 0 30px;
+}
+
+.info-div p {
+    line-height: 30px;
+}

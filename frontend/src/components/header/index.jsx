@@ -19,7 +19,7 @@ const Header = () => {
                     <DropDownMenu />
                 </nav>
                 <div className='logo'>
-                    <Link to='/'><h1>Lifelift Coffee</h1></Link>
+                    <Link to='/'><h2>Lifelift Coffee</h2></Link>
                 </div>
                 <div className='icon-bar'>
                     <Link to='/account'>
