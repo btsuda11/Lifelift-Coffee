@@ -1,18 +1,18 @@
 class Api::ProductsController < ApplicationController
   def index
     case params[:category]
-    when 'undefined'
+    when 'All Products'
       @products = Product.all
-    when 'light-medium-dark-roasts'
-      @products = Product.where("category = 'light-medium-dark-roasts'")
-    when 'decaf-coffee'
-      @products = Product.where("category = 'decaf-coffee'")
-    when 'flavored-coffee'
-      @products = Product.where("category = 'flavored-coffee'")
-    when 'coffee-pods'
-      @products = Product.where("category = 'coffee-pods'")
-    when 'health-boosters'
-      @products = Product.where("category = 'health-boosters'")
+    when 'Light Medium Dark Roasts'
+      @products = Product.where("category = 'Light Medium Dark Roasts'")
+    when 'Decaf Coffee'
+      @products = Product.where("category = 'Decaf Coffee'")
+    when 'Flavored Coffee'
+      @products = Product.where("category = 'Flavored Coffee'")
+    when 'Coffee Pods'
+      @products = Product.where("category = 'Coffee Pods'")
+    when 'Health Boosters'
+      @products = Product.where("category = 'Health Boosters'")
     end
     render :index
   end

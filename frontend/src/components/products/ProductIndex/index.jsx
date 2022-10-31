@@ -19,11 +19,12 @@ const ProductIndex = () => {
         return capitalizedWords.join(' ');
     }
 
-    category ? category = capitalizeWords(category) : category = 'All Products';
-
+    
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch])
+        dispatch(fetchProducts(category));
+    }, [dispatch, category])
+    
+    category ? category = capitalizeWords(category) : category = 'All Products';
 
     return (
         <>

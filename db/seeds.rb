@@ -45,7 +45,7 @@ ApplicationRecord.transaction do
     PRODUCT_TYPES.each do |type|
         Product.create!({
             name: 'Medium Roast',
-            category: 'light-medium-dark-roasts',
+            category: 'Light Medium Dark Roasts',
             product_type: type,
             description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
             price: 24.60
@@ -53,7 +53,7 @@ ApplicationRecord.transaction do
 
         Product.create!({
             name: 'Dark Chocolate Sea Salt Caramel',
-            category: 'flavored-coffee',
+            category: 'Flavored Coffee',
             product_type: type,
             description: "Single origin, specialty Arabica coffee cherries are grown to peak ripeness, hand selected, spring water washed, and roasted to perfection effortlessly combine with creamy, sinfully sweet caramel, covered in faintly bitter, decadent dark chocolate, with a hint of savory sea salt. The subtle sea salt works to slightly cut the rich, creamy, confectionery caramel flavors as a flood of decadence dances the dark chocolate across your taste buds, all warmly bathed in a waterfall of purely perfect medium roasted coffee. Bold and smooth, decadent and divine, slightly creamy, subtly sweet.",
             price: 28.95
@@ -62,7 +62,7 @@ ApplicationRecord.transaction do
 
     Product.create!({
         name: 'Medium Roast',
-        category: 'light-medium-dark-roasts',
+        category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
         price: 30.76
