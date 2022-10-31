@@ -1,6 +1,8 @@
 class Api::ProductsController < ApplicationController
   def index
     case params[:category]
+    when 'undefined'
+      @products = Product.all
     when 'All Products'
       @products = Product.all
     when 'Light Medium Dark Roasts'
@@ -18,7 +20,13 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by_id(params[:id])
+
+    @product = Product.where('name = (?)', capitalize_name(params[:name]))
     render :show
+  end
+
+  private
+  def capitalize_name(words)
+    words.split('-').map { |word| word.capitalize }.join(' ')
   end
 end

@@ -15,8 +15,8 @@ export const getProducts = state => (
     state.entities.products ? Object.values(state.entities.products) : []
 )
 
-export const getProduct = productId => state => (
-    state.entities.products ? state.entities.products[productId] : null
+export const getProduct = productName => state => (
+    state.entities.products ? state.entities.products[productName] : null
 )
 
 export const fetchProducts = (category) => async dispatch => {
@@ -27,8 +27,8 @@ export const fetchProducts = (category) => async dispatch => {
     }
 }
 
-export const fetchProduct = productId => async dispatch => {
-    const response = await csrfFetch(`/api/products/${productId}`);
+export const fetchProduct = productName => async dispatch => {
+    const response = await csrfFetch(`/api/products/${productName}`);
     if (response.ok) {
         const product = await response.json();
         dispatch(receiveProduct(product));
