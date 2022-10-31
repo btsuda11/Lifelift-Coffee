@@ -40,7 +40,7 @@ ApplicationRecord.transaction do
     end
 
     puts "Creating products..."
-    PRODUCT_TYPES = ['Ground', 'Whole Beans', 'Go Bags']
+    PRODUCT_TYPES = ['Ground', 'Whole Beans']
     
     PRODUCT_TYPES.each do |type|
         Product.create!({
@@ -52,7 +52,13 @@ ApplicationRecord.transaction do
         })
     end
 
-
+    Product.create!({
+        name: 'Medium Roast',
+        category: 'light-medium-dark-roasts',
+        product_type: 'Go Bags',
+        description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
+        price: 30.76
+    })
 
     puts "Done!"
 end
