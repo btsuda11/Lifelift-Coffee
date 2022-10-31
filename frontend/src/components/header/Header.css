@@ -16,9 +16,13 @@ header {
     align-items: center;
 }
 
+.header-div > div {
+    width: 20%;
+}
+
 .dropdown {
     font-size: 18px;
-    width: 20%;
+    width: 33.695%;
     position: relative;
 }
 
