@@ -19,8 +19,8 @@ export const getProduct = productId => state => (
     state.products ? state.products[productId] : null
 )
 
-export const fetchProducts = () => async dispatch => {
-    const response = await csrfFetch('/api/products');
+export const fetchProducts = (category) => async dispatch => {
+    const response = await csrfFetch(`/api/products?category=${category}`);
     if (response.ok) {
         const products = await response.json();
         dispatch(receiveProducts(products));
