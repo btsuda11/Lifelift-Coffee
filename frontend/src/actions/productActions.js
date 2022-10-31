@@ -11,6 +11,14 @@ const receiveProducts = products => (
     { type: RECEIVE_PRODUCTS, products }
 )
 
+export const getProducts = state => (
+    state.products ? Object.values(state.products) : []
+)
+
+export const getProduct = productId => state => (
+    state.products ? state.products[productId] : null
+)
+
 export const fetchProducts = () => async dispatch => {
     const response = await csrfFetch('/api/products');
     if (response.ok) {

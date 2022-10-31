@@ -1,0 +1,19 @@
+.shop-lifelift-section {
+    background-image: url('../../../images/ProductIndex/shop-lifelift-section.jpeg');
+    background-size: 100% 100%;
+    height: 50vh;
+}
+
+.shop-lifelift-section > div {
+    width: 25%;
+    height: 100%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.shop-lifelift-section p {
+    font-weight: bold;
+}
