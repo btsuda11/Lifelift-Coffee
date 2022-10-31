@@ -8,18 +8,17 @@ import { useParams } from 'react-router-dom';
 const ProductIndex = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
-
+    
     let { category } = useParams();
-
+    
     const capitalizeWords = str => {
         const words = str.split('-');
         const capitalizedWords = words.map((word) => (
             word[0].toUpperCase() + word.slice(1).toLowerCase()
-        ))
-        return capitalizedWords.join(' ');
-    }
-
-    
+            ))
+            return capitalizedWords.join(' ');
+        }
+            
     useEffect(() => {
         dispatch(fetchProducts(category));
     }, [dispatch, category])
@@ -39,7 +38,11 @@ const ProductIndex = () => {
                     <h2>{category}</h2>
                 </div>
                 <div>
-
+                    {products.map(product => (
+                        <>
+                            <h3>{product.name}</h3>
+                        </>
+                    ))}
                 </div>
             </section>
         </>

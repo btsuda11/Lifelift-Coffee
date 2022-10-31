@@ -12,11 +12,11 @@ const receiveProducts = products => (
 )
 
 export const getProducts = state => (
-    state.products ? Object.values(state.products) : []
+    state.entities.products ? Object.values(state.entities.products) : []
 )
 
 export const getProduct = productId => state => (
-    state.products ? state.products[productId] : null
+    state.entities.products ? state.entities.products[productId] : null
 )
 
 export const fetchProducts = (category) => async dispatch => {
