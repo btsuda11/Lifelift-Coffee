@@ -10,10 +10,12 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
+    Product.destroy_all
 
     puts "Resetting primary keys..."
-    # For easy testing, so that after seeding, the first `User` has `id` of 1
+    # For easy testing, so that after seeding, the first `User`, `Product` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('products')
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -36,6 +38,21 @@ ApplicationRecord.transaction do
             password: 'password'
         }) 
     end
+
+    puts "Creating products..."
+    PRODUCT_TYPES = ['Ground', 'Whole Beans', 'Go Bags']
+    
+    PRODUCT_TYPES.each do |type|
+        Product.create!({
+            name: 'Medium Roast',
+            category: 'light-medium-dark-roasts',
+            product_type: type,
+            description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
+            price: 24.60
+        })
+    end
+
+
 
     puts "Done!"
 end
