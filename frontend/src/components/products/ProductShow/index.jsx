@@ -1,22 +1,24 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchProduct, getProduct, removeProduct } from '../../../actions/productActions';
+import { fetchProduct, getProduct } from '../../../actions/productActions';
 import './ProductShow.css';
 
 const ProductShow = () => {
     const dispatch = useDispatch();
     const { productName } = useParams();
+    
     const product = useSelector(getProduct(camelize(productName)));
-
+    
     useEffect(() => {
         dispatch(fetchProduct(productName));
-        // return () => dispatch(removeProduct(camelize(productName)));
     }, [dispatch, productName])
+    
+    if (!Array.isArray(product) || product.length === 0) return null;
 
     return (
         <>
-            <h1>{}</h1>
+            <h3>{product[0].name}</h3>
         </>
     )
 }

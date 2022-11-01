@@ -8,7 +8,6 @@ import { useParams } from 'react-router-dom';
 const ProductIndex = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
-    console.log(products)
     
     let { category } = useParams();
     
@@ -22,11 +21,12 @@ const ProductIndex = () => {
     
     category ? category = capitalizeWords(category) : category = 'All Products';
 
-    if (products[0] instanceof Array) dispatch(removeProducts());
-            
     useEffect(() => {
         dispatch(fetchProducts(category));
+        // return () => dispatch(removeProducts())
     }, [dispatch, category])
+
+    if (products[0] instanceof Array) return null;
 
     return (
         <>
