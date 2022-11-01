@@ -52,6 +52,14 @@ ApplicationRecord.transaction do
         })
 
         Product.create!({
+            name: 'Embolden Dark Roast',
+            category: 'Light Medium Dark Roasts',
+            product_type: type,
+            description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
+            price: 24.60
+        })
+
+        Product.create!({
             name: 'Dark Chocolate Sea Salt Caramel',
             category: 'Flavored Coffee',
             product_type: type,
@@ -65,6 +73,14 @@ ApplicationRecord.transaction do
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
+        price: 30.76
+    })
+
+    Product.create!({
+        name: 'Embolden Dark Roast',
+        category: 'Light Medium Dark Roasts',
+        product_type: 'Go Bags',
+        description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
         price: 30.76
     })
 

@@ -15,7 +15,7 @@ const ProductShow = () => {
 
     return (
         <>
-            <h1>{productName}</h1>
+            <h1>{}</h1>
         </>
     )
 }

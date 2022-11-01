@@ -6,15 +6,15 @@ class Api::ProductsController < ApplicationController
     when 'All Products'
       @products = Product.all
     when 'Light Medium Dark Roasts'
-      @products = Product.where("category = 'Light Medium Dark Roasts'")
+      @products = Product.select('distinct(name)', 'image_url').where("category = 'Light Medium Dark Roasts'")
     when 'Decaf Coffee'
-      @products = Product.where("category = 'Decaf Coffee'")
+      @products = Product.select('distinct(name)', 'image_url').where("category = 'Decaf Coffee'")
     when 'Flavored Coffee'
-      @products = Product.where("category = 'Flavored Coffee'")
+      @products = Product.select('distinct(name)', 'image_url').where("category = 'Flavored Coffee'")
     when 'Coffee Pods'
-      @products = Product.where("category = 'Coffee Pods'")
+      @products = Product.select('distinct(name)', 'image_url').where("category = 'Coffee Pods'")
     when 'Health Boosters'
-      @products = Product.where("category = 'Health Boosters'")
+      @products = Product.select('distinct(name)', 'image_url').where("category = 'Health Boosters'")
     end
     render :index
   end
