@@ -37,8 +37,8 @@ const ProductIndex = () => {
                 <div>
                     <h2>{category}</h2>
                 </div>
-                <div>
-                    {/* {products.map(product => (<ProductIndexItem key={product.id} product={product} />))} */}
+                <div className='product-grid'>
+                    {products.map(product => (<ProductIndexItem key={product.id} product={product} />))}
                 </div>
             </section>
         </>
