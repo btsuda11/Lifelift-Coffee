@@ -2,6 +2,7 @@ import csrfFetch from "../store/csrf";
 
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
+export const REMOVE_PRODUCTS = 'products/REMOVE_PRODUCTS';
 
 const receiveProduct = payload => (
     { type: RECEIVE_PRODUCT, payload }
@@ -9,6 +10,10 @@ const receiveProduct = payload => (
 
 const receiveProducts = products => (
     { type: RECEIVE_PRODUCTS, products }
+)
+
+export const removeProducts = () => (
+    { type: REMOVE_PRODUCTS }
 )
 
 export const getProducts = state => (

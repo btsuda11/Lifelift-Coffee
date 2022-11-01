@@ -1,13 +1,14 @@
 import './ProductIndex.css';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductIndexItem from './ProductIndexItem';
-import { getProducts, fetchProducts } from '../../../actions/productActions';
+import { getProducts, fetchProducts, removeProducts } from '../../../actions/productActions';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ProductIndex = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
+    console.log(products)
     
     let { category } = useParams();
     
@@ -18,12 +19,14 @@ const ProductIndex = () => {
             ))
             return capitalizedWords.join(' ');
         }
+    
+    category ? category = capitalizeWords(category) : category = 'All Products';
+
+    if (products[0] instanceof Array) dispatch(removeProducts());
             
     useEffect(() => {
         dispatch(fetchProducts(category));
     }, [dispatch, category])
-    
-    category ? category = capitalizeWords(category) : category = 'All Products';
 
     return (
         <>

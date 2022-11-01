@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchProduct, getProduct } from '../../../actions/productActions';
+import { fetchProduct, getProduct, removeProduct } from '../../../actions/productActions';
 import './ProductShow.css';
 
 const ProductShow = () => {
@@ -11,6 +11,7 @@ const ProductShow = () => {
 
     useEffect(() => {
         dispatch(fetchProduct(productName));
+        // return () => dispatch(removeProduct(camelize(productName)));
     }, [dispatch, productName])
 
     return (
