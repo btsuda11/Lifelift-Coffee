@@ -1,0 +1,85 @@
+.product-info-section {
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+}
+
+.product-imgs {
+    padding: 0 0 0 5%;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-imgs > img {
+    width: 80%;
+    height: 90%;
+}
+
+.product-info-div {
+    padding: 0 9% 0 0;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-btn-div, .product-type-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-price-btn {
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    line-height: 20px;
+    height: 100px;
+    width: 155px;
+    border: 1px solid rgb(200, 200, 200);
+    margin-bottom: 40px;
+}
+
+.product-toggle-btn {
+    box-sizing: border-box;
+    background-color: white;
+    height: 50px;
+    width: 145px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.product-type-btn {
+    box-sizing: border-box;
+    background-color: white;
+    height: 50px;
+    width: 155px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.product-type-btn {
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.product-toggle-btn:active {
+    background-color: #e5e7eb;
+    border: 2px solid #ef4444;
+}
+
+.product-type-btn:active, .product-price-btn:active {
+    background-color: #e5e7eb;
+}
+
+.product-price-btn > p {
+    font-size: 15px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.strike-out {
+    text-decoration: line-through;
+}
