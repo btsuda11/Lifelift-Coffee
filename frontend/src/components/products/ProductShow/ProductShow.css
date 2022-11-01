@@ -5,8 +5,35 @@
 }
 
 .product-imgs {
-    /* margin: 0 5% 0 5%; */
+    margin: 0 5% 0 5%;
     height: 80%;
-    /* display: flex; */
+}
 
+.product-info-div {
+    margin: 0 5% 0 5%;
+}
+
+.product-price-btn {
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 4px;
+    height: 90px;
+    width: 115px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.product-price-btn:active {
+    background-color: #e5e7eb;
+}
+
+.product-price-btn > p {
+    font-size: 15px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.strike-out {
+    text-decoration: line-through;
 }

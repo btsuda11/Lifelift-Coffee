@@ -10,7 +10,7 @@ const ProductShow = () => {
     const { productName } = useParams();
     
     const product = useSelector(getProduct(camelize(productName)));
-    
+
     useEffect(() => {
         dispatch(fetchProduct(productName));
     }, [dispatch, productName])
@@ -25,6 +25,31 @@ const ProductShow = () => {
                 </div>
                 <div className='product-info-div'>
                     <h2>{product[0].name}</h2>
+                    <button>Buy One Time</button>
+                    <div>
+                        {product.map(type => (
+                            <>
+                                <button className='product-type-btn'>{type.productType}</button>
+                                <div>
+                                    <button className='product-price-btn'>
+                                        <p className='bold'>1</p>
+                                        <p className='bold'>${type.price}</p>
+                                        <p className='strike-out'>${(1.25 * type.price).toFixed(2)}</p>
+                                    </button>
+                                    <button className='product-price-btn'>
+                                        <p className='bold'>3</p>
+                                        <p className='bold'>${(0.89 * type.price).toFixed(2)}</p>
+                                        <p>Per Bag</p>
+                                    </button>
+                                    <button className='product-price-btn'>
+                                        <p className='bold'>5</p>
+                                        <p className='bold'>${(0.82 * type.price).toFixed(2)}</p>
+                                        <p>Per Bag</p>
+                                    </button>
+                                </div>
+                            </>
+                        ))}
+                    </div>
                 </div>
             </section>
         </>
