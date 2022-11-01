@@ -38,11 +38,7 @@ const ProductIndex = () => {
                     <h2>{category}</h2>
                 </div>
                 <div>
-                    {products.map(product => (
-                        <>
-                            <h3>{product.name}</h3>
-                        </>
-                    ))}
+                    {/* {products.map(product => (<ProductIndexItem key={product.id} product={product} />))} */}
                 </div>
             </section>
         </>

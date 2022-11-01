@@ -6,18 +6,29 @@ import './ProductShow.css';
 
 const ProductShow = () => {
     const dispatch = useDispatch();
-    const { productId } = useParams();
-    const product = useSelector(getProduct(productId));
+    const { productName } = useParams();
+    const product = useSelector(getProduct(camelize(productName)));
 
     useEffect(() => {
-        dispatch(fetchProduct(productId));
-    }, [dispatch, productId])
+        dispatch(fetchProduct(productName));
+    }, [dispatch, productName])
 
     return (
         <>
-            <h1>{}</h1>
+            <h1>{productName}</h1>
         </>
     )
 }
 
 export default ProductShow;
+
+export const camelize = name => {
+    const newName = name.split('-').map((word, i) => {
+        if (i !== 0) {
+            return word[0].toUpperCase() + word.slice(1).toLowerCase();
+        } else {
+            return word;
+        }
+    })
+    return newName.join('');
+}

@@ -20,7 +20,6 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-
     @product = Product.where('name = (?)', capitalize_name(params[:name]))
     render :show
   end

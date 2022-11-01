@@ -16,7 +16,7 @@ export const getProducts = state => (
 )
 
 export const getProduct = productName => state => (
-    state.entities.products ? state.entities.products[productName] : null
+    state.entities.products[productName] ? state.entities.products[productName] : []
 )
 
 export const fetchProducts = (category) => async dispatch => {
