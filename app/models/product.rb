@@ -13,5 +13,5 @@
 #  product_type :string           not null
 #
 class Product < ApplicationRecord
-    validates :name, :category, :product_type, :description, :price, presence: true
+    validates :name, :category, :description, :price, presence: true
 end

@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 const ProductIndexItem = ({ product }) => {
     return (
         <div className='product-container'>
-            <Link to={`/product/${dashify(product.name)}`}>
-                <div className='product-img' />
-            </Link>
-            <p>{product.name}</p>
-            <Link className='red-btn' to={`/product/${dashify(product.name)}`}>View Product</Link>
+            <div className='product-image-container'>
+                <Link to={`/product/${dashify(product.name)}`}>
+                    <div className='product-img' />
+                </Link>
+            </div>
+            <div className='product-index-item'>
+                <h3>{product.name}</h3>
+                <Link className='red-btn' to={`/product/${dashify(product.name)}`}>View Product</Link>
+            </div> 
         </div>
     )
 }

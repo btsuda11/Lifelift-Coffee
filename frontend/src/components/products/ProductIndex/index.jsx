@@ -35,7 +35,7 @@ const ProductIndex = () => {
             </section>
             <section className='products-section'>
                 <div>
-                    <h2>{category}</h2>
+                    <h2 className='category-title'>{category}</h2>
                 </div>
                 <div className='product-grid'>
                     {products.map(product => (<ProductIndexItem key={product.id} product={product} />))}

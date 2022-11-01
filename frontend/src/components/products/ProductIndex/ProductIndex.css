@@ -22,8 +22,18 @@
     text-align: center;
 }
 
+.category-title {
+    margin: 0;
+}
+
+.products-section > div:first-child {
+    margin: 5% 0 3.5% 0;
+}
+
 .product-grid {
     display: grid;
+    height: 100%;
     grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 25% 25% 25%;
     justify-content: center;
 }
