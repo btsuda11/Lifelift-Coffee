@@ -25,7 +25,7 @@
     z-index: 30;
     display: none;
     border-radius: 10px;
-    /* margin-top: 40px; */
+    top: 95%;
     width: 85vw;
     text-align: center;
     line-height: 30px;

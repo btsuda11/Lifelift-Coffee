@@ -48,7 +48,7 @@ ApplicationRecord.transaction do
             category: 'Light Medium Dark Roasts',
             product_type: type,
             description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-            price: 24.60
+            price: 27.95
         })
 
         Product.create!({
@@ -56,7 +56,7 @@ ApplicationRecord.transaction do
             category: 'Light Medium Dark Roasts',
             product_type: type,
             description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-            price: 24.60
+            price: 27.95
         })
 
         Product.create!({
@@ -64,7 +64,7 @@ ApplicationRecord.transaction do
             category: 'Decaf Coffee',
             product_type: type,
             description: "Your cup of Lifelift Light Roast Coffee Decaf comes from coffee beans that have been individually hand selected as the premium bean(s) of a harvest. Your coffee beans are lovingly cultivated by local farmers, after being grown slowly to full maturity in mountain shade.",
-            price: 24.60
+            price: 27.95
         })
 
         Product.create!({
@@ -72,7 +72,7 @@ ApplicationRecord.transaction do
             category: 'Decaf Coffee',
             product_type: type,
             description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-            price: 24.60
+            price: 27.95
         })
 
         Product.create!({
@@ -105,7 +105,7 @@ ApplicationRecord.transaction do
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 30.76
+        price: 34.95
     })
 
     Product.create!({
@@ -120,7 +120,7 @@ ApplicationRecord.transaction do
             Compatible with Keurig and Keurig 2
             USDA Organic
             10 Pods in each box",
-        price: 17.56
+        price: 19.95
     })
 
     Product.create!({
@@ -135,7 +135,7 @@ ApplicationRecord.transaction do
             Compatible with Keurig and Keurig 2
             USDA Organic
             10 Pods in each box",
-        price: 17.56
+        price: 19.95
     })
 
     Product.create!({
@@ -150,7 +150,7 @@ ApplicationRecord.transaction do
             Compatible with Keurig and Keurig 2
             USDA Organic
             10 Pods in each box",
-        price: 17.56
+        price: 19.95
     })
 
     Product.create!({
@@ -158,7 +158,7 @@ ApplicationRecord.transaction do
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 30.76
+        price: 34.95
     })
 
     Product.create!({

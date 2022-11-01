@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProduct, getProduct } from '../../../actions/productActions';
+import productImg from '../../../images/ProductIndex/medium-roast.jpeg';
 import './ProductShow.css';
 
 const ProductShow = () => {
@@ -18,7 +19,14 @@ const ProductShow = () => {
 
     return (
         <>
-            <h3>{product[0].name}</h3>
+            <section className='product-info-section'>
+                <div className='product-imgs'>
+                    <img src={productImg} />
+                </div>
+                <div className='product-info-div'>
+                    <h2>{product[0].name}</h2>
+                </div>
+            </section>
         </>
     )
 }
