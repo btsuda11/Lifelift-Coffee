@@ -3,10 +3,6 @@ header {
     height: 14vh;
 }
 
-.header-div > div {
-    width: 20%;
-}
-
 .header-div {
     padding: 0 7% 0 7%;
     height: 100%;
@@ -16,10 +12,19 @@ header {
     align-items: center;
 }
 
+.header-div > div {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .dropdown {
     font-size: 18px;
-    width: 20%;
+    height: 100%;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .shop {
@@ -41,5 +46,5 @@ header {
 }
 
 .logo {
-    text-align: center;
+    justify-content: center;
 }

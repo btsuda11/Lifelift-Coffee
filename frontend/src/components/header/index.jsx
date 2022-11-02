@@ -10,14 +10,16 @@ const Header = () => {
     return (
         <header>
             <div className='header-div'>
-                <nav className='dropdown'>
-                    <div>
-                        <Link to='#' className='shop-btn'>Shop
-                            <img src={openBar}/>
-                        </Link>
-                    </div>
-                    <DropDownMenu />
-                </nav>
+                <div>
+                    <nav className='dropdown'>
+                        <div>
+                            <Link to='#' className='shop-btn'>Shop
+                                <img src={openBar}/>
+                            </Link>
+                        </div>
+                        <DropDownMenu />
+                    </nav>
+                </div>
                 <div className='logo'>
                     <Link to='/'><h2>Lifelift Coffee</h2></Link>
                 </div>

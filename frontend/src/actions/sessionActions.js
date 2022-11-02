@@ -1,7 +1,7 @@
 import csrfFetch, { storeCurrentUser } from "../store/csrf";
 
-export const RECEIVE_USER = 'user/RECEIVE_USER';
-export const REMOVE_USER = 'user/REMOVE_USER';
+export const RECEIVE_USER = 'users/RECEIVE_USER';
+export const REMOVE_USER = 'users/REMOVE_USER';
 
 export const receiveCurrentUser = user => (
     { type: RECEIVE_USER, user }
