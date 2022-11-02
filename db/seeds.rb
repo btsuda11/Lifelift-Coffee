@@ -11,11 +11,13 @@ ApplicationRecord.transaction do
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Product.destroy_all
+    CartItem.destroy_all
 
     puts "Resetting primary keys..."
-    # For easy testing, so that after seeding, the first `User`, `Product` has `id` of 1
+    # For easy testing, so that after seeding, the first `User`, `Product`, `CartItem` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
+    ApplicationRecord.connection.reset_pk_sequence!('cart_items')
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
