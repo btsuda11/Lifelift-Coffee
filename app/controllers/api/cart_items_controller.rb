@@ -1,12 +1,9 @@
 class Api::CartItemsController < ApplicationController
+    # before_action :require_logged_in
+
     def index
         @cart_items = CartItem.all
         render :index
-    end
-
-    def show
-        @cart_item = CartItem.find_by_id(params[:id])
-        render :show
     end
 
     def create
@@ -36,6 +33,6 @@ class Api::CartItemsController < ApplicationController
 
     private
     def cart_item_params
-        params.require(:cart_item).permit(:quantity, :size, :price, :shopper_id, :product_id)
+        params.require(:cart_item).permit(:id, :quantity, :shopper_id, :product_id)
     end
 end

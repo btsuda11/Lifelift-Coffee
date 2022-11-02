@@ -8,11 +8,9 @@
 #  product_id :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  size       :string           not null
-#  price      :float            not null
 #
 class CartItem < ApplicationRecord
-    validates :quantity, :size, :price, presence: true
+    validates :quantity, presence: true
 
     belongs_to :shopper,
         foreign_key: :shopper_id,
