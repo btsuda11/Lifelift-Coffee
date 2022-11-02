@@ -23,7 +23,7 @@ const ProductShow = () => {
 
     return (
         <>
-            <ProductInfo product={product} />
+            <ProductInfo product={product} spotlight={false} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
                     <div>

@@ -23,7 +23,6 @@ const ProductIndex = () => {
 
     useEffect(() => {
         dispatch(fetchProducts(category));
-        // return () => dispatch(removeProducts())
     }, [dispatch, category])
 
     if (products[0] instanceof Array) return null;

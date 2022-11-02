@@ -51,7 +51,7 @@
 
 .product-toggle-btn {
     box-sizing: border-box;
-    height: 50px;
+    height: 45px;
     width: 145px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -80,4 +80,9 @@
 
 .strike-out {
     text-decoration: line-through;
+}
+
+.product-info-div > p {
+    margin-top: 2%;
+    margin-bottom: 7%;
 }

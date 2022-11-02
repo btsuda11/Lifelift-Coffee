@@ -52,10 +52,18 @@ ApplicationRecord.transaction do
         })
 
         Product.create!({
-            name: 'Embolden Dark Roast',
+            name: 'Dark Roast',
             category: 'Light Medium Dark Roasts',
             product_type: type,
             description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
+            price: 27.95
+        })
+
+        Product.create!({
+            name: 'Light Roast',
+            category: 'Light Medium Dark Roasts',
+            product_type: type,
+            description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
             price: 27.95
         })
 
@@ -130,7 +138,7 @@ ApplicationRecord.transaction do
     })
 
     Product.create!({
-        name: 'Embolden Dark Roast',
+        name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",

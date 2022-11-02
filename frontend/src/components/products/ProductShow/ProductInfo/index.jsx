@@ -2,12 +2,12 @@ import { useState } from 'react';
 import './ProductInfo.css';
 import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
 
-const ProductInfo = ({ product }) => {
+const ProductInfo = ({ product, spotlight }) => {
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
     const [clickType, setClickType] = useState({'Ground': true, 'Whole Beans': false, 'Go Bags': false});
     const [typeStyle, setTypeStyle] = useState({'Ground': {backgroundColor: '#e5e7eb'}, 'Whole Beans': {}, 'Go Bags': {}});
-    
+
     const handleQuantity = quantity => {
         const quant = { '1': false, '3': false, '6': false };
         const quantStyle = {'1': {}, '3': {}, '6': {}};
@@ -29,6 +29,9 @@ const ProductInfo = ({ product }) => {
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>
+                {spotlight && 
+                    <p>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
+                }
                 <button className='product-toggle-btn bold'>Buy One Time</button>
                 <div>
                     <div className='product-type-div'>
