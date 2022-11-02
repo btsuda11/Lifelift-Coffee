@@ -38,24 +38,26 @@ const ProductShow = () => {
                 <div className='highlights-img' />
             </section>
             <section className='healthiest-section'>
-                <div>
+                <div className='reasons-div'>
                     <h1>The Healthiest, Tastiest Coffee Possible</h1>
                     <div>
-                        <div className='reasons'>
+                        <div className='reasons spaced'>
                             <img src={clean}/>
-                            <p>CLEAN - 80% of the time, put clean foods AND clean beverages in your body such as Lifelift coffee. The other 20% of the time, enjoy life and treat yourself!</p>
+                            <p><span className='bold'>CLEAN</span> - 80% of the time, put clean foods AND clean beverages in your body such as Lifelift coffee. The other 20% of the time, enjoy life and treat yourself!</p>
                         </div>
-                        <div className='reasons'>
+                        <div className='reasons spaced'>
                             <img src={cause} />
-                            <p>CAUSE - Support something you believe in. We support the farmers, their families and communities. We also definitely support sustainable farming methods, wildlife protection, and our first responders.</p>
+                            <p><span className='bold'>CAUSE</span> - Support something you believe in. We support the farmers, their families and communities. We also definitely support sustainable farming methods, wildlife protection, and our first responders.</p>
                         </div>
-                        <div className='reasons'>
+                        <div className='reasons spaced'>
                             <img src={connection} />
-                            <p>CONNECTION - Coffee connects us. Whether it's conversations with friends or family, business meetings or simply just spending time with yourself. Life is about connection.</p>
+                            <p><span className='bold'>CONNECTION</span> - Coffee connects us. Whether it's conversations with friends or family, business meetings or simply just spending time with yourself. Life is about connection.</p>
                         </div>
                     </div>
                 </div>
-                <img src={healthiestCoffee}/>
+                <div className='healthiest-img-div'>
+                    <img src={healthiestCoffee}/>
+                </div>
             </section>
         </>
     )

@@ -43,7 +43,7 @@ const ProductInfo = ({ product }) => {
                                     <div className='price-btn-div'>
                                         <button onClick={() => handleQuantity('1')} className='product-price-btn' style={quantityStyle['1']}>
                                             <p className='bold'>1</p>
-                                            <p className='bold'>${type.price}</p>
+                                            <p className='bold'>${(type.price).toFixed(2)}</p>
                                             <p className='strike-out'>${(1.25 * type.price).toFixed(2)}</p>
                                         </button>
                                         <button onClick={() => handleQuantity('3')} className='product-price-btn' style={quantityStyle['3']}>

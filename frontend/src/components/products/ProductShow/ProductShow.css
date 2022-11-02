@@ -31,9 +31,43 @@
 
 .healthiest-section {
     height: 100vh;
+    display: flex;
+}
+
+.healthiest-img-div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.healthiest-img-div > img {
+    width: 80%;
+    height: 80%;
+}
+
+.reasons-div {
+    width: 50%;
+    padding: 5% 0 0 8%;
+}
+
+.reasons-div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.reasons {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.reasons > p {
+    width: 75%;
 }
 
 .reasons > img {
     height: 60px;
     width: 60px;
+    margin-right: 5%;
 }
