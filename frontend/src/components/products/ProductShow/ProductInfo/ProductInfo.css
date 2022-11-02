@@ -63,10 +63,6 @@
     border: 1px solid rgb(200, 200, 200);
 }
 
-/* .product-type-btn:active, .product-price-btn:active {
-    background-color: #e5e7eb;
-} */
-
 .product-price-btn > p {
     font-size: 15px;
 }

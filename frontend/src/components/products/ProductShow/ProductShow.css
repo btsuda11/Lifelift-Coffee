@@ -1,0 +1,26 @@
+.highlights-section {
+    background-color: #e1eaf4;
+    height: 78vh;
+    display: flex;
+}
+
+.highlights-img {
+    background-image: url('../../../images/ProductShow/highlights-section.jpeg');
+    background-size: 170% 120%;
+    background-position: -200px -100px;
+    height: 100%;
+    width: 42%;
+}
+
+.highlights-description {
+    width: 58%;
+}
+
+.highlights-description > div {
+    padding: 11% 30% 0 10%;
+}
+
+.highlights-list {
+    list-style: disc;
+    padding-left: 5%;
+}

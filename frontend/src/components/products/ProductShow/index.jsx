@@ -20,6 +20,19 @@ const ProductShow = () => {
     return (
         <>
             <ProductInfo product={product} />
+            <section className='highlights-section'>
+                <div className='highlights-description'>
+                    <div>
+                        <h2>Highlights</h2>
+                        {product[0].category !== 'Coffee Pods' ? 
+                            <p className='spaced'>{product[0].description}</p> : 
+                            <ul className='highlights-list spaced'>
+                                {product[0].description.split('.').map(li => <li>{li}</li>)}
+                            </ul>}
+                    </div>
+                </div>
+                <div className='highlights-img' />
+            </section>
         </>
     )
 }

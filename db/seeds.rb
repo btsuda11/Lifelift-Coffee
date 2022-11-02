@@ -111,45 +111,21 @@ ApplicationRecord.transaction do
     Product.create!({
         name: 'Medium Roast Coffee Pods',
         category: 'Coffee Pods',
-        description: "Non-GMO, single-origin, specialty coffee
-            pH test proven to be up to 27.7% less acidic than common store-bought coffees
-            Shade-grown & sun-dried high in the mountains of Central America
-            Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee
-            No lines, no rationing, delivered directly to your door
-            These coffee pods are recyclable 
-            Compatible with Keurig and Keurig 2
-            USDA Organic
-            10 Pods in each box",
+        description: "Non-GMO, single-origin, specialty coffee.pH test proven to be up to 27.7% less acidic than common store-bought coffees.Shade-grown & sun-dried high in the mountains of Central America.Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee.No lines, no rationing, delivered directly to your door.These coffee pods are recyclable.Compatible with Keurig and Keurig 2.USDA Organic.10 Pods in each box",
         price: 19.95
     })
 
     Product.create!({
         name: 'Dark Roast Coffee Pods',
         category: 'Coffee Pods',
-        description: "Non-GMO, single-origin, specialty coffee
-            pH test proven to be up to 27.7% less acidic than common store-bought coffees
-            Shade-grown & sun-dried high in the mountains of Central America
-            Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee
-            No lines, no rationing, delivered directly to your door
-            These coffee pods are recyclable 
-            Compatible with Keurig and Keurig 2
-            USDA Organic
-            10 Pods in each box",
+        description: "Non-GMO, single-origin, specialty coffee.pH test proven to be up to 27.7% less acidic than common store-bought coffees.Shade-grown & sun-dried high in the mountains of Central America.Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee.No lines, no rationing, delivered directly to your door.These coffee pods are recyclable.Compatible with Keurig and Keurig 2.USDA Organic.10 Pods in each box",
         price: 19.95
     })
 
     Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
         category: 'Coffee Pods',
-        description: "Non-GMO, single-origin, specialty coffee
-            pH test proven to be up to 27.7% less acidic than common store-bought coffees
-            Shade-grown & sun-dried high in the mountains of Central America
-            Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee
-            No lines, no rationing, delivered directly to your door
-            These coffee pods are recyclable 
-            Compatible with Keurig and Keurig 2
-            USDA Organic
-            10 Pods in each box",
+        description: "Non-GMO, single-origin, specialty coffee.pH test proven to be up to 27.7% less acidic than common store-bought coffees.Shade-grown & sun-dried high in the mountains of Central America.Fairly traded, pesticide-free, & chemical-free, pure antioxidant-rich coffee.No lines, no rationing, delivered directly to your door.These coffee pods are recyclable.Compatible with Keurig and Keurig 2.USDA Organic.10 Pods in each box",
         price: 19.95
     })
 
