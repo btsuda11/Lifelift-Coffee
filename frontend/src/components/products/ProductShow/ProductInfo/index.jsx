@@ -52,12 +52,16 @@ const ProductInfo = ({ product, spotlight }) => {
                                         <button onClick={() => handleQuantity('3')} className='product-price-btn' style={quantityStyle['3']}>
                                             <p className='bold'>3</p>
                                             <p className='bold'>${(0.89 * type.price).toFixed(2)}</p>
-                                            <p>Per Bag</p>
+                                            {type.category === 'Coffee Pods' ? <p>Per Box</p> : null}
+                                            {type.category === 'Health Boosters' ? <p>Per Unit</p> : null}
+                                            {type.category === 'Light Medium Dark Roasts' || type.category === 'Decaf Coffee' || type.category === 'Flavored Coffee' ? <p>Per Bag</p> : null}
                                         </button>
                                         <button onClick={() => handleQuantity('6')} className='product-price-btn' style={quantityStyle['6']}>
                                             <p className='bold'>6</p>
                                             <p className='bold'>${(0.82 * type.price).toFixed(2)}</p>
-                                            <p>Per Bag</p>
+                                            {type.category === 'Coffee Pods' ? <p>Per Box</p> : null}
+                                            {type.category === 'Health Boosters' ? <p>Per Unit</p> : null}
+                                            {type.category === 'Light Medium Dark Roasts' || type.category === 'Decaf Coffee' || type.category === 'Flavored Coffee' ? <p>Per Bag</p> : null}
                                         </button>
                                     </div>
                                 }
