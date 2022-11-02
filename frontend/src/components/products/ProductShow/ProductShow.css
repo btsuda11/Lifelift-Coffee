@@ -20,7 +20,20 @@
     padding: 11% 30% 0 10%;
 }
 
+.highlights-description h2 {
+    margin-bottom: 40px;
+}
+
 .highlights-list {
     list-style: disc;
     padding-left: 5%;
+}
+
+.healthiest-section {
+    height: 100vh;
+}
+
+.reasons > img {
+    height: 60px;
+    width: 60px;
 }

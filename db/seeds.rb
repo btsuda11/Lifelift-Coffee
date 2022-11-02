@@ -145,7 +145,7 @@ ApplicationRecord.transaction do
     })
 
     Product.create!({
-        name: 'HP Adapt Adrenal Drink',
+        name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         description: "Adrenal Support",
         price: 49.95
