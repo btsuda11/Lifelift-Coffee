@@ -11,9 +11,10 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  product_type :string
+#  amount       :integer          not null
 #
 class Product < ApplicationRecord
-    validates :name, :category, :description, :price, presence: true
+    validates :name, :category, :amount, :description, :price, presence: true
 
     has_many :cart_items,
         foreign_key: :product_id,
