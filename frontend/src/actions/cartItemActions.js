@@ -16,6 +16,10 @@ const removeCartItem = itemId => (
     { type: REMOVE_CART_ITEM, itemId }
 )
 
+export const getCartItems = state => (
+    state.entities.cartItems ? Object.values(state.entities.cartItems) : []
+)
+
 export const fetchCartItems = () => async dispatch => {
     const response = await csrfFetch('/api/cart_items');
     if (response.ok) {
