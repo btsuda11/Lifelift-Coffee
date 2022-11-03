@@ -1,8 +1,13 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createCartItem } from '../../../../actions/cartItemActions';
 import './ProductInfo.css';
 import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
 
 const ProductInfo = ({ product, spotlight }) => {
+    const dispatch = useDispatch();
+    const currentUserId = useSelector(state => state.session.currentUser);
+
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
     const [clickType, setClickType] = useState({'Ground': true, 'Whole Beans': false, 'Go Bags': false});
@@ -11,8 +16,8 @@ const ProductInfo = ({ product, spotlight }) => {
     const productTypes = [...new Set(product.map(option => option.productType))];
 
     const handleQuantity = quantity => {
-        const quant = { '1': false, '3': false, '6': false };
-        const quantStyle = {'1': {}, '3': {}, '6': {}};
+        const quant = { 1: false, 3: false, 6: false };
+        const quantStyle = { 1: {}, 3: {}, 6: {} };
         setClickQuantity({ ...quant, [quantity]: true });
         setQuantityStyle({ ...quantStyle, [quantity]: {backgroundColor: '#e5e7eb'} });
     }
@@ -22,6 +27,10 @@ const ProductInfo = ({ product, spotlight }) => {
         const typStyle = { 'Ground': {}, 'Whole Beans': {}, 'Go Bags': {} }
         setClickType({ ...typ, [type]: true });
         setTypeStyle({ ...typStyle, [type]: {backgroundColor: '#e5e7eb'} });
+    }
+
+    const addToCart = () => {
+        dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: clickedOption(product, clickType, clickQuantity).id }))
     }
 
     return (
@@ -60,10 +69,25 @@ const ProductInfo = ({ product, spotlight }) => {
                         })} 
                     </div>
                 </div>
-                <button className='red-btn'>Add to Cart</button>
+                <button className='red-btn' onClick={addToCart} >Add to Cart</button>
             </div>
         </section>
     )
 }
 
 export default ProductInfo;
+
+export const clickedButton = obj => {
+    const keys = Object.keys(obj);
+    return keys.filter(key => obj[key])[0]
+}
+
+export const clickedOption = (product, type, quantity) => {
+    return product.find(({ productType, amount }) => {
+        if (productType) {
+            return productType === clickedButton(type) && amount == clickedButton(quantity)
+        } else {
+            return amount == clickedButton(quantity)
+        }
+    })
+}
