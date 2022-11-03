@@ -9,7 +9,7 @@ import cause from '../../../images/ProductShow/cause.svg';
 import connection from '../../../images/ProductShow/connection.svg';
 import './ProductShow.css';
 
-const ProductShow = () => {
+const ProductShow = ({ setShowCart }) => {
     const dispatch = useDispatch();
     const { productName } = useParams();
     
@@ -23,7 +23,7 @@ const ProductShow = () => {
 
     return (
         <>
-            <ProductInfo product={product} spotlight={false} />
+            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
                     <div>

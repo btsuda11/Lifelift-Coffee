@@ -5,7 +5,7 @@ import environment from '../../../images/Splash/environment.svg';
 import shipping from '../../../images/Splash/shipping.svg';
 import SpotlightSection from './SpotlightSection';
 
-const SplashPage = () => {
+const SplashPage = ({ setShowCart }) => {
     return (
         <>
             <section className='shop-section'>
@@ -37,7 +37,7 @@ const SplashPage = () => {
                     </div>
                 </div>
             </section>
-            <SpotlightSection />
+            <SpotlightSection setShowCart={setShowCart} />
         </>
     )
 }

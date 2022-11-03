@@ -1,5 +1,4 @@
 import './Header.css';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import account from '../../images/Header/account.svg';
 import search from '../../images/Header/search.svg';
@@ -8,9 +7,7 @@ import openBar from '../../images/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 import CartSideBar from './Cart';
 
-const Header = () => {
-    const [showCart, setShowCart] = useState(false);
-
+const Header = ({ showCart, setShowCart }) => {
     return (
         <>
             { showCart &&
