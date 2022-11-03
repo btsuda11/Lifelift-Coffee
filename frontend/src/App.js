@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import LoginPage from "./components/account/LoginPage";
 import Profile from './components/account/Profile';
 import SignUpPage from './components/account/SignUpPage';
+import Footer from './components/footer';
 import Header from './components/header';
 import ProductIndex from './components/products/ProductIndex';
 import ProductShow from './components/products/ProductShow';
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/' component={SplashPage} />
         <Redirect to='/' />
       </Switch>
+      <Footer />
     </>
   );
 }
