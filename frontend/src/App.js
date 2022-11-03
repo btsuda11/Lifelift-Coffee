@@ -11,21 +11,22 @@ import SplashPage from './components/splash/SplashPage';
 
 function App() {
   const [showCart, setShowCart] = useState(false);
+  const [cartTotal, setCartTotal] = useState(0);
 
   return (
     <>
-      <Header showCart={showCart} setShowCart={setShowCart} />
+      <Header showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
       <Switch>
         <Route exact path='/products' component={ProductIndex} />
         <Route exact path='/products/:category' component={ProductIndex} />
         <Route exact path='/product/:productName'>
-          <ProductShow setShowCart={setShowCart} />
+          <ProductShow setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
         </Route>
         <Route exact path='/account' component={Profile} />
         <Route exact path='/account/login' component={LoginPage} />
         <Route exact path='/account/register' component={SignUpPage} />
         <Route exact path='/'>
-          <SplashPage setShowCart={setShowCart} />
+          <SplashPage setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
         </Route>
         <Redirect to='/' />
       </Switch>

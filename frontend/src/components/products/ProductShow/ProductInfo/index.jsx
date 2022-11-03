@@ -4,7 +4,7 @@ import { createCartItem } from '../../../../actions/cartItemActions';
 import './ProductInfo.css';
 import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
 
-const ProductInfo = ({ product, spotlight, setShowCart }) => {
+const ProductInfo = ({ product, spotlight, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
 
@@ -30,6 +30,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
     }
 
     const addToCart = () => {
+        setCartTotal(cartTotal + clickedOption(product, clickType, clickQuantity).price);
         setShowCart(true);
         dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: clickedOption(product, clickType, clickQuantity).id }))
     }

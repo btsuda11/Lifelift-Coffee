@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartItems, getCartItems } from '../../../actions/cartItemActions';
 import CartItem from './CartItem';
 import './CartSideBar.css';
 import { AiOutlineRight } from 'react-icons/ai';
 
-const CartSideBar = ({ setShowCart }) => {
+const CartSideBar = ({ setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const cartItems = useSelector(getCartItems);
 
@@ -22,10 +22,22 @@ const CartSideBar = ({ setShowCart }) => {
                 </div>
             </div>
             <div className='cart-items'>
-                {cartItems.map( (item) => <CartItem item={item} /> )}
+                {cartItems.map( (item) => <CartItem item={item} cartTotal={cartTotal} setCartTotal={setCartTotal} /> )}
             </div>
             <div className='cart-footer'>
-
+                <div>
+                    <p>Subtotal</p>
+                    <p>${cartTotal.toFixed(2)}</p>
+                </div>
+                <div>
+                    <p>Shipping</p>
+                    <p>Calculated at Checkout</p>
+                </div>
+                <div>
+                    <h5>Grand Total</h5>
+                    <h5>${cartTotal.toFixed(2)}</h5>
+                </div>
+                <button className=''>Continue Checkout</button>
             </div>
         </div>
     )

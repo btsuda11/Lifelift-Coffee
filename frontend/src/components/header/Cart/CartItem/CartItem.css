@@ -1,0 +1,58 @@
+.cart-item-div {
+    height: 110px;
+    margin: 12.5px;
+    display: flex;
+}
+
+.cart-item-info > div {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-img {
+    background-image: url('../../../../images/ProductIndex/medium-roast.jpeg');
+    background-size: 100% 100%;
+    width: 35%;
+    margin-right: 15px;
+    background-color: #e5e7eb;
+}
+
+.cart-item-info {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cart-item-info p {
+    font-size: 16px;
+}
+
+.cart-item-info a {
+    font-size: 12px;
+}
+
+.quantity-div {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;   
+    border-radius: 10px; 
+    width: 50%;
+}
+
+.quantity-div > button {
+    background-color: white;
+    padding: 3px 6px 3px 6px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.quantity-div > div {
+    width: 20%;
+    text-align: center;
+}
+
+.quantity-div ~ p {
+    width: 50%;
+    text-align: center;
+}
