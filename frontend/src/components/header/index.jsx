@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <>
             { showCart &&
-                <CartSideBar /> } 
+                <CartSideBar setShowCart={setShowCart} /> } 
             <header>
                 <div className='header-div'>
                     <div>

@@ -4,7 +4,36 @@
     position: fixed;
     right: 25px;
     top: 30px;
-    background-color: bisque;
+    background-color: white;
     border-radius: 10px;
+    box-shadow: 1.5pt 0pt 5pt 0.5pt #D3D3D3;
     z-index: 30;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    height: 12.5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cart-header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-header svg {
+    margin-left: 70px;
+    margin-right: 20px;
+}
+
+.cart-items {
+    height: 70%;
+}
+
+.cart-footer {
+    height: 20%;
 }
