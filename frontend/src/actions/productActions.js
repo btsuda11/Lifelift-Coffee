@@ -25,6 +25,7 @@ export const fetchProducts = (category) => async dispatch => {
         const products = await response.json();
         dispatch(receiveProducts(products));
     }
+    return response;
 }
 
 export const fetchProduct = productName => async dispatch => {
@@ -33,4 +34,5 @@ export const fetchProduct = productName => async dispatch => {
         const product = await response.json();
         dispatch(receiveProduct(product));
     }
+    return response;
 }

@@ -38,6 +38,7 @@ export const createCartItem = item => async dispatch => {
         const item = await response.json();
         dispatch(receiveCartItem(item));
     }
+    return response;
 }
 
 export const updateCartItem = item => async dispatch => {
@@ -49,6 +50,7 @@ export const updateCartItem = item => async dispatch => {
         const item = await response.json();
         dispatch(receiveCartItem(item));
     }
+    return response;
 }
 
 export const deleteCartItem = (itemId) => async dispatch => {
@@ -58,4 +60,5 @@ export const deleteCartItem = (itemId) => async dispatch => {
     if (response.ok) {
         dispatch(removeCartItem(itemId));
     }
+    return response;
 }

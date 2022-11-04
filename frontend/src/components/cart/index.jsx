@@ -9,7 +9,14 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const cartItems = useSelector(getCartItems);
-    setCartTotal(cartItems.reduce((acc, a) => acc + (a.price * a.quantity), 0))
+    const currentUserId = useSelector(state => state.session.currentUser)
+    setCartTotal(cartItems.reduce((acc, a) => {
+        if (a.shopperId === currentUserId) {
+            return acc + (a.price * a.quantity);
+        } else {
+            return acc;
+        }
+    }, 0))
 
     useEffect(() => {
         setErrors([]);
@@ -36,10 +43,13 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
                 </div>
             </div>
             <div className='cart-items'>
-                <ul className='errors'>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                {cartItems.map( (item) => <CartItem item={item} cartTotal={cartTotal} /> )}
+                { errors.length > 0 &&
+                    <ul className='errors'>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>}
+                {cartItems.map( (item) => {
+                    if (currentUserId === item.shopperId) return <CartItem item={item} cartTotal={cartTotal} />
+                } )}
             </div>
             <div className='cart-footer'>
                 <div>
