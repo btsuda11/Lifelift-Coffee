@@ -8,11 +8,11 @@ import cart from '../../images/Header/cart.svg';
 import openBar from '../../images/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 
-const Header = ({ setShowCart }) => {
+const Header = ({ setShowCart, closeCart }) => {
 
     return (
         <>
-            <header>
+            <header onClick={closeCart}>
                 <div className='header-div'>
                     <div>
                         <nav className='dropdown'>

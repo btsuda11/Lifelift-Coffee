@@ -5,7 +5,7 @@ import { getProducts, fetchProducts } from '../../../actions/productActions';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-const ProductIndex = () => {
+const ProductIndex = ({ closeCart }) => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
     
@@ -29,13 +29,13 @@ const ProductIndex = () => {
 
     return (
         <>
-            <section className='shop-lifelift-section'>
+            <section className='shop-lifelift-section' onClick={closeCart}>
                 <div>
                     <h1>Shop Lifelift</h1>
                     <p className='spaced'>Using Sustainable Farming & Protecting Our Wildlife</p>
                 </div>
             </section>
-            <section className='products-section'>
+            <section className='products-section' onClick={closeCart}>
                 <div>
                     <h2 className='category-title'>{category}</h2>
                 </div>

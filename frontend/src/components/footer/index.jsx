@@ -1,8 +1,8 @@
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ closeCart }) => {
     return (
-        <footer>
+        <footer onClick={closeCart}>
             
         </footer>
     )

@@ -5,9 +5,9 @@ import environment from '../../../images/Splash/environment.svg';
 import shipping from '../../../images/Splash/shipping.svg';
 import SpotlightSection from './SpotlightSection';
 
-const SplashPage = ({ showCart, setShowCart }) => {
+const SplashPage = ({ showCart, setShowCart, closeCart }) => {
     return (
-        <main>
+        <main onClick={closeCart}>
             <section className='shop-section'>
                 <div>
                     <h1>Helping You Achieve The Healthiest, Tastiest, Lowest Acid Cup of Coffee Possible</h1>

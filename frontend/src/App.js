@@ -14,25 +14,39 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
 
+  const closeCart = () => {
+    if (showCart) setShowCart(false);
+  }
+
   return (
     <>
       <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
-      <Header setShowCart={setShowCart} />
+      <Header setShowCart={setShowCart} closeCart={closeCart} />
       <Switch>
-        <Route exact path='/products' component={ProductIndex} />
-        <Route exact path='/products/:category' component={ProductIndex} />
-        <Route exact path='/product/:productName'>
-          <ProductShow setShowCart={setShowCart} />
+        <Route exact path='/products'>
+          <ProductIndex closeCart={closeCart} />
         </Route>
-        <Route exact path='/account' component={Profile} />
-        <Route exact path='/account/login' component={LoginPage} />
-        <Route exact path='/account/register' component={SignUpPage} />
+        <Route exact path='/products/:category'>
+          <ProductIndex closeCart={closeCart} />
+        </Route>
+        <Route exact path='/product/:productName'>
+          <ProductShow setShowCart={setShowCart} closeCart={closeCart} />
+        </Route>
+        <Route exact path='/account'>
+          <Profile closeCart={closeCart} />
+        </Route>
+        <Route exact path='/account/login'>
+          <LoginPage closeCart={closeCart} />
+        </Route>
+        <Route exact path='/account/register'>
+          <SignUpPage closeCart={closeCart} />
+        </Route>
         <Route exact path='/'>
-          <SplashPage showCart={showCart} setShowCart={setShowCart} />
+          <SplashPage showCart={showCart} setShowCart={setShowCart} closeCart={closeCart} />
         </Route>
         <Redirect to='/' />
       </Switch>
-      <Footer />
+      <Footer closeCart={closeCart} />
     </>
   );
 }

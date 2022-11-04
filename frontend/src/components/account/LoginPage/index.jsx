@@ -2,9 +2,9 @@ import LoginForm from "./LoginForm";
 import './LoginPage.css';
 import WelcomeComponent from "./WelcomeComponent";
 
-const LoginPage = () => {
+const LoginPage = ({ closeCart }) => {
     return (
-        <section className='login-section'>
+        <section className='login-section' onClick={closeCart}>
             <div>
                 <WelcomeComponent />
                 <LoginForm />
