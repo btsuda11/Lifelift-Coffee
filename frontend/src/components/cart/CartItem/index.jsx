@@ -3,26 +3,22 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteCartItem, updateCartItem } from '../../../actions/cartItemActions';
 
-const CartItem = ({ item, cartTotal, setCartTotal }) => {
+const CartItem = ({ item, cartTotal }) => {
     const dispatch = useDispatch();
 
     const removeItem = e => {
         e.preventDefault();
-        setCartTotal(cartTotal - (item.quantity * item.price));
         dispatch(deleteCartItem(item.id));
     }
 
     const incrementQuantity = () => {
-        setCartTotal(cartTotal + item.price);
         dispatch(updateCartItem({ ...item, quantity: item.quantity + 1 }));
     }
 
     const decrementQuantity = () => {
         if (item.quantity === 1) {
-            setCartTotal(cartTotal - (item.quantity * item.price));
             dispatch(deleteCartItem(item.id));
         } else {
-            setCartTotal(cartTotal - item.price);
             dispatch(updateCartItem({ ...item, quantity: item.quantity - 1 }));
         }
     }

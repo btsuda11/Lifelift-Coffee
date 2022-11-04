@@ -8,6 +8,7 @@ import { AiOutlineRight } from 'react-icons/ai';
 const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const cartItems = useSelector(getCartItems);
+    setCartTotal(cartItems.reduce((acc, a) => acc + (a.price * a.quantity), 0))
 
     useEffect(() => {
         dispatch(fetchCartItems());
@@ -22,7 +23,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
                 </div>
             </div>
             <div className='cart-items'>
-                {cartItems.map( (item) => <CartItem item={item} cartTotal={cartTotal} setCartTotal={setCartTotal} /> )}
+                {cartItems.map( (item) => <CartItem item={item} cartTotal={cartTotal} /> )}
             </div>
             <div className='cart-footer'>
                 <div>

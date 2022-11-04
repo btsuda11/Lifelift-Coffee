@@ -4,7 +4,7 @@ import { createCartItem, getCartItems, updateCartItem } from '../../../../action
 import './ProductInfo.css';
 import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
 
-const ProductInfo = ({ product, spotlight, setShowCart, cartTotal, setCartTotal }) => {
+const ProductInfo = ({ product, spotlight, setShowCart }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
@@ -33,7 +33,6 @@ const ProductInfo = ({ product, spotlight, setShowCart, cartTotal, setCartTotal 
     const addToCart = () => {
         const item = clickedOption(product, clickType, clickQuantity);
         const existingItem = cartItems.find(({ productId }) => productId === item.id);
-        setCartTotal(cartTotal + item.price);
         setShowCart(true);
         if (cartItems.some(({ productId }) => productId === item.id)) {
             dispatch(updateCartItem({ ...existingItem, quantity: existingItem.quantity + 1 }));

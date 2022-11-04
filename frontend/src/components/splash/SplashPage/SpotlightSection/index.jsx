@@ -5,7 +5,7 @@ import ProductInfo from '../../../products/ProductShow/ProductInfo';
 import { useEffect, useState } from 'react';
 import { camelize } from '../../../products/ProductShow';
 
-const SpotlightSection = ({ setShowCart, cartTotal, setCartTotal }) => {
+const SpotlightSection = ({ setShowCart }) => {
     const dispatch = useDispatch();
     const [spotlightItem, setSpotlightItem] = useState('medium-roast');
     const [spotlightStyle, setSpotlightStyle] = useState({'medium-roast': { borderBottom: '2px solid black' }, 'light-roast': {}, 'dark-roast': {}, 'medium-roast-decaf': {}})
@@ -39,7 +39,7 @@ const SpotlightSection = ({ setShowCart, cartTotal, setCartTotal }) => {
                     <p>Medium Roast Decaf</p>
                 </button>
             </div>
-            <ProductInfo product={product} spotlight={true} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
+            <ProductInfo product={product} spotlight={true} setShowCart={setShowCart} />
         </section>
     )
 }
