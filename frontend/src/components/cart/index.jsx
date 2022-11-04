@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCartItems, getCartItems } from '../../actions/cartItemActions';
+import { fetchCartItems, getCartItems, deleteCartItem } from '../../actions/cartItemActions';
 import CartItem from './CartItem';
+import { Link } from 'react-router-dom';
 import './CartSideBar.css';
 import { AiOutlineRight } from 'react-icons/ai';
 
-const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
+const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart, setShowCheckoutModal }) => {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const cartItems = useSelector(getCartItems);
     const currentUserId = useSelector(state => state.session.currentUser)
+    
     setCartTotal(cartItems.reduce((acc, a) => {
         if (a.shopperId === currentUserId) {
             return acc + (a.price * a.quantity);
@@ -33,6 +35,16 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
                 else setErrors([res.statusText]);
         });
     }, [dispatch])
+
+    const checkout = () => {
+        closeCart();
+        setShowCheckoutModal(true);
+        cartItems.forEach(item => {
+            if (item.shopperId === currentUserId) {
+                dispatch(deleteCartItem(item.id))
+            }
+        });
+    }
 
     return (
         <div className={`cart ${showCart ? 'translate-x-0 right-25' : 'translate-x-full'} ease-in-out duration-400`}>
@@ -64,7 +76,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
                     <h5>Grand Total</h5>
                     <h5>${cartTotal.toFixed(2)}</h5>
                 </div>
-                <button className=''>Continue Checkout</button>
+                <Link to='/account' onClick={checkout}>Continue Checkout</Link>
             </div>
         </div>
     )

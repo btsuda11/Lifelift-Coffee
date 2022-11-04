@@ -13,6 +13,7 @@ import SplashPage from './components/splash/SplashPage';
 function App() {
   const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
   const closeCart = () => {
     if (showCart) setShowCart(false);
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-      <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
+      <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} closeCart={closeCart} setShowCheckoutModal={setShowCheckoutModal} />
       <Header setShowCart={setShowCart} closeCart={closeCart} />
       <Switch>
         <Route exact path='/products'>
@@ -33,7 +34,7 @@ function App() {
           <ProductShow setShowCart={setShowCart} closeCart={closeCart} />
         </Route>
         <Route exact path='/account'>
-          <Profile closeCart={closeCart} />
+          <Profile closeCart={closeCart} showCheckoutModal={showCheckoutModal} setShowCheckoutModal={setShowCheckoutModal} />
         </Route>
         <Route exact path='/account/login'>
           <LoginPage closeCart={closeCart} />
