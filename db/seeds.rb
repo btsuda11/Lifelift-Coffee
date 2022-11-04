@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
-    User.destroy_all
-    Product.destroy_all
     CartItem.destroy_all
+    Product.destroy_all
+    User.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User`, `Product`, `CartItem` has `id` of 1
@@ -277,13 +279,16 @@ ApplicationRecord.transaction do
         price: 34.95
     })
 
-    Product.create!({
+    fuel_1 = Product.create!({
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 1,
         description: "Fuel for the mind",
         price: 39.00
     })
+
+    file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    fuel_1.photos.attach(io: file_1, filename: "medium-roast.jpeg")
 
     Product.create!({
         name: 'HPAdapt Adrenal Drink',
@@ -335,13 +340,16 @@ ApplicationRecord.transaction do
         price: 89.94
     })
 
-    Product.create!({
+    fuel_2 = Product.create!({
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 3,
         description: "Fuel for the mind",
         price: 99.00
     })
+
+    file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    fuel_2.photos.attach(io: file_2, filename: "medium-roast.jpeg")
 
     Product.create!({
         name: 'HPAdapt Adrenal Drink',
@@ -393,13 +401,16 @@ ApplicationRecord.transaction do
         price: 149.40
     })
 
-    Product.create!({
+    fuel_3 = Product.create!({
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 6,
         description: "Fuel for the mind",
         price: 180.00
     })
+
+    file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    fuel_3.photos.attach(io: file_3, filename: "medium-roast.jpeg")
 
     Product.create!({
         name: 'HPAdapt Adrenal Drink',
