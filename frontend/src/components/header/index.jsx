@@ -9,11 +9,9 @@ import openBar from '../../images/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 
 const Header = ({ setShowCart }) => {
-    const cartItems = useSelector(getCartItems);
 
     return (
         <>
-            
             <header>
                 <div className='header-div'>
                     <div>

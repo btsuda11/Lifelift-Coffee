@@ -35,11 +35,11 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     }, [dispatch])
 
     return (
-        <div className='cart'>
+        <div className={`cart ${showCart ? 'translate-x-0 right-25' : 'translate-x-full'} ease-in-out duration-300`}>
             <div className='cart-header'>
                 <div>
                     <h3>Your Cart</h3>
-                    <AiOutlineRight style={{cursor: 'pointer'}} onClick={() => setShowCart(false)} />
+                    { showCart && <AiOutlineRight style={{cursor: 'pointer'}} onClick={() => setShowCart(false)} /> }
                 </div>
             </div>
             <div className='cart-items'>

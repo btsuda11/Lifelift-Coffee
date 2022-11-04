@@ -2,7 +2,7 @@ class Api::CartItemsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        @cart_items = CartItem.all
+        @cart_items = CartItem.where("shopper_id = (?)", current_user.id)
         render :index
     end
 

@@ -16,8 +16,7 @@ function App() {
 
   return (
     <>
-      {showCart &&
-        <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} 
+      <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
       <Header setShowCart={setShowCart} />
       <Switch>
         <Route exact path='/products' component={ProductIndex} />
