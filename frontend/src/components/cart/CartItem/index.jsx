@@ -1,7 +1,7 @@
 import './CartItem.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteCartItem } from '../../../../actions/cartItemActions';
+import { deleteCartItem } from '../../../actions/cartItemActions';
 
 const CartItem = ({ item, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();

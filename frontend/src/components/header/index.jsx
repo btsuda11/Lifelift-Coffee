@@ -5,13 +5,11 @@ import search from '../../images/Header/search.svg';
 import cart from '../../images/Header/cart.svg';
 import openBar from '../../images/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
-import CartSideBar from './Cart';
 
-const Header = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
+const Header = ({ setShowCart }) => {
     return (
         <>
-            { showCart &&
-                <CartSideBar setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} /> } 
+            
             <header>
                 <div className='header-div'>
                     <div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCartItems, getCartItems } from '../../../actions/cartItemActions';
+import { fetchCartItems, getCartItems } from '../../actions/cartItemActions';
 import CartItem from './CartItem';
 import './CartSideBar.css';
 import { AiOutlineRight } from 'react-icons/ai';

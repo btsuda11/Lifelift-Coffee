@@ -10,7 +10,7 @@
 }
 
 .cart-item-img {
-    background-image: url('../../../../images/ProductIndex/medium-roast.jpeg');
+    background-image: url('../../../images/ProductIndex/medium-roast.jpeg');
     background-size: 100% 100%;
     width: 35%;
     margin-right: 15px;

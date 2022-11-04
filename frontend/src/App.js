@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import LoginPage from "./components/account/LoginPage";
+import CartSideBar from './components/cart';
 import Profile from './components/account/Profile';
 import SignUpPage from './components/account/SignUpPage';
 import Footer from './components/footer';
@@ -15,7 +16,9 @@ function App() {
 
   return (
     <>
-      <Header showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
+      {showCart &&
+        <CartSideBar setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} 
+      <Header setShowCart={setShowCart} />
       <Switch>
         <Route exact path='/products' component={ProductIndex} />
         <Route exact path='/products/:category' component={ProductIndex} />
