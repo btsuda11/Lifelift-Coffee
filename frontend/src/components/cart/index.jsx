@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import './CartSideBar.css';
 import { AiOutlineRight } from 'react-icons/ai';
 
-const CartSideBar = ({ setShowCart, cartTotal, setCartTotal }) => {
+const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const cartItems = useSelector(getCartItems);
 

@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       {showCart &&
-        <CartSideBar setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} 
+        <CartSideBar showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} 
       <Header setShowCart={setShowCart} />
       <Switch>
         <Route exact path='/products' component={ProductIndex} />
@@ -29,7 +29,7 @@ function App() {
         <Route exact path='/account/login' component={LoginPage} />
         <Route exact path='/account/register' component={SignUpPage} />
         <Route exact path='/'>
-          <SplashPage setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
+          <SplashPage showCart={showCart} setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
         </Route>
         <Redirect to='/' />
       </Switch>

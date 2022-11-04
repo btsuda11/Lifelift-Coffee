@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createCartItem } from '../../../../actions/cartItemActions';
+import { createCartItem, getCartItems, updateCartItem } from '../../../../actions/cartItemActions';
 import './ProductInfo.css';
 import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
 
 const ProductInfo = ({ product, spotlight, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
+    const cartItems = useSelector(getCartItems);
 
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
@@ -30,9 +31,15 @@ const ProductInfo = ({ product, spotlight, setShowCart, cartTotal, setCartTotal 
     }
 
     const addToCart = () => {
-        setCartTotal(cartTotal + clickedOption(product, clickType, clickQuantity).price);
+        const item = clickedOption(product, clickType, clickQuantity);
+        const existingItem = cartItems.find(({ productId }) => productId === item.id);
+        setCartTotal(cartTotal + item.price);
         setShowCart(true);
-        dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: clickedOption(product, clickType, clickQuantity).id }))
+        if (cartItems.some(({ productId }) => productId === item.id)) {
+            dispatch(updateCartItem({ ...existingItem, quantity: existingItem.quantity + 1 }));
+        } else {
+            dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: item.id }))
+        }
     }
 
     return (

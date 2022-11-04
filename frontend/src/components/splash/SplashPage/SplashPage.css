@@ -4,6 +4,10 @@
     height: 69vh;
 }
 
+main {
+    /* transition: all 0.2s linear; */
+}
+
 .shop-section > div {
     width: 35%;
     height: 100%;

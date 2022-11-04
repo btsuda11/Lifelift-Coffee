@@ -5,9 +5,9 @@ import environment from '../../../images/Splash/environment.svg';
 import shipping from '../../../images/Splash/shipping.svg';
 import SpotlightSection from './SpotlightSection';
 
-const SplashPage = ({ setShowCart, cartTotal, setCartTotal }) => {
+const SplashPage = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     return (
-        <>
+        <main>
             <section className='shop-section'>
                 <div>
                     <h1>Helping You Achieve The Healthiest, Tastiest, Lowest Acid Cup of Coffee Possible</h1>
@@ -38,7 +38,7 @@ const SplashPage = ({ setShowCart, cartTotal, setCartTotal }) => {
                 </div>
             </section>
             <SpotlightSection setShowCart={setShowCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />
-        </>
+        </main>
     )
 }
 
