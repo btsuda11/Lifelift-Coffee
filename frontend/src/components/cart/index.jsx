@@ -7,11 +7,24 @@ import { AiOutlineRight } from 'react-icons/ai';
 
 const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     const dispatch = useDispatch();
+    const [errors, setErrors] = useState([]);
     const cartItems = useSelector(getCartItems);
     setCartTotal(cartItems.reduce((acc, a) => acc + (a.price * a.quantity), 0))
 
     useEffect(() => {
-        dispatch(fetchCartItems());
+        setErrors([]);
+        dispatch(fetchCartItems()).catch(async (res) => {
+                let data;
+                try {
+                    // .clone() essentially allows you to read the response body twice
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text(); // Will hit this case if the server is down
+                }
+                if (data?.message) setErrors(['Must be logged in to view cart']);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+        });
     }, [dispatch])
 
     return (
@@ -23,6 +36,9 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
                 </div>
             </div>
             <div className='cart-items'>
+                <ul className='errors'>
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
                 {cartItems.map( (item) => <CartItem item={item} cartTotal={cartTotal} /> )}
             </div>
             <div className='cart-footer'>

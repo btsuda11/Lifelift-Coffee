@@ -26,6 +26,7 @@ export const fetchCartItems = () => async dispatch => {
         const items = await response.json();
         dispatch(receiveCartItems(items));
     }
+    return response;
 }
 
 export const createCartItem = item => async dispatch => {

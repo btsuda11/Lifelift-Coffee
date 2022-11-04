@@ -10,7 +10,6 @@
     z-index: 30;
     display: flex;
     flex-direction: column;
-    /* transition: all 0.2s linear; */
 }
 
 .cart-header {
@@ -34,8 +33,14 @@
 
 .cart-items {
     height: 70%;
-
     overflow: scroll;
+}
+
+.cart-items > ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cart-footer {
