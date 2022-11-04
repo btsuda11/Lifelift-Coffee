@@ -21,7 +21,7 @@ const Profile = ({ closeCart, showCheckoutModal, setShowCheckoutModal }) => {
         <>
             {showCheckoutModal && 
                 <Modal onClose={() => setShowCheckoutModal(false)}>
-                    <CheckoutModal />
+                    <CheckoutModal setShowCheckoutModal={setShowCheckoutModal} />
                 </Modal>
             }
             <section onClick={closeCart}>

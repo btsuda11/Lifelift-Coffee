@@ -38,12 +38,14 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
 
     const checkout = () => {
         closeCart();
-        setShowCheckoutModal(true);
-        cartItems.forEach(item => {
-            if (item.shopperId === currentUserId) {
-                dispatch(deleteCartItem(item.id))
-            }
-        });
+        if (currentUserId) {
+            setShowCheckoutModal(true);
+            cartItems.forEach(item => {
+                if (item.shopperId === currentUserId) {
+                    dispatch(deleteCartItem(item.id))
+                }
+            });
+        }
     }
 
     return (
