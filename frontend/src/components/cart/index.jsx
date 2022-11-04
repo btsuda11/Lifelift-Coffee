@@ -35,7 +35,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal }) => {
     }, [dispatch])
 
     return (
-        <div className={`cart ${showCart ? 'translate-x-0 right-25' : 'translate-x-full'} ease-in-out duration-300`}>
+        <div className={`cart ${showCart ? 'translate-x-0 right-25' : 'translate-x-full'} ease-in-out duration-400`}>
             <div className='cart-header'>
                 <div>
                     <h3>Your Cart</h3>
