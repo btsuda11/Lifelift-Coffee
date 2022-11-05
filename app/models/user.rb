@@ -21,6 +21,12 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { in: 6..255 }, allow_nil: true
 
+    has_many :cart_items,
+        foreign_key: :shopper_id,
+        class_name: :CartItem,
+        dependent: :destroy,
+        inverse_of: :shopper
+
     def self.find_by_credentials(email, password)
         user = User.find_by_email(email)
         if user&.authenticate(password)

@@ -10,8 +10,16 @@
 #  image_url    :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  product_type :string           not null
+#  product_type :string
+#  amount       :integer          not null
 #
 class Product < ApplicationRecord
-    validates :name, :category, :description, :price, presence: true
+    validates :name, :category, :amount, :description, :price, presence: true
+
+    has_many_attached :photos
+
+    has_many :cart_items,
+        foreign_key: :product_id,
+        class_name: :CartItem,
+        dependent: :destroy
 end
