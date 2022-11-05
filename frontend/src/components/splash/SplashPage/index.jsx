@@ -1,8 +1,8 @@
 import './SplashPage.css';
 import { Link } from 'react-router-dom';
-import toxin from '../../../images/Splash/toxin.svg';
-import environment from '../../../images/Splash/environment.svg';
-import shipping from '../../../images/Splash/shipping.svg';
+import toxin from '../../../assets/Splash/toxin.svg';
+import environment from '../../../assets/Splash/environment.svg';
+import shipping from '../../../assets/Splash/shipping.svg';
 import SpotlightSection from './SpotlightSection';
 
 const SplashPage = ({ showCart, setShowCart, closeCart }) => {

@@ -1,7 +1,7 @@
 import './WelcomeComponent.css';
-import subscription from '../../../../images/LoginPage/subscription.svg';
-import shipping from '../../../../images/LoginPage/shipping.svg';
-import access from '../../../../images/LoginPage/access.svg';
+import subscription from '../../../../assets/LoginPage/subscription.svg';
+import shipping from '../../../../assets/LoginPage/shipping.svg';
+import access from '../../../../assets/LoginPage/access.svg';
 import { Link } from 'react-router-dom';
 
 const WelcomeComponent = () => {

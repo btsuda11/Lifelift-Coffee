@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCartItem, getCartItems, updateCartItem } from '../../../../actions/cartItemActions';
 import './ProductInfo.css';
-import productImg from '../../../../images/ProductIndex/medium-roast.jpeg';
+import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
 
 const ProductInfo = ({ product, spotlight, setShowCart }) => {
     const dispatch = useDispatch();
@@ -45,6 +45,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
         <section className='product-info-section'>
             <div className='product-imgs'>
                 <img src={productImg} />
+                {/* <img src={product[0].photoUrls[0]}/> */}
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>

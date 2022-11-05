@@ -6,8 +6,8 @@ const ProductIndexItem = ({ product }) => {
         <div className='product-container'>
             <div className='product-image-container'>
                 <Link to={`/product/${dashify(product.name)}`}>
-                    <div className='product-img' style={{backgroundImage: `url(${product.photoUrls[0]})`}}/>
-                    {/* <img src={product.photoUrls[0]}></img> */}
+                    {/* <div className='product-img' style={{backgroundImage: `url(${product.photoUrls[0]})`}}/> */}
+                    <div className='product-img' />
                 </Link>
             </div>
             <div className='product-index-item'>

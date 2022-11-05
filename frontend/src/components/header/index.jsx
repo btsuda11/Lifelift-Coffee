@@ -2,10 +2,10 @@ import './Header.css';
 import { useSelector } from 'react-redux';
 import { getCartItems } from '../../actions/cartItemActions';
 import { Link } from 'react-router-dom';
-import account from '../../images/Header/account.svg';
-import search from '../../images/Header/search.svg';
-import cart from '../../images/Header/cart.svg';
-import openBar from '../../images/Header/open-bar.svg';
+import account from '../../assets/Header/account.svg';
+import search from '../../assets/Header/search.svg';
+import cart from '../../assets/Header/cart.svg';
+import openBar from '../../assets/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 
 const Header = ({ setShowCart, closeCart }) => {

@@ -1,11 +1,11 @@
 import './DropDownMenu.css';
 import { Link } from 'react-router-dom';
-import shopAll from '../../../images/Header/shop-all.jpeg';
-import roasts from '../../../images/Header/light-medium-dark-roasts.jpeg';
-import decaf from '../../../images/Header/decaf-coffee.jpeg';
-import flavored from '../../../images/Header/flavored-coffee.jpeg';
-import pods from '../../../images/Header/coffee-pods.jpeg';
-import boosters from '../../../images/Header/health-boosters.jpeg';
+import shopAll from '../../../assets/Header/shop-all.jpeg';
+import roasts from '../../../assets/Header/light-medium-dark-roasts.jpeg';
+import decaf from '../../../assets/Header/decaf-coffee.jpeg';
+import flavored from '../../../assets/Header/flavored-coffee.jpeg';
+import pods from '../../../assets/Header/coffee-pods.jpeg';
+import boosters from '../../../assets/Header/health-boosters.jpeg';
 
 const DropDownMenu = () => {
     return (

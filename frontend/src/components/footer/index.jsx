@@ -1,7 +1,6 @@
 import './Footer.css';
-import { Link } from 'react-router-dom';
-import linkedIn from '../../images/Footer/linkedin.png';
-import gitHub from '../../images/Footer/github.png';
+import linkedIn from '../../assets/Footer/linkedin.png';
+import gitHub from '../../assets/Footer/github.png';
 
 
 const Footer = ({ closeCart }) => {

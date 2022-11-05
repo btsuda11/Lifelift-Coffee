@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProduct, getProduct } from '../../../actions/productActions';
 import ProductInfo from './ProductInfo';
-import healthiestCoffee from '../../../images/ProductShow/healthiest-coffee-section.jpeg';
-import clean from '../../../images/ProductShow/clean.svg';
-import cause from '../../../images/ProductShow/cause.svg';
-import connection from '../../../images/ProductShow/connection.svg';
+import healthiestCoffee from '../../../assets/ProductShow/healthiest-coffee-section.jpeg';
+import clean from '../../../assets/ProductShow/clean.svg';
+import cause from '../../../assets/ProductShow/cause.svg';
+import connection from '../../../assets/ProductShow/connection.svg';
 import './ProductShow.css';
 
 const ProductShow = ({ setShowCart, closeCart }) => {
