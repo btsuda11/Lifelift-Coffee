@@ -9,7 +9,7 @@ import cause from '../../../images/ProductShow/cause.svg';
 import connection from '../../../images/ProductShow/connection.svg';
 import './ProductShow.css';
 
-const ProductShow = ({ setShowCart }) => {
+const ProductShow = ({ setShowCart, closeCart }) => {
     const dispatch = useDispatch();
     const { productName } = useParams();
     
@@ -22,7 +22,7 @@ const ProductShow = ({ setShowCart }) => {
     if (!Array.isArray(product) || product.length === 0) return null;
 
     return (
-        <>
+        <main onClick={closeCart}>
             <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
@@ -59,7 +59,7 @@ const ProductShow = ({ setShowCart }) => {
                     <img src={healthiestCoffee}/>
                 </div>
             </section>
-        </>
+        </main>
     )
 }
 

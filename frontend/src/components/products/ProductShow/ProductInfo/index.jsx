@@ -77,7 +77,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
                         })} 
                     </div>
                 </div>
-                <button className='red-btn' onClick={addToCart} >Add to Cart</button>
+                <button className='red-btn' onClick={addToCart}>Add to Cart</button>
             </div>
         </section>
     )
