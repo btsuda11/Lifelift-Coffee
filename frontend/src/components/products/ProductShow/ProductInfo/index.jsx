@@ -44,8 +44,8 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
     return (
         <section className='product-info-section'>
             <div className='product-imgs'>
-                {/* <img src={productImg} /> */}
-                <img src={product[0].photoUrls[0]}/>
+                <img src={productImg} />
+                {/* <img src={product[0].photoUrls[0]}/> */}
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>
