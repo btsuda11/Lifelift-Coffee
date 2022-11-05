@@ -57,7 +57,7 @@ ApplicationRecord.transaction do
     medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_1.photos.attach(io: medium_file_1, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_1 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -66,7 +66,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    dark_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_1.photos.attach(io: dark_file_1, filename: "dark-roast.jpeg")
+
+    light_1 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -75,7 +78,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    light_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_1.photos.attach(io: light_file_1, filename: "light-roast.jpeg")
+
+    light_decaf_1 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -84,7 +90,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    light_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_1.photos.attach(io: light_decaf_file_1, filename: "light-decaf.jpeg")
+
+    medium_decaf_1 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -93,7 +102,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    medium_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_1.photos.attach(io: medium_decaf_file_1, filename: "medium-roast-decaf.jpeg")
+
+    choc_1 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -102,7 +114,10 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    Product.create!({
+    choc_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_1.photos.attach(io: choc_file_1, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_1 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -110,6 +125,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 28.95
     })
+
+    amaretto_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_1.photos.attach(io: amaretto_file_1, filename: "amaretto.jpeg")
 
     medium_2 = Product.create!({
         name: 'Medium Roast',
@@ -123,7 +141,7 @@ ApplicationRecord.transaction do
     medium_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_2.photos.attach(io: medium_file_2, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_2 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -132,7 +150,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    dark_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_2.photos.attach(io: dark_file_2, filename: "dark-roast.jpeg")
+
+    light_2 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -141,7 +162,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    light_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_2.photos.attach(io: light_file_2, filename: "light-roast.jpeg")
+
+    light_decaf_2 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -150,7 +174,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    light_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_2.photos.attach(io: light_decaf_file_2, filename: "light-decaf.jpeg")
+
+    medium_decaf_2 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -159,7 +186,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    medium_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_2.photos.attach(io: medium_decaf_file_2, filename: "medium-roast-decaf.jpeg")
+
+    choc_2 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -168,7 +198,10 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    Product.create!({
+    choc_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_2.photos.attach(io: choc_file_2, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_2 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -176,6 +209,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 77.85
     })
+
+    amaretto_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_2.photos.attach(io: amaretto_file_2, filename: "amaretto.jpeg")
 
     medium_3 = Product.create!({
         name: 'Medium Roast',
@@ -189,7 +225,7 @@ ApplicationRecord.transaction do
     medium_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_3.photos.attach(io: medium_file_3, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_3 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -198,7 +234,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    dark_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_3.photos.attach(io: dark_file_3, filename: "dark-roast.jpeg")
+
+    light_3 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Ground',
@@ -207,7 +246,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    light_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_3.photos.attach(io: light_file_3, filename: "light-roast.jpeg")
+
+    light_decaf_3 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -216,7 +258,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    light_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_3.photos.attach(io: light_decaf_file_3, filename: "light-decaf.jpeg")
+
+    medium_decaf_3 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Ground',
@@ -225,7 +270,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    medium_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_3.photos.attach(io: medium_decaf_file_3, filename: "medium-roast-decaf.jpeg")
+
+    choc_3 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -234,7 +282,10 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    Product.create!({
+    choc_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_3.photos.attach(io: choc_file_3, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_3 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Ground',
@@ -242,6 +293,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 143.70
     })
+
+    amaretto_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_3.photos.attach(io: amaretto_file_3, filename: "amaretto.jpeg")
 
     medium_4 = Product.create!({
         name: 'Medium Roast',
@@ -255,7 +309,7 @@ ApplicationRecord.transaction do
     medium_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_4.photos.attach(io: medium_file_4, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_4 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -264,7 +318,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    dark_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_4.photos.attach(io: dark_file_4, filename: "dark-roast.jpeg")
+
+    light_4 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -273,7 +330,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    light_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_4.photos.attach(io: light_file_4, filename: "light-roast.jpeg")
+
+    light_decaf_4 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -282,7 +342,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    light_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_4.photos.attach(io: light_decaf_file_4, filename: "light-decaf.jpeg")
+
+    medium_decaf_4 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -291,7 +354,10 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    Product.create!({
+    medium_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_4.photos.attach(io: medium_decaf_file_4, filename: "medium-roast-decaf.jpeg")
+
+    choc_4 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -300,7 +366,10 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    Product.create!({
+    choc_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_4.photos.attach(io: choc_file_4, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_4 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -308,6 +377,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 28.95
     })
+
+    amaretto_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_4.photos.attach(io: amaretto_file_4, filename: "amaretto.jpeg")
 
     medium_5 = Product.create!({
         name: 'Medium Roast',
@@ -321,7 +393,7 @@ ApplicationRecord.transaction do
     medium_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_5.photos.attach(io: medium_file_5, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_5 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -330,7 +402,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    dark_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_5.photos.attach(io: dark_file_5, filename: "dark-roast.jpeg")
+
+    light_5 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -339,7 +414,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    light_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_5.photos.attach(io: light_file_5, filename: "light-roast.jpeg")
+
+    light_decaf_5 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -348,7 +426,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    light_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_5.photos.attach(io: light_decaf_file_5, filename: "light-decaf.jpeg")
+
+    medium_decaf_5 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -357,7 +438,10 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    Product.create!({
+    medium_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_5.photos.attach(io: medium_decaf_file_5, filename: "medium-roast-decaf.jpeg")
+
+    choc_5 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -366,7 +450,10 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    Product.create!({
+    choc_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_5.photos.attach(io: choc_file_5, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_5 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -374,6 +461,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 77.85
     })
+
+    amaretto_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_5.photos.attach(io: amaretto_file_5, filename: "amaretto.jpeg")
 
     medium_6 = Product.create!({
         name: 'Medium Roast',
@@ -387,7 +477,7 @@ ApplicationRecord.transaction do
     medium_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_6.photos.attach(io: medium_file_6, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    dark_6 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -396,7 +486,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    dark_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_6.photos.attach(io: dark_file_6, filename: "dark-roast.jpeg")
+
+    light_6 = Product.create!({
         name: 'Light Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Whole Beans',
@@ -405,7 +498,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    light_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_6.photos.attach(io: light_file_6, filename: "light-roast.jpeg")
+
+    light_decaf_6 = Product.create!({
         name: 'Light Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -414,7 +510,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    light_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_6.photos.attach(io: light_decaf_file_6, filename: "light-decaf.jpeg")
+
+    medium_decaf_6 = Product.create!({
         name: 'Medium Roast Decaf',
         category: 'Decaf Coffee',
         product_type: 'Whole Beans',
@@ -423,7 +522,10 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    Product.create!({
+    medium_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_6.photos.attach(io: medium_decaf_file_6, filename: "medium-roast-decaf.jpeg")
+
+    choc_6 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -432,7 +534,10 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    Product.create!({
+    choc_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_6.photos.attach(io: choc_file_6, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+
+    amaretto_6 = Product.create!({
         name: 'Amaretto',
         category: 'Flavored Coffee',
         product_type: 'Whole Beans',
@@ -440,6 +545,9 @@ ApplicationRecord.transaction do
         description: "Romance meets desire and culminates in indulgence here with our Amaretto Coffee. Sip slowly to savor almonds, lightly toasted, and sweet, succulent apricots drenched in the Lifeboost flavors you love from our medium roasted gourmet Arabica single origin coffee beans, hand selected, bringing you the cream of the crop, and here: the most romantic cup of coffee.",
         price: 143.70
     })
+
+    amaretto_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_6.photos.attach(io: amaretto_file_6, filename: "amaretto.jpeg")
 
     medium_7 = Product.create!({
         name: 'Medium Roast',
@@ -453,7 +561,7 @@ ApplicationRecord.transaction do
     medium_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_7.photos.attach(io: medium_file_7, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    medium_pod_1 = Product.create!({
         name: 'Medium Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 1,
@@ -461,7 +569,10 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    Product.create!({
+    medium_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_1.photos.attach(io: medium_pod_file_1, filename: "medium-roast-coffee-pods.jpeg")
+
+    dark_pod_1 = Product.create!({
         name: 'Dark Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 1,
@@ -469,7 +580,10 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    Product.create!({
+    dark_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_1.photos.attach(io: dark_pod_file_1, filename: "dark-roast-coffee-pods.jpeg")
+
+    medium_decaf_pod_1 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
         category: 'Coffee Pods',
         amount: 1,
@@ -477,7 +591,10 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    Product.create!({
+    medium_decaf_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_1.photos.attach(io: medium_decaf_pod_file_1, filename: "medium-roast-decaf-coffee-pods.jpeg")
+
+    dark_7 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
@@ -485,6 +602,9 @@ ApplicationRecord.transaction do
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
         price: 34.95
     })
+
+    dark_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_7.photos.attach(io: dark_file_7, filename: "dark-roast.jpeg")
 
     fuel_1 = Product.create!({
         name: 'Lifelift Fuel',
@@ -520,7 +640,7 @@ ApplicationRecord.transaction do
     medium_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_8.photos.attach(io: medium_file_8, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    medium_pod_2 = Product.create!({
         name: 'Medium Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 3,
@@ -528,7 +648,10 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    Product.create!({
+    medium_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_2.photos.attach(io: medium_pod_file_2, filename: "medium-roast-coffee-pods.jpeg")
+
+    dark_pod_2 = Product.create!({
         name: 'Dark Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 3,
@@ -536,7 +659,10 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    Product.create!({
+    dark_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_2.photos.attach(io: dark_pod_file_2, filename: "dark-roast-coffee-pods.jpeg")
+
+    medium_decaf_pod_2 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
         category: 'Coffee Pods',
         amount: 3,
@@ -544,7 +670,10 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    Product.create!({
+    medium_decaf_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_2.photos.attach(io: medium_decaf_pod_file_2, filename: "medium-roast-decaf-coffee-pods.jpeg")
+
+    dark_8 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
@@ -552,6 +681,9 @@ ApplicationRecord.transaction do
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
         price: 89.94
     })
+
+    dark_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_8.photos.attach(io: dark_file_8, filename: "dark-roast.jpeg")
 
     fuel_2 = Product.create!({
         name: 'Lifelift Fuel',
@@ -587,7 +719,7 @@ ApplicationRecord.transaction do
     medium_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     medium_9.photos.attach(io: medium_file_9, filename: "medium-roast.jpeg")
 
-    Product.create!({
+    medium_pod_3 = Product.create!({
         name: 'Medium Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 6,
@@ -595,7 +727,10 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    Product.create!({
+    medium_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_3.photos.attach(io: medium_pod_file_3, filename: "medium-roast-coffee-pods.jpeg")
+
+    dark_pod_3 = Product.create!({
         name: 'Dark Roast Coffee Pods',
         category: 'Coffee Pods',
         amount: 6,
@@ -603,7 +738,10 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    Product.create!({
+    dark_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_3.photos.attach(io: dark_pod_file_3, filename: "dark-roast-coffee-pods.jpeg")
+
+    medium_decaf_pod_3 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
         category: 'Coffee Pods',
         amount: 6,
@@ -611,7 +749,10 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    Product.create!({
+    medium_decaf_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_3.photos.attach(io: medium_decaf_pod_file_3, filename: "medium-roast-decaf-coffee-pods.jpeg")
+
+    dark_9 = Product.create!({
         name: 'Dark Roast',
         category: 'Light Medium Dark Roasts',
         product_type: 'Go Bags',
@@ -619,6 +760,9 @@ ApplicationRecord.transaction do
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
         price: 149.40
     })
+
+    dark_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_9.photos.attach(io: dark_file_9, filename: "dark-roast.jpeg")
 
     fuel_3 = Product.create!({
         name: 'Lifelift Fuel',
