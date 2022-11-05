@@ -2,3 +2,19 @@ footer {
     background-color: #2e394d;
     height: 20vh;
 }
+
+footer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+footer a {
+    margin: 7.5%;
+}
+
+footer img {
+    height: 60px;
+    width: 60px;
+}

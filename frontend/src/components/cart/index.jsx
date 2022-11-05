@@ -10,7 +10,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const cartItems = useSelector(getCartItems);
-    const currentUserId = useSelector(state => state.session.currentUser)
+    const currentUserId = useSelector(state => state.session.currentUser);
     
     setCartTotal(cartItems.reduce((acc, a) => {
         if (a.shopperId === currentUserId) {
