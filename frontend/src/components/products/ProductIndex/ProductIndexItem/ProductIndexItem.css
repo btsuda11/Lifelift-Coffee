@@ -11,7 +11,7 @@
 }
 
 .product-img {
-    background-image: url('../../../../assets/ProductIndex/medium-roast.jpeg');
+    /* background-image: url('../../../../assets/ProductIndex/medium-roast.jpeg'); */
     background-size: 100% 100%;
     width: 70%;
     height: 70%;
