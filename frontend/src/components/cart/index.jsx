@@ -34,7 +34,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
         });
-    }, [dispatch])
+    }, [dispatch, currentUserId])
 
     const checkout = () => {
         closeCart();

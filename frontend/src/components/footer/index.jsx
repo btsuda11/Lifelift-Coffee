@@ -8,12 +8,12 @@ const Footer = ({ closeCart }) => {
     return (
         <footer onClick={closeCart}>
             <div>
-                <Link to='https://www.linkedin.com/in/brendan-tsuda/'>
+                <a href='https://www.linkedin.com/in/brendan-tsuda/'>
                     <img src={linkedIn} />
-                </Link>
-                <Link to='https://github.com/btsuda11'>
+                </a>
+                <a href='https://github.com/btsuda11'>
                     <img src={gitHub} />
-                </Link>
+                </a>
             </div>
         </footer>
     )
