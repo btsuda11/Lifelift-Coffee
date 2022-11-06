@@ -21,4 +21,9 @@ class Product < ApplicationRecord
         foreign_key: :product_id,
         class_name: :CartItem,
         dependent: :destroy
+
+    has_many :reviews,
+        foreign_key: :product_id,
+        class_name: :Review,
+        dependent: :destroy
 end
