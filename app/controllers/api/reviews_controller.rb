@@ -2,7 +2,8 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @reviews = Review.where("product_id = (?)", params[:product_id])
+    @reviews = Review.where("product_name = (?)", params[:product_name])
+    # @reviews = Product.joins(:reviews).where("name = (?)", params[:product_name]).map { |product| product.reviews }
     render :index
   end
 
