@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/products/:product_name', to: 'products#show'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :reviews, only: [:create, :update, :destroy]
-    get '/products/:name/reviews', to: 'reviews#index'
+    get '/products/:product_name/reviews', to: 'reviews#index'
   end
   
   get '*path', to: "static_pages#frontend_index"

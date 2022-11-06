@@ -98,7 +98,7 @@ input[type="submit"] {
     border-radius: 30px;
 }
 
-.red-btn:hover, .splash-shop-btn:hover, .cart-footer > button:hover {
+.red-btn:hover, .splash-shop-btn:hover, .cart-footer > a:hover {
     opacity: 0.8;
 }
 
