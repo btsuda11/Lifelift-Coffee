@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProduct, getProduct } from '../../../actions/productActions';
+import { fetchReviews, getReviews } from '../../../actions/reviewActions';
+import ReviewIndex from '../../reviews/ReviewIndex';
 import ProductInfo from './ProductInfo';
 import healthiestCoffee from '../../../assets/ProductShow/healthiest-coffee-section.jpeg';
 import clean from '../../../assets/ProductShow/clean.svg';
@@ -14,9 +16,11 @@ const ProductShow = ({ setShowCart, closeCart }) => {
     const { productName } = useParams();
     
     const product = useSelector(getProduct(camelize(productName)));
+    const reviews = useSelector(getReviews);
 
     useEffect(() => {
         dispatch(fetchProduct(productName));
+        dispatch(fetchReviews(productName));
     }, [dispatch, productName])
     
     if (!Array.isArray(product) || product.length === 0) return null;
@@ -59,6 +63,7 @@ const ProductShow = ({ setShowCart, closeCart }) => {
                     <img src={healthiestCoffee}/>
                 </div>
             </section>
+            <ReviewIndex reviews={reviews} />
         </main>
     )
 }

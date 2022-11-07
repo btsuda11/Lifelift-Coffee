@@ -1,0 +1,15 @@
+.reviews-section {
+    height: 150vh;
+    background-color: #f5f1ed;
+}
+
+.reviews-section > div {
+    padding: 90px;
+    height: 100%;
+}
+
+.reviews-div {
+    height: 100%;
+    background-color: white;
+    border: 3px dashed rgb(208, 208, 208);
+}
