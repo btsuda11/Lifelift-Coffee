@@ -56,7 +56,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
                 <div>
                     <div className='product-type-div'>
                         {productTypes.map(type => {
-                            if (type) return <button onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
+                            if (type) return <button key={type.id} onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
                         })}
                     </div>
                     <div className='price-btn-div'>
@@ -64,7 +64,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
                             return (
                                 <>
                                     {(clickType[option.productType] === true || !option.productType) &&
-                                        <button onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
+                                        <button key={option.id} onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
                                             <p className='bold'>{option.amount}</p>
                                             <p className='bold'>${(option.price / option.amount).toFixed(2)}</p>
                                             {option.amount === 1 ? <p className='strike-out'>${(1.25 * option.price).toFixed(2)}</p> : null }

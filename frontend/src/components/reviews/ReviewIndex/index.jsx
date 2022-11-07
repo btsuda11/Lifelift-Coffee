@@ -6,6 +6,7 @@ import { FaStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
     const [showReviewForm, setShowReviewForm] = useState(false);
+    const sortedReviews = [...reviews].reverse();
 
     return (
         <section className='reviews-section'>
@@ -20,7 +21,7 @@ const ReviewIndex = ({ reviews, product }) => {
                                 <FaStar className='star' />
                                 <FaStar className='star' />
                                 <FaStar className='star' />
-                                <p>Based on {reviews.length > 1 || reviews.length === 0 ? `${reviews.length} reviews` : `${reviews.length} review`}</p>
+                                <p>Based on {sortedReviews.length > 1 || sortedReviews.length === 0 ? `${sortedReviews.length} reviews` : `${sortedReviews.length} review`}</p>
                             </div>
                             <div>
 
@@ -34,7 +35,7 @@ const ReviewIndex = ({ reviews, product }) => {
                         <ReviewForm product={product} />
                     }
                     <div className='reviews-body'>
-                        {reviews.map(review => <ReviewIndexItem review={review} />)}
+                        {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} />)}
                     </div>
                 </div>
             </div>

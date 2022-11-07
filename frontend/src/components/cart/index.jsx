@@ -62,7 +62,7 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>}
                 {cartItems.map( (item) => {
-                    if (currentUserId === item.shopperId) return <CartItem item={item} cartTotal={cartTotal} />
+                    if (currentUserId === item.shopperId) return <CartItem item={item} key={item.id} cartTotal={cartTotal} />
                 } )}
             </div>
             <div className='cart-footer'>

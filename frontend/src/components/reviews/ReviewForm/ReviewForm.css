@@ -1,10 +1,18 @@
-.name-input {
+.review-form > div {
     display: flex;
     flex-direction: column;
 }
 
+.review-form > * {
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    margin-bottom: 5px;
+}
+
 .review-form {
-    padding: 30px 0 30px 0;
+    padding: 30px 0 20px 0;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -26,17 +34,24 @@
     color: #e5e7eb;
 }
 
-.review-form > label {
-    display: flex;
-    flex-direction: column;
-}
-
-textarea {
+.review-form textarea {
     resize: vertical;
+    border: 1px solid #e5e7eb;
+    padding: 1%;
+    height: 125px;
+    font-size: 16px;
 }
 
-select {
+.review-form input {
+    padding: 1%;
+    border: 1px solid #e5e7eb;
+    font-size: 16px;
+}
+
+.review-form select {
     font-family: WigrumWeb;
+    font-size: 16px;
+    border: 0;
 }
 
 .review-form input::-webkit-input-placeholder, .review-form textarea::-webkit-input-placeholder {

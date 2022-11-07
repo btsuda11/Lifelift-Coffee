@@ -6,7 +6,8 @@ import { createReview } from '../../../actions/reviewActions';
 import { Link } from 'react-router-dom';
 
 const ReviewForm = ({ product }) => {
-    const [name, setName] = useState('');
+    const [reviewerName, setReviewerName] = useState('');
+    const [email, setEmail] = useState('');
     const [clickedRating, setClickedRating] = useState([true, true, true, true, true]);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -33,12 +34,17 @@ const ReviewForm = ({ product }) => {
                 break;
             }
         }
-        dispatch(createReview({ title, body, rating, reviewerId: currentUserId, productId: product[0].id }));
+        dispatch(createReview({ review: {reviewerName, title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
+        setReviewerName('');
+        setEmail('');
+        setClickedRating([true, true, true, true, true]);
+        setTitle('');
+        setBody('');
     }
 
     return (
         <form className='review-form'>
-            <div className='name-input'>
+            <div>
                 <label htmlFor='name'>Name (displayed publicly as <select>
                         <option>John Smith</option>
                         <option>John S.</option>
@@ -46,25 +52,30 @@ const ReviewForm = ({ product }) => {
                         <option>Anonymous</option>
                     </select>)
                 </label>
-                <input type='text' placeholder='Enter your name (public)' id='name' />
+                <input type='text' placeholder='Enter your name (public)' id='name' value={reviewerName} onChange={e => setReviewerName(e.target.value)} />
             </div>
-            <label>Email
-                <input type='text' placeholder='Enter your email (private)' />
-            </label>
-            <label>Rating</label>
-            <div className='rating-div'>
-                <FaStar className={clickedRating[0] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 0)}/>
-                <FaStar className={clickedRating[1] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 1)}/>
-                <FaStar className={clickedRating[2] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 2)}/>
-                <FaStar className={clickedRating[3] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 3)}/>
-                <FaStar className={clickedRating[4] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 4)}/>
+            <div>
+                <label htmlFor='email'>Email</label>
+                <input id='email' type='text' placeholder='Enter your email (private)' value={email} onChange={e => setEmail(e.target.value)} />
             </div>
-            <label>Review Title
-                <input type='text' placeholder='Give your review a title' value={title} onChange={e => setTitle(e.target.value)} />
-            </label>
-            <label>Review
-                <textarea placeholder='Write your comments here' value={body} onChange={e => setBody(e.target.value)} />
-            </label>
+            <div>
+                <label htmlFor='rating'>Rating</label>
+                <div className='rating-div' id='rating'>
+                    <FaStar className={clickedRating[0] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 0)} />
+                    <FaStar className={clickedRating[1] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 1)} />
+                    <FaStar className={clickedRating[2] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 2)} />
+                    <FaStar className={clickedRating[3] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 3)} />
+                    <FaStar className={clickedRating[4] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 4)} />
+                </div>
+            </div>
+            <div>
+                <label htmlFor='title'>Review Title</label>
+                <input id='title' type='text' placeholder='Give your review a title' value={title} onChange={e => setTitle(e.target.value)} />
+            </div>
+            <div>
+                <label htmlFor='body'>Review</label>
+                <textarea id='body' placeholder='Write your comments here' value={body} onChange={e => setBody(e.target.value)} />
+            </div>
             <Link className='underline-on-hover spaced' to='#' onClick={submitReview}>Submit Review</Link>
         </form>
     )
