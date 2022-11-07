@@ -1,0 +1,47 @@
+.review-item-div {
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.reviewer-icon {
+    background-color: #e9e9e9;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.review-header-info > div {
+    display: flex;
+    align-items: center;
+}
+
+.review-header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+
+.rating-div {
+    margin-right: 5px;
+}
+
+.review-item-div p {
+    font-size: 18px;
+}
+
+.light-bold {
+    font-weight: 600;
+}
+
+.review-body {
+    line-height: 25px;
+}

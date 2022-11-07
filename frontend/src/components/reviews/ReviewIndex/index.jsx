@@ -1,5 +1,6 @@
 import './ReviewIndex.css';
 import ReviewIndexItem from './ReviewIndexItem';
+import { FaStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews }) => {
     return (
@@ -7,15 +8,22 @@ const ReviewIndex = ({ reviews }) => {
             <div>
                 <div className='reviews-div'>
                     <div className='reviews-header'>
-                        <h3>Customer Reviews</h3>
+                        <h2>Customer Reviews</h2>
                         <div>
+                            <div>
+                                <FaStar className='star' />
+                                <FaStar className='star' />
+                                <FaStar className='star' />
+                                <FaStar className='star' />
+                                <FaStar className='star' />
+                                <p>Based on {reviews.length > 1 || reviews.length === 0 ? `${reviews.length} reviews` : `${reviews.length} review`}</p>
+                            </div>
+                            <div>
 
-                        </div>
-                        <div>
-
-                        </div>
-                        <div>
-                            
+                            </div>
+                            <div>
+                                <button className='review-btn'>Write a review</button>
+                            </div>
                         </div>
                     </div>
                     <div className='reviews-body'>
