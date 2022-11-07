@@ -2,8 +2,8 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @reviews = Review.where("product_name = (?)", params[:product_name])
-    # @reviews = Product.joins(:reviews).where("name = (?)", params[:product_name]).map { |product| product.reviews }
+    # @reviews = Review.where("product_name = (?)", params[:product_name])
+    @reviews = Product.joins(:reviews).where("name = (?)", capitalize_name(params[:product_name])).map { |product| product.reviews }.flatten
     render :index
   end
 
@@ -34,6 +34,6 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:title, :body, :rating, :product_id, :reviewer_id)
+    params.require(:review).permit(:id, :title, :body, :rating, :product_id, :reviewer_id)
   end
 end

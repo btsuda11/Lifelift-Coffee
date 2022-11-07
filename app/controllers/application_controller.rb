@@ -64,4 +64,8 @@ class ApplicationController < ActionController::API
             logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
         end
     end
+
+    def capitalize_name(words)
+        words.split('-').map { |word| word.capitalize }.join(' ')
+    end
 end

@@ -1,4 +1,5 @@
 class Api::ProductsController < ApplicationController
+
   def index
     case params[:category]
     when 'undefined'
@@ -22,10 +23,5 @@ class Api::ProductsController < ApplicationController
   def show
     @product = Product.where('name ILIKE (?)', capitalize_name(params[:product_name]))
     render :show
-  end
-
-  private
-  def capitalize_name(words)
-    words.split('-').map { |word| word.capitalize }.join(' ')
   end
 end
