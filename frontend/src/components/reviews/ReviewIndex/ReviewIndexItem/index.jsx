@@ -13,13 +13,13 @@ const ReviewIndexItem = ({ review }) => {
     return (
         <div className='review-item-div'>
             <div className='review-header'>
-                <div className='reviewer-icon'>{review.firstName[0].toUpperCase()}</div>
+                <div className='reviewer-icon'>{review.reviewerName[0].toUpperCase()}</div>
                 <div className='review-header-info'>
                     <div>
                         <div className='rating-div'>{ratingToStars(review.rating)}</div>
                         <p>{review.createdAt}</p>
                     </div>
-                    <p className='light-bold'>{review.firstName + ' ' + review.lastName}</p>
+                    <p className='light-bold'>{review.reviewerName}</p>
                 </div>
             </div>
             <div className='review-body'>

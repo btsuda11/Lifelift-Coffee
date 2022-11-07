@@ -49,7 +49,7 @@ ul {
     font-weight: bold;
 }
 
-body {
+body, textarea, input {
     font-family: WigrumWeb;
 }
 

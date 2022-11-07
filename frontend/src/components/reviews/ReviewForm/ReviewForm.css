@@ -41,4 +41,5 @@ select {
 
 .review-form input::-webkit-input-placeholder, .review-form textarea::-webkit-input-placeholder {
     text-align: start;
+    font-family: WigrumWeb;
 }
