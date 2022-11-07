@@ -63,7 +63,7 @@ const ProductShow = ({ setShowCart, closeCart }) => {
                     <img src={healthiestCoffee}/>
                 </div>
             </section>
-            <ReviewIndex reviews={reviews} />
+            <ReviewIndex reviews={reviews} product={product} />
         </main>
     )
 }

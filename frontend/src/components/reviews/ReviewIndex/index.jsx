@@ -4,7 +4,7 @@ import ReviewForm from '../ReviewForm';
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const ReviewIndex = ({ reviews }) => {
+const ReviewIndex = ({ reviews, product }) => {
     const [showReviewForm, setShowReviewForm] = useState(false);
 
     return (
@@ -31,7 +31,7 @@ const ReviewIndex = ({ reviews }) => {
                         </div>
                     </div>
                     { showReviewForm &&
-                        <ReviewForm />
+                        <ReviewForm product={product} />
                     }
                     <div className='reviews-body'>
                         {reviews.map(review => <ReviewIndexItem review={review} />)}
