@@ -14,6 +14,16 @@ const ReviewForm = ({ product }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
 
+    const handleStarClick = (e, index) => {
+        e.preventDefault();
+        let clickedStars = [...rating];
+        for (let i = 0; i < clickedStars.length; i++) {
+            if (i <= index) clickedStars[i] = true;
+            else clickedStars[i] = false;
+        }
+        setRating(clickedStars);
+    }
+
     const submitReview = e => {
         e.preventDefault();
         dispatch(createReview({ title, body, rating, reviewerId: currentUserId, productId: product[0].id }))
@@ -35,12 +45,12 @@ const ReviewForm = ({ product }) => {
                 <input type='text' placeholder='Enter your email (private)' value={email} />
             </label>
             <label>Rating</label>
-            <div>
-                <FaStar className='star' />
-                <FaStar className='star' />
-                <FaStar className='star' />
-                <FaStar className='star' />
-                <FaStar className='star' />
+            <div className='rating-div'>
+                <FaStar className={rating[0] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 0)}/>
+                <FaStar className={rating[1] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 1)}/>
+                <FaStar className={rating[2] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 2)}/>
+                <FaStar className={rating[3] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 3)}/>
+                <FaStar className={rating[4] ? 'clicked-rating' : 'rating'} onClick={e => handleStarClick(e, 4)}/>
             </div>
             <label>Review Title
                 <input type='text' placeholder='Give your review a title' value={title} />

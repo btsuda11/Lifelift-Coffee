@@ -3,6 +3,29 @@
     flex-direction: column;
 }
 
+.review-form {
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rating {
+    cursor: pointer;
+    color: #e5e7eb;
+}
+
+.clicked-rating {
+    cursor: pointer;
+    color: #fbcd0a;
+}
+
+.rating-div:hover .rating {
+    color: #fbcd0a;
+}
+
+.rating:hover~.rating {
+    color: #e5e7eb;
+}
+
 .review-form > label {
     display: flex;
     flex-direction: column;
@@ -10,4 +33,12 @@
 
 textarea {
     resize: vertical;
+}
+
+select {
+    font-family: WigrumWeb;
+}
+
+.review-form input::-webkit-input-placeholder, .review-form textarea::-webkit-input-placeholder {
+    text-align: start;
 }
