@@ -1,8 +1,12 @@
 import './ReviewIndex.css';
 import ReviewIndexItem from './ReviewIndexItem';
+import ReviewForm from '../ReviewForm';
+import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews }) => {
+    const [showReviewForm, setShowReviewForm] = useState(false);
+
     return (
         <section className='reviews-section'>
             <div>
@@ -22,10 +26,13 @@ const ReviewIndex = ({ reviews }) => {
 
                             </div>
                             <div>
-                                <button className='review-btn'>Write a review</button>
+                                {showReviewForm ? <button className='review-btn' onClick={() => setShowReviewForm(false)}>Cancel review</button> : <button className='review-btn' onClick={() => setShowReviewForm(true)}>Write a review</button>}
                             </div>
                         </div>
                     </div>
+                    { showReviewForm &&
+                        <ReviewForm />
+                    }
                     <div className='reviews-body'>
                         {reviews.map(review => <ReviewIndexItem review={review} />)}
                     </div>
