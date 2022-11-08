@@ -9,7 +9,14 @@ import openBar from '../../assets/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 
 const Header = ({ setShowCart, closeCart }) => {
-    const numberCartItems = useSelector(getCartItems).reduce((acc, a) => acc + a.quantity, 0);
+    const currentUserId = useSelector(state => state.session.currentUser);
+    const numberCartItems = useSelector(getCartItems).reduce((acc, a) => {
+        if (a.shopperId === currentUserId) {
+            return acc + a.quantity;
+        } else {
+            return acc;
+        }
+    }, 0);
 
     return (
         <>
