@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchProduct, getProduct } from '../../../actions/productActions';
+import { fetchProduct, getProduct, removeProducts } from '../../../actions/productActions';
 import { fetchReviews, getReviews } from '../../../actions/reviewActions';
 import ReviewIndex from '../../reviews/ReviewIndex';
 import ProductInfo from './ProductInfo';
@@ -23,6 +23,7 @@ const ProductShow = ({ setShowCart, closeCart }) => {
     useEffect(() => {
         dispatch(fetchProduct(productName));
         dispatch(fetchReviews(productName));
+        return () => dispatch(removeProducts());
     }, [dispatch, productName])
     
     if (!Array.isArray(product) || product.length === 0) return null;

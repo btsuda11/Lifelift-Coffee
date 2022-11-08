@@ -1,7 +1,7 @@
 import './ProductIndex.css';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductIndexItem from './ProductIndexItem';
-import { getProducts, fetchProducts } from '../../../actions/productActions';
+import { getProducts, fetchProducts, removeProducts } from '../../../actions/productActions';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -23,6 +23,7 @@ const ProductIndex = ({ closeCart }) => {
 
     useEffect(() => {
         dispatch(fetchProducts(category));
+        return () => dispatch(removeProducts());
     }, [dispatch, category])
 
     if (products[0] instanceof Array) return null;

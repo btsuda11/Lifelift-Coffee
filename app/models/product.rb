@@ -11,6 +11,7 @@
 #  updated_at   :datetime         not null
 #  product_type :string
 #  amount       :integer          not null
+#  featured     :boolean
 #
 class Product < ApplicationRecord
     validates :name, :category, :amount, :description, :price, presence: true

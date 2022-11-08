@@ -49,7 +49,7 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
                 {/* <img src={product[0].photoUrls[0]}/> */}
             </div>
             <div className='product-info-div'>
-                <h2>{product[0].name}</h2>
+                <h2 style={spotlight ? {textAlign: 'center'} : {}}>{product[0].name}</h2>
                 {!spotlight && 
                     <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                         <FaStar className='star' />
@@ -63,7 +63,10 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
                     </div>
                 }
                 {spotlight && 
-                    <p>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
+                    <>
+                        <h3 style={{textAlign: 'center', marginBottom: '10px'}}>${clickedOption(product, clickType, clickQuantity).price.toFixed(2)}</h3>
+                        <p style={{textAlign: 'center'}}>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
+                    </>
                 }
                 <button className='product-toggle-btn bold'>Buy One Time</button>
                 <div>

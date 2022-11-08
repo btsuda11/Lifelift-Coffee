@@ -53,7 +53,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 1,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -65,7 +66,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 1,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # dark_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -77,7 +79,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 1,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # light_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -101,7 +104,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 1,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # medium_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -137,7 +141,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 3,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # medium_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -149,7 +154,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 3,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # dark_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -161,7 +167,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 3,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # light_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -185,7 +192,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 3,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # medium_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -221,7 +229,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 6,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # medium_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -233,7 +242,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 6,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # dark_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -245,7 +255,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 6,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # light_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -269,7 +280,8 @@ ApplicationRecord.transaction do
         product_type: 'Ground',
         amount: 6,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # medium_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -305,7 +317,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 1,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # medium_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -317,7 +330,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 1,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # dark_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -329,7 +343,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 1,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # light_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -353,7 +368,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 1,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 27.95
+        price: 27.95,
+        featured: true
     })
 
     # medium_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -389,7 +405,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 3,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # medium_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -401,7 +418,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 3,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # dark_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -413,7 +431,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 3,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # light_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -437,7 +456,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 3,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 74.85
+        price: 74.85,
+        featured: true
     })
 
     # medium_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -473,7 +493,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 6,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # medium_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -485,7 +506,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 6,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # dark_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -497,7 +519,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 6,
         description: "The journey to bring you the healthiest coffee on the planet begins on a small farm in the shady mountain rainforests of South America, and it journeys through the hands of local coffee farming experts who hand-select and carefully bring you the only finest specialty Arabica coffee beans. Our lightly roasted coffee selection, bright and ever-so-slightly more acidic, allows you to best savor the authentic, original, true flavor notes of premium Lifelift coffee beans.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # light_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
@@ -521,7 +544,8 @@ ApplicationRecord.transaction do
         product_type: 'Whole Beans',
         amount: 6,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 137.70
+        price: 137.70,
+        featured: true
     })
 
     # medium_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
@@ -557,7 +581,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 1,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 34.95
+        price: 34.95,
+        featured: true
     })
 
     # medium_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -602,7 +627,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 1,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 34.95
+        price: 34.95,
+        featured: true
     })
 
     # dark_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -636,7 +662,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 3,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 89.94
+        price: 89.94,
+        featured: true
     })
 
     # medium_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -681,7 +708,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 3,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 89.94
+        price: 89.94,
+        featured: true
     })
 
     # dark_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
@@ -715,7 +743,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 6,
         description: "Careful selection of mature coffee cherries, meticulous processing from fermentation, to spring water washing, to drying and rigorous testing for toxins, to a perfected roasting process makes our low acid coffee beans the healthiest, best tasting, most smooth coffee you’ll ever try. From the local Nicaraguan coffee farmers, to our new and even long time customers, our certified medium roasted Arabica coffee is, by far, our most popular coffee selection.",
-        price: 149.40
+        price: 149.40,
+        featured: true
     })
 
     # medium_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
@@ -760,7 +789,8 @@ ApplicationRecord.transaction do
         product_type: 'Go Bags',
         amount: 6,
         description: "Beginning with premium coffee beans, free from the use of pesticides, carefully grown, meticulously processed, then triple tested for toxins, and roasted at higher temperatures for longer times brings you the healthiest dark roast coffee selection possible. A roast commonly referred to as French or Italian, our dark roast selection stands out as a step above with its unique aroma, smooth, full-bodied flavor, and delicious aftertaste.",
-        price: 149.40
+        price: 149.40,
+        featured: true
     })
 
     # dark_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')

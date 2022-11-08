@@ -1,5 +1,4 @@
 class Api::ProductsController < ApplicationController
-
   def index
     case params[:category]
     when 'undefined'
