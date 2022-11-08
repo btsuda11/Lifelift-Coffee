@@ -17,10 +17,30 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
     }
     
     const [reviewerName, setReviewerName] = useState(review.reviewerName);
+    const [selectedNameFormat, setSelectedNameFormat] = useState('John Smith');
     const [email, setEmail] = useState('');
     const [clickedRating, setClickedRating] = useState(clickedStates);
     const [title, setTitle] = useState(review.title);
     const [body, setBody] = useState(review.body);
+
+    const formattedReviewerName = () => {
+        switch(selectedNameFormat) {
+            case 'John Smith':
+                return reviewerName.split(' ').map(word => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+            case 'John S.':
+                return reviewerName.split(' ').map((word, i) => {
+                    if (i != 0) {
+                        return word[0].toUpperCase() + '.';
+                    } else {
+                        return word[0].toUpperCase() + word.slice(1).toLowerCase();
+                    }
+                }).join(' ');
+            case 'J.S.':
+                return reviewerName.split(' ').map(word => word[0].toUpperCase() + '.').join('');
+            case 'Anonymous':
+                return reviewerName[0].toUpperCase() + '.';
+        }
+    }
 
     const handleStarClick = (e, index) => {
         e.preventDefault();
@@ -42,7 +62,7 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
             }
         }
         if (!review.id) {
-            dispatch(createReview({ review: {reviewerName, title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
+            dispatch(createReview({ review: {reviewerName: formattedReviewerName(), title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
             setReviewerName('');
             setEmail('');
             setClickedRating([true, true, true, true, true]);
@@ -50,7 +70,7 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
             setBody('');
             setShowCreateReview(false);
         } else {
-            dispatch(updateReview({ review: { id: review.id, reviewerName, title, body, rating, reviewerId: review.reviewerId, productId: review.productId } }));
+            dispatch(updateReview({ review: { id: review.id, reviewerName: formattedReviewerName(), title, body, rating, reviewerId: review.reviewerId, productId: review.productId } }));
             setShowEditReview(false);
         }
         
@@ -59,7 +79,7 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
     return (
         <form className='review-form'>
             <div>
-                <label htmlFor='name'>Name (displayed publicly as <select>
+                <label htmlFor='name'>Name (displayed publicly as <select onChange={e => setSelectedNameFormat(e.target.value)}>
                         <option>John Smith</option>
                         <option>John S.</option>
                         <option>J.S.</option>
