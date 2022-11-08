@@ -9,7 +9,6 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
-    console.log(reviewsRef)
 
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
@@ -36,7 +35,7 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
         const item = clickedOption(product, clickType, clickQuantity);
         const existingItem = cartItems.find(({ productId }) => productId === item.id);
         setShowCart(true);
-        if (cartItems.some(({ productId }) => productId === item.id)) {
+        if(cartItems.some(({ productId }) => productId === item.id)) {
             dispatch(updateCartItem({ ...existingItem, quantity: existingItem.quantity + 1 }));
         } else {
             dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: item.id }))
@@ -51,16 +50,18 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>
-                <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <div className='number-reviews-div'>
-                        <p>{reviewsLength > 1 || reviewsLength === 0 ? `${reviewsLength} reviews` : `${reviewsLength} review`}</p>
+                {!spotlight && 
+                    <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <div className='number-reviews-div'>
+                            <p>{reviewsLength > 1 || reviewsLength === 0 ? `${reviewsLength} reviews` : `${reviewsLength} review`}</p>
+                        </div>
                     </div>
-                </div>
+                }
                 {spotlight && 
                     <p>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
                 }

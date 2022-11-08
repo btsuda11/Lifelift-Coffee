@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCartItems, getCartItems, deleteCartItem } from '../../actions/cartItemActions';
+import { getCartItems, deleteCartItem } from '../../actions/cartItemActions';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
 import './CartSideBar.css';
 import { AiOutlineRight } from 'react-icons/ai';
 
-const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart, setShowCheckoutModal }) => {
+const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart, setShowCheckoutModal, cartErrors }) => {
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState([]);
     const cartItems = useSelector(getCartItems);
     const currentUserId = useSelector(state => state.session.currentUser);
     
@@ -19,22 +17,6 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
             return acc;
         }
     }, 0))
-
-    useEffect(() => {
-        setErrors([]);
-        dispatch(fetchCartItems()).catch(async (res) => {
-                let data;
-                try {
-                    // .clone() essentially allows you to read the response body twice
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text(); // Will hit this case if the server is down
-                }
-                if (data?.message) setErrors(['Must be logged in to view cart']);
-                else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
-        });
-    }, [dispatch, currentUserId])
 
     const checkout = () => {
         closeCart();
@@ -57,9 +39,9 @@ const CartSideBar = ({ showCart, setShowCart, cartTotal, setCartTotal, closeCart
                 </div>
             </div>
             <div className='cart-items'>
-                { errors.length > 0 &&
+                { cartErrors.length > 0 &&
                     <ul className='errors'>
-                        {errors.map(error => <li key={error}>{error}</li>)}
+                        {cartErrors.map(error => <li key={error}>{error}</li>)}
                     </ul>}
                 {cartItems.map( (item) => {
                     if (currentUserId === item.shopperId) return <CartItem item={item} key={item.id} cartTotal={cartTotal} />
