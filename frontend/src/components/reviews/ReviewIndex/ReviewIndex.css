@@ -37,3 +37,47 @@
     padding: 10px;
     font-size: 16px;
 }
+
+.reviews-breakdown-div {
+    display: flex;
+}
+
+.reviews-percentage-div > div {
+    display: flex;
+    align-items: center;
+}
+
+.percentage-div {
+    width: 80px;
+    height: 14px;
+    background-color: white;
+    border: 0.75px solid #e5e7eb;
+}
+
+.reviews-breakdown-div > div:first-child {
+    padding-right: 20px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.reviews-percentage-div {
+    padding: 0 20px 0 20px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.reviews-percentage-div svg {
+    height: 13px;
+    width: 13px;
+}
+
+.reviews-percentage-div p {
+    font-size: 12px;
+    width: 30px;
+}
+
+.unclicked {
+    color: #e5e7eb;
+}
+
+.specific-star-div > * {
+    margin-right: 10px;
+}

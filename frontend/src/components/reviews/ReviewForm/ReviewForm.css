@@ -12,6 +12,10 @@
 }
 
 .review-form {
+    /* visibility: hidden;
+    transition: visibility 1s, max-height 1s;
+    max-height: 0;
+    overflow: hidden; */
     padding: 30px 0 20px 0;
     border-top: 1px solid #e5e7eb;
 }
@@ -58,3 +62,11 @@
     text-align: start;
     font-family: WigrumWeb;
 }
+
+/* .open {
+    visibility: visible;
+    max-height: 800px;
+    padding: 30px 0 20px 0;
+    border-top: 1px solid #e5e7eb;
+    transition: height, 1s linear;
+} */
