@@ -2,18 +2,25 @@ import './ReviewForm.css';
 import { FaStar } from 'react-icons/fa';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createReview } from '../../../actions/reviewActions';
+import { createReview, updateReview } from '../../../actions/reviewActions';
 import { Link } from 'react-router-dom';
 
-const ReviewForm = ({ product }) => {
-    const [reviewerName, setReviewerName] = useState('');
-    const [email, setEmail] = useState('');
-    const [clickedRating, setClickedRating] = useState([true, true, true, true, true]);
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-
+const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
+    
+    if (!review) review = {reviewerName: '', title: '', body: '', rating: 5, reviewerId: '', productId: ''}
+
+    const clickedStates = [true, true, true, true, true];
+    for (let i = clickedStates.length - 1; i >= review.rating; i--) {
+        clickedStates[i] = false;
+    }
+    
+    const [reviewerName, setReviewerName] = useState(review.reviewerName);
+    const [email, setEmail] = useState('');
+    const [clickedRating, setClickedRating] = useState(clickedStates);
+    const [title, setTitle] = useState(review.title);
+    const [body, setBody] = useState(review.body);
 
     const handleStarClick = (e, index) => {
         e.preventDefault();
@@ -34,12 +41,19 @@ const ReviewForm = ({ product }) => {
                 break;
             }
         }
-        dispatch(createReview({ review: {reviewerName, title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
-        setReviewerName('');
-        setEmail('');
-        setClickedRating([true, true, true, true, true]);
-        setTitle('');
-        setBody('');
+        if (!review.id) {
+            dispatch(createReview({ review: {reviewerName, title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
+            setReviewerName('');
+            setEmail('');
+            setClickedRating([true, true, true, true, true]);
+            setTitle('');
+            setBody('');
+            setShowCreateReview(false);
+        } else {
+            dispatch(updateReview({ review: { id: review.id, reviewerName, title, body, rating, reviewerId: review.reviewerId, productId: review.productId } }));
+            setShowEditReview(false);
+        }
+        
     }
 
     return (

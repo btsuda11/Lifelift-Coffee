@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createCartItem, getCartItems, updateCartItem } from '../../../../actions/cartItemActions';
 import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
+import { FaStar } from 'react-icons/fa';
 
-const ProductInfo = ({ product, spotlight, setShowCart }) => {
+const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
@@ -49,6 +50,16 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>
+                <div>
+                    <FaStar className='star' />
+                    <FaStar className='star' />
+                    <FaStar className='star' />
+                    <FaStar className='star' />
+                    <FaStar className='star' />
+                    <div className='number-reviews-div'>
+                        <p>{reviewsLength > 1 || reviewsLength === 0 ? `${reviewsLength} reviews` : `${reviewsLength} review`}</p>
+                    </div>
+                </div>
                 {spotlight && 
                     <p>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
                 }

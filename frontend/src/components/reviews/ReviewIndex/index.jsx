@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
-    const [showReviewForm, setShowReviewForm] = useState(false);
+    const [showCreateReview, setShowCreateReview] = useState(false);
     const sortedReviews = [...reviews].reverse();
 
     return (
@@ -27,12 +27,12 @@ const ReviewIndex = ({ reviews, product }) => {
 
                             </div>
                             <div>
-                                {showReviewForm ? <button className='review-btn' onClick={() => setShowReviewForm(false)}>Cancel review</button> : <button className='review-btn' onClick={() => setShowReviewForm(true)}>Write a review</button>}
+                                {showCreateReview ? <button className='review-btn' onClick={() => setShowCreateReview(false)}>Cancel review</button> : <button className='review-btn' onClick={() => setShowCreateReview(true)}>Write a review</button>}
                             </div>
                         </div>
                     </div>
-                    { showReviewForm &&
-                        <ReviewForm product={product} />
+                    { showCreateReview &&
+                        <ReviewForm product={product} setShowCreateReview={setShowCreateReview} />
                     }
                     <div className='reviews-body'>
                         {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} />)}

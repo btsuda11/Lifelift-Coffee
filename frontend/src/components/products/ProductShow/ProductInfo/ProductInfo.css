@@ -25,6 +25,15 @@
     flex-direction: column;
 }
 
+.product-info-div > div:nth-child(2) {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.number-reviews-div {
+    margin-left: 10px;
+}
+
 .product-type-div {
     display: flex;
     justify-content: flex-start;
