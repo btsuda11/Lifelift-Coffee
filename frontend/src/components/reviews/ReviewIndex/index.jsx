@@ -6,6 +6,7 @@ import { FaStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
     const [showCreateReview, setShowCreateReview] = useState(false);
+    const [showEditReview, setShowEditReview] = useState(false);
     const sortedReviews = [...reviews].reverse();
 
     return (
@@ -27,7 +28,10 @@ const ReviewIndex = ({ reviews, product }) => {
 
                             </div>
                             <div>
-                                {showCreateReview ? <button className='review-btn' onClick={() => setShowCreateReview(false)}>Cancel review</button> : <button className='review-btn' onClick={() => setShowCreateReview(true)}>Write a review</button>}
+                                {showCreateReview ? <button className='review-btn' onClick={() => setShowCreateReview(false)}>Cancel review</button> : <button className='review-btn' onClick={() => {
+                                    setShowCreateReview(true);
+                                    setShowEditReview(false);
+                                }}>Write a review</button>}
                             </div>
                         </div>
                     </div>
@@ -35,7 +39,7 @@ const ReviewIndex = ({ reviews, product }) => {
                         <ReviewForm product={product} setShowCreateReview={setShowCreateReview} />
                     }
                     <div className='reviews-body'>
-                        {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} />)}
+                        {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} showEditReview={showEditReview} setShowEditReview={setShowEditReview} setShowCreateReview={setShowCreateReview} />)}
                     </div>
                 </div>
             </div>

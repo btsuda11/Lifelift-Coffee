@@ -2,15 +2,13 @@ import './ReviewIndexItem.css';
 import { FaStar } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteReview } from '../../../../actions/reviewActions';
 import ReviewForm from '../../ReviewForm';
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCreateReview }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
-    const [showEditReview, setShowEditReview] = useState(false);
 
     const ratingToStars = rating => {
         let stars = [];
@@ -36,7 +34,10 @@ const ReviewIndexItem = ({ review }) => {
                     </div>
                     { currentUserId === review.reviewerId &&
                         <div className='modify-icon-div'>
-                            <FiEdit className='edit' onClick={() => setShowEditReview(!showEditReview)}/>
+                            <FiEdit className='edit' onClick={() => {
+                                setShowEditReview(!showEditReview);
+                                setShowCreateReview(false);
+                            }}/>
                             <AiOutlineDelete className='delete' onClick={() => dispatch(deleteReview(review.id))} />
                         </div>}
                 </div>
