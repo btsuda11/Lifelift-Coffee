@@ -28,6 +28,7 @@
 .product-info-div > div:nth-child(2) {
     margin-bottom: 20px;
     display: flex;
+    cursor: pointer;
 }
 
 .number-reviews-div {

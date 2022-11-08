@@ -10,10 +10,12 @@ import clean from '../../../assets/ProductShow/clean.svg';
 import cause from '../../../assets/ProductShow/cause.svg';
 import connection from '../../../assets/ProductShow/connection.svg';
 import './ProductShow.css';
+import { useRef } from 'react';
 
 const ProductShow = ({ setShowCart, closeCart }) => {
     const dispatch = useDispatch();
     const { productName } = useParams();
+    const reviewsRef = useRef(null);
     
     const product = useSelector(getProduct(camelize(productName)));
     const reviews = useSelector(getReviews);
@@ -27,7 +29,7 @@ const ProductShow = ({ setShowCart, closeCart }) => {
 
     return (
         <main onClick={closeCart}>
-            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} reviewsLength={reviews.length}/>
+            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} reviewsLength={reviews.length} reviewsRef={reviewsRef} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
                     <div>
@@ -63,7 +65,9 @@ const ProductShow = ({ setShowCart, closeCart }) => {
                     <img src={healthiestCoffee}/>
                 </div>
             </section>
-            <ReviewIndex reviews={reviews} product={product} />
+            <div ref={reviewsRef}>
+                <ReviewIndex reviews={reviews} product={product} />
+            </div>
         </main>
     )
 }

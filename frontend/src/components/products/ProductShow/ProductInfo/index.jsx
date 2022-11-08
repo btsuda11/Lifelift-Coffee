@@ -5,10 +5,11 @@ import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
 import { FaStar } from 'react-icons/fa';
 
-const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength }) => {
+const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRef }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
+    console.log(reviewsRef)
 
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
@@ -50,7 +51,7 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength }) => {
             </div>
             <div className='product-info-div'>
                 <h2>{product[0].name}</h2>
-                <div>
+                <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                     <FaStar className='star' />
                     <FaStar className='star' />
                     <FaStar className='star' />
