@@ -62,7 +62,7 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
             }
         }
         if (!review.id) {
-            dispatch(createReview({ review: {reviewerName: formattedReviewerName(), title, body, rating, reviewerId: currentUserId, productId: product[0].id} }));
+            dispatch(createReview({ review: {reviewerName: formattedReviewerName(), title, body, rating, reviewerId: currentUserId, productId: product[product.length - 1].id} }));
             setReviewerName('');
             setEmail('');
             setClickedRating([true, true, true, true, true]);

@@ -16,7 +16,10 @@ const ReviewIndex = ({ reviews, product }) => {
         }, 0)
     )
 
-    const percentageReviews = rating => ((numberReviews(rating) / reviews.length).toFixed(2) * 100)
+    const percentageReviews = rating => {
+        if (reviews.length === 0) return 0
+        else return (numberReviews(rating) / reviews.length).toFixed(2) * 100;
+    }
 
     return (
         <section className='reviews-section'>
