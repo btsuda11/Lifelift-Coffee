@@ -10,16 +10,18 @@ const SearchIndex = ({ closeCart }) => {
     const products = useSelector(getProducts);
     const dispatch = useDispatch();
     const location = useLocation();
-    const { query } = location.state;
+    const { query } = location.state || {};
 
     useEffect(() => {
         dispatch(searchProducts(query));
-        return () => dispatch(removeProducts());
-    }, [dispatch])
+        // return () => dispatch(removeProducts());
+    }, [dispatch, query])
+
+    if (Array.isArray(products[0])) return null;
 
     return (
         <>
-            {/* <SearchPage /> */}
+            <SearchPage closeCart={closeCart}/>
             <section onClick={closeCart} className='search-results'>
                 {products.length === 0 ?
                     <p>Your search for "{query}" did not yield any results</p> :
