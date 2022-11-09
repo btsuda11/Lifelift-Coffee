@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 import { getProducts, removeProducts, searchProducts } from '../../../actions/productActions';
 import ProductIndexItem from '../../products/ProductIndex/ProductIndexItem';
 import SearchPage from '../index';
@@ -14,9 +14,10 @@ const SearchIndex = ({ closeCart }) => {
 
     useEffect(() => {
         dispatch(searchProducts(query));
-        // return () => dispatch(removeProducts());
+        return () => dispatch(removeProducts());
     }, [dispatch, query])
 
+    if (!location.state?.fromApp) return <Redirect to='/search' />
     if (Array.isArray(products[0])) return null;
 
     return (

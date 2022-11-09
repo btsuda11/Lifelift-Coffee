@@ -12,7 +12,7 @@ const SearchPage = ({ closeCart }) => {
                 <h2>Search Results</h2>
                 <div className='search-bar'>
                     <input type='text' placeholder='Search Terms' value={query} onChange={e => setQuery(e.target.value)} />
-                    <Link to={{pathname: '/search-results', state: {query}}}><CiSearch /></Link>
+                    <Link to={{pathname: '/search-results', state: {query, fromApp: true}}}><CiSearch /></Link>
                 </div>
             </section>
         </>

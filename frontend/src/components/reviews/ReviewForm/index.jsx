@@ -88,10 +88,10 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview })
                 </label>
                 <input type='text' placeholder='Enter your name (public)' id='name' value={reviewerName} onChange={e => setReviewerName(e.target.value)} />
             </div>
-            <div>
+            {/* <div>
                 <label htmlFor='email'>Email</label>
                 <input id='email' type='text' placeholder='Enter your email (private)' value={email} onChange={e => setEmail(e.target.value)} />
-            </div>
+            </div> */}
             <div>
                 <label htmlFor='rating'>Rating</label>
                 <div className='rating-div' id='rating'>

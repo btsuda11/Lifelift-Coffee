@@ -42,7 +42,7 @@ const Header = ({ setShowCart, closeCart }) => {
                         <Link to='/search'>
                             <img src={search} />
                         </Link>
-                        <Link to='#' className='cart-link'>
+                        <Link to='#' className='cart-link' onClick={e => e.preventDefault()}>
                             <img id='cart' src={cart} onClick={() => setShowCart(true)} />
                             <div className='items-quantity'>{numberCartItems}</div>
                         </Link>
