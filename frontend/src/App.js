@@ -11,6 +11,7 @@ import ProductIndex from './components/products/ProductIndex';
 import ProductShow from './components/products/ProductShow';
 import SplashPage from './components/splash/SplashPage';
 import SearchPage from './components/search';
+import SearchIndex from './components/search/SearchIndex';
 import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
@@ -66,6 +67,9 @@ function App() {
         </Route>
         <Route exact path='/search'>
           <SearchPage closeCart={closeCart} />
+        </Route>
+        <Route exact path='/search-results'>
+          <SearchIndex closeCart={closeCart} />
         </Route>
         <Route exact path='/'>
           <SplashPage showCart={showCart} setShowCart={setShowCart} closeCart={closeCart} />

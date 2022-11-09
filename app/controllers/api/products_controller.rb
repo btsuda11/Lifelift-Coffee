@@ -20,7 +20,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where('name ILIKE (?)', params[:query])
+    @products = Product.where('name ILIKE (?)', "%#{params[:query]}%")
     render :search
   end
 

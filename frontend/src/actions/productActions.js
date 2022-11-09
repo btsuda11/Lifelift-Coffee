@@ -55,3 +55,12 @@ export const fetchFeaturedProduct = productName => async dispatch => {
     }
     return response;
 }
+
+export const searchProducts = query => async dispatch => {
+    const response = await (csrfFetch(`/api/products/search/${query}`));
+    if (response.ok) {
+        const products = await response.json();
+        dispatch(receiveProducts(products));
+    }
+    return response;
+}
