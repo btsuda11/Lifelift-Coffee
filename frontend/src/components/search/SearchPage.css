@@ -19,7 +19,7 @@
     width: 22.5px;
 }
 
-.search-bar > button {
+.search-bar > a {
     height: 100%;
     display: flex;
     align-items: center;
