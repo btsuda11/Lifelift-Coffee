@@ -1,5 +1,5 @@
 import './ReviewIndexItem.css';
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,9 +11,9 @@ const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCre
     const currentUserId = useSelector(state => state.session.currentUser);
 
     const ratingToStars = rating => {
-        let stars = [];
+        let stars = [<FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />];
         for (let i = 0; i < rating; i++) {
-            stars.push(<FaStar className='star' />)
+            stars[i] = <FaStar className='star' />
         }
         return stars;
     }

@@ -5,6 +5,7 @@ import { getReviews } from '../../../../actions/reviewActions';
 import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
 import { avgStarRating, avgRating } from '../../../reviews/ReviewIndex';
+import { HiCheckCircle } from 'react-icons/hi';
 
 const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
     const dispatch = useDispatch();
@@ -70,7 +71,14 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
                 <div>
                     <div className='product-type-div'>
                         {productTypes.map(type => {
-                            if (type) return <button key={type.id} onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
+                            if (type) {
+                                return (
+                                    <div>
+                                        <button key={type.id} onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
+                                        <HiCheckCircle className='checkmark' style={clickType[type] === true ? { display: 'flex' } : {}} />
+                                    </div>
+                                )
+                            }
                         })}
                     </div>
                     <div className='price-btn-div'>
@@ -78,14 +86,17 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
                             return (
                                 <>
                                     {(clickType[option.productType] === true || !option.productType) &&
-                                        <button key={option.id} onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
-                                            <p className='bold'>{option.amount}</p>
-                                            <p className='bold'>${(option.price / option.amount).toFixed(2)}</p>
-                                            {option.amount === 1 ? <p className='strike-out'>${(1.25 * option.price).toFixed(2)}</p> : null }
-                                            {option.category === 'Coffee Pods' && option.amount !== 1 ? <p>Per Box</p> : null}
-                                            {option.category === 'Health Boosters' && option.amount !== 1 ? <p>Per Unit</p> : null}
-                                            {(option.category === 'Light Medium Dark Roasts' || option.category === 'Decaf Coffee' || option.category === 'Flavored Coffee') && option.amount !== 1 ? <p>Per Bag</p> : null}
-                                        </button>
+                                        <div>
+                                            <button key={option.id} onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
+                                                <p className='bold'>{option.amount}</p>
+                                                <p className='bold'>${(option.price / option.amount).toFixed(2)}</p>
+                                                {option.amount === 1 ? <p className='strike-out'>${(1.25 * option.price).toFixed(2)}</p> : null }
+                                                {option.category === 'Coffee Pods' && option.amount !== 1 ? <p>Per Box</p> : null}
+                                                {option.category === 'Health Boosters' && option.amount !== 1 ? <p>Per Unit</p> : null}
+                                                {(option.category === 'Light Medium Dark Roasts' || option.category === 'Decaf Coffee' || option.category === 'Flavored Coffee') && option.amount !== 1 ? <p>Per Bag</p> : null}
+                                            </button>
+                                            <HiCheckCircle className='checkmark' style={clickQuantity[option.amount] === true ? {display: 'flex'} : {}}/>
+                                        </div>
                                     }
                                 </>
                             )

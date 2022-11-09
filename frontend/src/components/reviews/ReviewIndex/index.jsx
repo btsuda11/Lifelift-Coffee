@@ -2,7 +2,7 @@ import './ReviewIndex.css';
 import ReviewIndexItem from './ReviewIndexItem';
 import ReviewForm from '../ReviewForm';
 import { useState } from 'react';
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
     const [showCreateReview, setShowCreateReview] = useState(false);
@@ -52,7 +52,7 @@ const ReviewIndex = ({ reviews, product }) => {
                                             <FaStar className='star' />
                                             <FaStar className='star' />
                                             <FaStar className='star' />
-                                            <FaStar className='unclicked' />
+                                            <FaRegStar className='star' />
                                         </div>
                                         <div className='percentage-div' style={{background: `linear-gradient(to right, #fbcd0a ${percentageReviews(4)}%, white ${percentageReviews(4)}%)`}}></div>
                                         <p>{percentageReviews(4)}%</p>
@@ -63,8 +63,8 @@ const ReviewIndex = ({ reviews, product }) => {
                                             <FaStar className='star' />
                                             <FaStar className='star' />
                                             <FaStar className='star' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
                                         </div>
                                         <div className='percentage-div' style={{background: `linear-gradient(to right, #fbcd0a ${percentageReviews(3)}%, white ${percentageReviews(3)}%)`}}></div>
                                         <p>{percentageReviews(3)}%</p>
@@ -74,9 +74,9 @@ const ReviewIndex = ({ reviews, product }) => {
                                         <div>
                                             <FaStar className='star' />
                                             <FaStar className='star' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
                                         </div>
                                         <div className='percentage-div' style={{background: `linear-gradient(to right, #fbcd0a ${percentageReviews(2)}%, white ${percentageReviews(2)}%)`}}></div>
                                         <p>{percentageReviews(2)}%</p>
@@ -85,10 +85,10 @@ const ReviewIndex = ({ reviews, product }) => {
                                     <div className='specific-star-div'>
                                         <div>
                                             <FaStar className='star' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
-                                            <FaStar className='unclicked' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
+                                            <FaRegStar className='star' />
                                         </div>
                                         <div className='percentage-div' style={{background: `linear-gradient(to right, #fbcd0a ${percentageReviews(1)}%, white ${percentageReviews(1)}%)`}}></div>
                                         <p>{percentageReviews(1)}%</p>
@@ -124,7 +124,7 @@ export const avgRating = reviews => {
 }
 
 export const avgStarRating = avgRating => {
-    const stars = [<FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />];
+    const stars = [<FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />, <FaRegStar className='star' />];
     const wholeNumber = Math.floor(avgRating % 10);
     const decimal = avgRating % wholeNumber;
     for (let i = 0; i < stars.length; i++) {

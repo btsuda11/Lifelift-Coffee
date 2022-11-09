@@ -74,10 +74,6 @@
     width: 30px;
 }
 
-.unclicked {
-    color: #e5e7eb;
-}
-
 .specific-star-div > * {
     margin-right: 10px;
 }
