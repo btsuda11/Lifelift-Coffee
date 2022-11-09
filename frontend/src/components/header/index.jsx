@@ -39,7 +39,7 @@ const Header = ({ setShowCart, closeCart }) => {
                         <Link to='/account'>
                             <img src={account} />
                         </Link>
-                        <Link to='#'>
+                        <Link to='/search'>
                             <img src={search} />
                         </Link>
                         <Link to='#' className='cart-link'>
