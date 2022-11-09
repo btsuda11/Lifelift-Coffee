@@ -11,6 +11,15 @@
     margin-bottom: 5px;
 }
 
+.review-form li {
+    text-align: start;
+}
+
+.review-form .errors {
+    line-height: 20px;
+    margin-top: 5px;
+}
+
 .review-form {
     /* visibility: hidden;
     transition: visibility 1s, max-height 1s;

@@ -2,11 +2,16 @@ import './ReviewIndex.css';
 import ReviewIndexItem from './ReviewIndexItem';
 import ReviewForm from '../ReviewForm';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
     const [showCreateReview, setShowCreateReview] = useState(false);
     const [showEditReview, setShowEditReview] = useState(false);
+    const [loginReviewError, setLoginReviewError] = useState('');
+    const [reviewErrors, setReviewErrors] = useState([]);
+    const currentUserId = useSelector(state => state.session.currentUser);
+
     const sortedReviews = [...reviews].reverse();
 
     const numberReviews = rating => (
@@ -97,18 +102,30 @@ const ReviewIndex = ({ reviews, product }) => {
                                 </div>
                             </div>
                             <div>
-                                {showCreateReview ? <button className='review-btn' onClick={() => setShowCreateReview(false)}>Cancel review</button> : <button className='review-btn' onClick={() => {
-                                    setShowCreateReview(true);
-                                    setShowEditReview(false);
+                                {showCreateReview ? <button className='review-btn' onClick={() => {
+                                    setShowCreateReview(false);
+                                    setReviewErrors([]);
+                                }}>Cancel review</button> : 
+                                <button className='review-btn' onClick={() => {
+                                    if (currentUserId) {
+                                        setShowCreateReview(true);
+                                        setShowEditReview(false);
+                                    } else {
+                                        setLoginReviewError('Must be logged in to write reviews');
+                                    }
                                 }}>Write a review</button>}
                             </div>
                         </div>
                     </div>
+                    { loginReviewError.length > 0 &&
+                        <ul className='errors'>
+                            <li>{loginReviewError}</li>
+                        </ul>}
                     { showCreateReview &&
-                        <ReviewForm product={product} setShowCreateReview={setShowCreateReview} />
+                        <ReviewForm product={product} setShowCreateReview={setShowCreateReview} reviewErrors={reviewErrors} setReviewErrors={setReviewErrors} />
                     }
                     <div className='reviews-body'>
-                        {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} showEditReview={showEditReview} setShowEditReview={setShowEditReview} setShowCreateReview={setShowCreateReview} />)}
+                        {sortedReviews.map(review => <ReviewIndexItem review={review} key={review.id} showEditReview={showEditReview} setShowEditReview={setShowEditReview} setShowCreateReview={setShowCreateReview} reviewErrors={reviewErrors} setReviewErrors={setReviewErrors} />)}
                     </div>
                 </div>
             </div>

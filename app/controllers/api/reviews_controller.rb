@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :show
     else 
-      render json: { errors: ['Unable to create review'] }, status: 422
+      render json: { errors: @review.errors.full_messages }, status: 422
     end
   end
 
@@ -21,7 +21,7 @@ class Api::ReviewsController < ApplicationController
     if @review&.update(review_params)
       render :show
     else  
-      render json: { errors: ['Unable to update review'] }, status: 422
+      render json: { errors: @review.errors.full_messages }, status: 422
     end
   end
 
