@@ -2,7 +2,7 @@ import './ReviewIndex.css';
 import ReviewIndexItem from './ReviewIndexItem';
 import ReviewForm from '../ReviewForm';
 import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 const ReviewIndex = ({ reviews, product }) => {
     const [showCreateReview, setShowCreateReview] = useState(false);
@@ -30,11 +30,7 @@ const ReviewIndex = ({ reviews, product }) => {
                         <div>
                             <div className='reviews-breakdown-div'>
                                 <div>
-                                    <FaStar className='star' />
-                                    <FaStar className='star' />
-                                    <FaStar className='star' />
-                                    <FaStar className='star' />
-                                    <FaStar className='star' />
+                                    {avgStarRating(avgRating(reviews))}
                                     <p>Based on {sortedReviews.length > 1 || sortedReviews.length === 0 ? `${sortedReviews.length} reviews` : `${sortedReviews.length} review`}</p>
                                 </div>
                                 <div className='reviews-percentage-div'>
@@ -121,3 +117,22 @@ const ReviewIndex = ({ reviews, product }) => {
 }
 
 export default ReviewIndex;
+
+export const avgRating = reviews => {
+    if (reviews.length === 0) return 0
+    else return Math.round((reviews.reduce((acc, a) => acc + a.rating, 0) / reviews.length) * 2) / 2;
+}
+
+export const avgStarRating = avgRating => {
+    const stars = [<FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />, <FaStar className='unclicked' />];
+    const wholeNumber = Math.floor(avgRating % 10);
+    const decimal = avgRating % wholeNumber;
+    for (let i = 0; i < stars.length; i++) {
+        if (i < wholeNumber) {
+            stars[i] = <FaStar className='star' />
+        } else if (i === wholeNumber && decimal === 0.5) {
+            stars[i] = <FaStarHalfAlt className='star' />
+        }
+    }
+    return stars;
+}

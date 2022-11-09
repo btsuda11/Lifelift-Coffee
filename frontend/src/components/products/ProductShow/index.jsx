@@ -30,7 +30,7 @@ const ProductShow = ({ setShowCart, closeCart }) => {
 
     return (
         <main onClick={closeCart}>
-            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} reviewsLength={reviews.length} reviewsRef={reviewsRef} />
+            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} reviewsRef={reviewsRef} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
                     <div>

@@ -1,6 +1,7 @@
 import './ProductIndexItem.css';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import { avgStarRating } from '../../../reviews/ReviewIndex';
 
 const ProductIndexItem = ({ product }) => {
     return (
@@ -14,11 +15,7 @@ const ProductIndexItem = ({ product }) => {
             <div className='product-index-item'>
                 <h3>{product.name}</h3>
                 <div>
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
-                    <FaStar className='star' />
+                    {avgStarRating(product.avgRating)}
                     <div className='number-reviews-div'>
                         <p>{product.numReviews > 1 || product.numReviews === 0 ? `${product.numReviews} reviews` : `${product.numReviews} review`}</p>
                     </div>

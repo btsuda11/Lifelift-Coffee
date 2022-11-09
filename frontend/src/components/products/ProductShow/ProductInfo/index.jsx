@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCartItem, getCartItems, updateCartItem } from '../../../../actions/cartItemActions';
+import { getReviews } from '../../../../actions/reviewActions';
 import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
-import { FaStar } from 'react-icons/fa';
+import { avgStarRating, avgRating } from '../../../reviews/ReviewIndex';
 
-const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRef }) => {
+const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
+    const reviews = useSelector(getReviews);
 
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
@@ -52,13 +54,9 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsLength, reviewsRe
                 <h2 style={spotlight ? {textAlign: 'center'} : {}}>{product[0].name}</h2>
                 {!spotlight && 
                     <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
-                        <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
+                        {avgStarRating(avgRating(reviews))}
                         <div className='number-reviews-div'>
-                            <p>{reviewsLength > 1 || reviewsLength === 0 ? `${reviewsLength} reviews` : `${reviewsLength} review`}</p>
+                            <p>{reviews.length > 1 || reviews.length === 0 ? `${reviews.length} reviews` : `${reviews.length} review`}</p>
                         </div>
                     </div>
                 }

@@ -30,11 +30,11 @@
     color: #fbcd0a;
 }
 
-.rating-div:hover .rating {
+.rating-div:hover .rating, .clicked-rating:hover .clicked-rating {
     color: #fbcd0a;
 }
 
-.rating:hover~.rating {
+.rating:hover~.rating, .clicked-rating:hover~.clicked-rating, .clicked-rating:hover~.rating {
     color: #e5e7eb;
 }
 
