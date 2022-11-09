@@ -9,6 +9,14 @@ import openBar from '../../assets/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
 
 const Header = ({ setShowCart, closeCart }) => {
+    const currentUserId = useSelector(state => state.session.currentUser);
+    const numberCartItems = useSelector(getCartItems).reduce((acc, a) => {
+        if (a.shopperId === currentUserId) {
+            return acc + a.quantity;
+        } else {
+            return acc;
+        }
+    }, 0);
 
     return (
         <>
@@ -34,12 +42,9 @@ const Header = ({ setShowCart, closeCart }) => {
                         <Link to='#'>
                             <img src={search} />
                         </Link>
-                        <Link to='#'>
+                        <Link to='#' className='cart-link'>
                             <img id='cart' src={cart} onClick={() => setShowCart(true)} />
-                            {/* <svg id="cart-count" width="19.622" height="19.622" >
-                                <circle cx="9.811" cy="9.811" r="9.811" fill="#fe3c38">
-                                </circle>
-                            </svg> */}
+                            <div className='items-quantity'>{numberCartItems}</div>
                         </Link>
                     </div>
                 </div>

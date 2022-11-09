@@ -11,6 +11,7 @@
 #  updated_at   :datetime         not null
 #  product_type :string
 #  amount       :integer          not null
+#  featured     :boolean
 #
 class Product < ApplicationRecord
     validates :name, :category, :amount, :description, :price, presence: true
@@ -20,5 +21,10 @@ class Product < ApplicationRecord
     has_many :cart_items,
         foreign_key: :product_id,
         class_name: :CartItem,
+        dependent: :destroy
+
+    has_many :reviews,
+        foreign_key: :product_id,
+        class_name: :Review,
         dependent: :destroy
 end

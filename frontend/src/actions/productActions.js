@@ -2,6 +2,8 @@ import csrfFetch from "../store/csrf";
 
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
+export const RECEIVE_FEATURED_PRODUCT = 'products/RECEIVE_FEATURED_PRODUCT';
+export const REMOVE_PRODUCTS = 'products/REMOVE_PRODUCTS';
 
 const receiveProduct = payload => (
     { type: RECEIVE_PRODUCT, payload }
@@ -9,6 +11,14 @@ const receiveProduct = payload => (
 
 const receiveProducts = products => (
     { type: RECEIVE_PRODUCTS, products }
+)
+
+const receiveFeaturedProduct = payload => (
+    { type: RECEIVE_FEATURED_PRODUCT, payload }
+)
+
+export const removeProducts = () => (
+    { type: REMOVE_PRODUCTS }
 )
 
 export const getProducts = state => (
@@ -33,6 +43,15 @@ export const fetchProduct = productName => async dispatch => {
     if (response.ok) {
         const product = await response.json();
         dispatch(receiveProduct(product));
+    }
+    return response;
+}
+
+export const fetchFeaturedProduct = productName => async dispatch => {
+    const response = await csrfFetch(`/api/products/${productName}`);
+    if (response.ok) {
+        const product = await response.json();
+        dispatch(receiveFeaturedProduct(product));
     }
     return response;
 }

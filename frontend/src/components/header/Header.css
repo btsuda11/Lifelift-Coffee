@@ -48,3 +48,21 @@ header {
 .logo {
     justify-content: center;
 }
+
+.cart-link {
+    position: relative;
+}
+
+.items-quantity {
+    font-size: 14px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fe3c38;
+    color: white;
+    height: 12px;
+    width: 12px;
+    text-align: center;
+    padding: 5.5px;
+    bottom: 17px;
+    left: 17px;
+}

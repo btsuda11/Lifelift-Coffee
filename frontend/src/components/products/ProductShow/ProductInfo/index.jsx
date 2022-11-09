@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCartItem, getCartItems, updateCartItem } from '../../../../actions/cartItemActions';
+import { getReviews } from '../../../../actions/reviewActions';
 import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
+import { avgStarRating, avgRating } from '../../../reviews/ReviewIndex';
+import { HiCheckCircle } from 'react-icons/hi';
 
-const ProductInfo = ({ product, spotlight, setShowCart }) => {
+const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
     const cartItems = useSelector(getCartItems);
+    const reviews = useSelector(getReviews);
 
     const [clickQuantity, setClickQuantity] = useState({ '1': true, '3': false, '6': false });
     const [quantityStyle, setQuantityStyle] = useState({ '1': {backgroundColor: '#e5e7eb'}, '3': {}, '6': {} });
@@ -34,7 +38,7 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
         const item = clickedOption(product, clickType, clickQuantity);
         const existingItem = cartItems.find(({ productId }) => productId === item.id);
         setShowCart(true);
-        if (cartItems.some(({ productId }) => productId === item.id)) {
+        if(cartItems.some(({ productId }) => productId === item.id)) {
             dispatch(updateCartItem({ ...existingItem, quantity: existingItem.quantity + 1 }));
         } else {
             dispatch(createCartItem({ quantity: 1, shopper_id: currentUserId, product_id: item.id }))
@@ -48,15 +52,33 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
                 {/* <img src={product[0].photoUrls[0]}/> */}
             </div>
             <div className='product-info-div'>
-                <h2>{product[0].name}</h2>
+                <h2 style={spotlight ? {textAlign: 'center'} : {}}>{product[0].name}</h2>
+                {!spotlight && 
+                    <div onClick={() => reviewsRef.current?.scrollIntoView({ behavior: 'smooth' })}>
+                        {avgStarRating(avgRating(reviews))}
+                        <div className='number-reviews-div'>
+                            <p>{reviews.length > 1 || reviews.length === 0 ? `${reviews.length} reviews` : `${reviews.length} review`}</p>
+                        </div>
+                    </div>
+                }
                 {spotlight && 
-                    <p>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
+                    <>
+                        <h3 style={{textAlign: 'center', marginBottom: '10px'}}>${clickedOption(product, clickType, clickQuantity).price.toFixed(2)}</h3>
+                        <p style={{textAlign: 'center'}}>The healthiest, tastiest {product[0].name.toLowerCase()} coffee possible. Enjoy our low-acid {product[0].name.toLowerCase()} coffee.</p>
+                    </>
                 }
                 <button className='product-toggle-btn bold'>Buy One Time</button>
                 <div>
                     <div className='product-type-div'>
                         {productTypes.map(type => {
-                            if (type) return <button onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
+                            if (type) {
+                                return (
+                                    <div>
+                                        <button key={type.id} onClick={() => handleType(type)} style={typeStyle[type]} className='product-type-btn'>{type}</button>
+                                        <HiCheckCircle className='checkmark' style={clickType[type] === true ? { display: 'flex' } : {}} />
+                                    </div>
+                                )
+                            }
                         })}
                     </div>
                     <div className='price-btn-div'>
@@ -64,14 +86,17 @@ const ProductInfo = ({ product, spotlight, setShowCart }) => {
                             return (
                                 <>
                                     {(clickType[option.productType] === true || !option.productType) &&
-                                        <button onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
-                                            <p className='bold'>{option.amount}</p>
-                                            <p className='bold'>${(option.price / option.amount).toFixed(2)}</p>
-                                            {option.amount === 1 ? <p className='strike-out'>${(1.25 * option.price).toFixed(2)}</p> : null }
-                                            {option.category === 'Coffee Pods' && option.amount !== 1 ? <p>Per Box</p> : null}
-                                            {option.category === 'Health Boosters' && option.amount !== 1 ? <p>Per Unit</p> : null}
-                                            {(option.category === 'Light Medium Dark Roasts' || option.category === 'Decaf Coffee' || option.category === 'Flavored Coffee') && option.amount !== 1 ? <p>Per Bag</p> : null}
-                                        </button>
+                                        <div>
+                                            <button key={option.id} onClick={() => handleQuantity(option.amount)} className='product-price-btn' style={quantityStyle[option.amount]}>
+                                                <p className='bold'>{option.amount}</p>
+                                                <p className='bold'>${(option.price / option.amount).toFixed(2)}</p>
+                                                {option.amount === 1 ? <p className='strike-out'>${(1.25 * option.price).toFixed(2)}</p> : null }
+                                                {option.category === 'Coffee Pods' && option.amount !== 1 ? <p>Per Box</p> : null}
+                                                {option.category === 'Health Boosters' && option.amount !== 1 ? <p>Per Unit</p> : null}
+                                                {(option.category === 'Light Medium Dark Roasts' || option.category === 'Decaf Coffee' || option.category === 'Flavored Coffee') && option.amount !== 1 ? <p>Per Bag</p> : null}
+                                            </button>
+                                            <HiCheckCircle className='checkmark' style={clickQuantity[option.amount] === true ? {display: 'flex'} : {}}/>
+                                        </div>
                                     }
                                 </>
                             )

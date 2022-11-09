@@ -1,0 +1,79 @@
+.reviews-section {
+    background-color: #f5f1ed;
+}
+
+.reviews-section > div {
+    padding: 90px;
+}
+
+.reviews-header > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews-header > h2 {
+    margin: 0;
+    padding: 20px 0 20px 0;
+}
+
+.reviews-header {
+    padding-bottom: 30px;
+}
+
+.reviews-div {
+    padding: 30px 30px 40px 30px;
+    height: 100%;
+    background-color: white;
+    border: 3px dashed rgb(208, 208, 208);
+}
+
+.star {
+    color: #fbcd0a;
+}
+
+.review-btn {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.reviews-breakdown-div {
+    display: flex;
+}
+
+.reviews-percentage-div > div {
+    display: flex;
+    align-items: center;
+}
+
+.percentage-div {
+    width: 80px;
+    height: 14px;
+    background-color: white;
+    border: 0.75px solid #e5e7eb;
+}
+
+.reviews-breakdown-div > div:first-child {
+    padding-right: 20px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.reviews-percentage-div {
+    padding: 0 20px 0 20px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.reviews-percentage-div svg {
+    height: 13px;
+    width: 13px;
+}
+
+.reviews-percentage-div p {
+    font-size: 13px;
+    width: 30px;
+}
+
+.specific-star-div > * {
+    margin-right: 10px;
+}

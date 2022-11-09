@@ -1,29 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchProduct, getProduct } from '../../../actions/productActions';
+import { fetchProduct, getProduct, removeProducts } from '../../../actions/productActions';
+import { fetchReviews, getReviews } from '../../../actions/reviewActions';
+import ReviewIndex from '../../reviews/ReviewIndex';
 import ProductInfo from './ProductInfo';
 import healthiestCoffee from '../../../assets/ProductShow/healthiest-coffee-section.jpeg';
 import clean from '../../../assets/ProductShow/clean.svg';
 import cause from '../../../assets/ProductShow/cause.svg';
 import connection from '../../../assets/ProductShow/connection.svg';
 import './ProductShow.css';
+import { useRef } from 'react';
 
 const ProductShow = ({ setShowCart, closeCart }) => {
     const dispatch = useDispatch();
     const { productName } = useParams();
+    const reviewsRef = useRef(null);
     
     const product = useSelector(getProduct(camelize(productName)));
+    const reviews = useSelector(getReviews);
 
     useEffect(() => {
         dispatch(fetchProduct(productName));
+        dispatch(fetchReviews(productName));
+        return () => dispatch(removeProducts());
     }, [dispatch, productName])
     
     if (!Array.isArray(product) || product.length === 0) return null;
 
     return (
         <main onClick={closeCart}>
-            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} />
+            <ProductInfo product={product} spotlight={false} setShowCart={setShowCart} reviewsRef={reviewsRef} />
             <section className='highlights-section'>
                 <div className='highlights-description'>
                     <div>
@@ -59,6 +66,9 @@ const ProductShow = ({ setShowCart, closeCart }) => {
                     <img src={healthiestCoffee}/>
                 </div>
             </section>
+            <div ref={reviewsRef}>
+                <ReviewIndex reviews={reviews} product={product} />
+            </div>
         </main>
     )
 }

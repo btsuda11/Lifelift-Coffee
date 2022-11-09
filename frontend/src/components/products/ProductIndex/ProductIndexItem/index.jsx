@@ -1,5 +1,6 @@
 import './ProductIndexItem.css';
 import { Link } from 'react-router-dom';
+import { avgStarRating } from '../../../reviews/ReviewIndex';
 
 const ProductIndexItem = ({ product }) => {
     return (
@@ -12,6 +13,12 @@ const ProductIndexItem = ({ product }) => {
             </div>
             <div className='product-index-item'>
                 <h3>{product.name}</h3>
+                <div>
+                    {avgStarRating(product.avgRating)}
+                    <div className='number-reviews-div'>
+                        <p>{product.numReviews > 1 || product.numReviews === 0 ? `${product.numReviews} reviews` : `${product.numReviews} review`}</p>
+                    </div>
+                </div>
                 <Link className='red-btn' to={`/product/${dashify(product.name)}`}>View Product</Link>
             </div> 
         </div>

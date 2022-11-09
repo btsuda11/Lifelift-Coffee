@@ -10,6 +10,7 @@ import csrfFetch, { restoreSession } from './store/csrf';
 import * as sessionActions from "./actions/sessionActions";
 import * as productActions from './actions/productActions';
 import * as cartItemActions from './actions/cartItemActions';
+import * as reviewActions from './actions/reviewActions';
 import sessionReducer from './reducers/sessionReducer';
 
 
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.productActions = productActions;
   window.cartItemActions = cartItemActions;
+  window.reviewActions = reviewActions;
   window.sessionReducer = sessionReducer;
 }
 

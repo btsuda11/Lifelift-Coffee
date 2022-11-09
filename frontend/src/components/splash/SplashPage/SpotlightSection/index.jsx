@@ -1,6 +1,6 @@
 import './SpotlightSection.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct, getProduct } from '../../../../actions/productActions';
+import { fetchFeaturedProduct, getProduct } from '../../../../actions/productActions';
 import ProductInfo from '../../../products/ProductShow/ProductInfo';
 import { useEffect, useState } from 'react';
 import { camelize } from '../../../products/ProductShow';
@@ -12,8 +12,11 @@ const SpotlightSection = ({ setShowCart }) => {
     const product = useSelector(getProduct(camelize(spotlightItem)));
 
     useEffect(() => {
-        dispatch(fetchProduct(spotlightItem));
-    }, [dispatch, spotlightItem]);
+        dispatch(fetchFeaturedProduct('medium-roast'));
+        dispatch(fetchFeaturedProduct('light-roast'));
+        dispatch(fetchFeaturedProduct('dark-roast'));
+        dispatch(fetchFeaturedProduct('medium-roast-decaf'));
+    }, [dispatch]);
 
     const handleClick = productName => {
         const style = {'medium-roast': {}, 'light-roast': {}, 'dark-roast': {}, 'medium-roast-decaf': {}}
