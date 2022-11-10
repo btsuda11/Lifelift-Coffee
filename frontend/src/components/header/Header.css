@@ -25,6 +25,11 @@ header {
     position: relative;
     display: flex;
     align-items: center;
+    margin-right: 40px;
+}
+
+.dropdown ~ div > a {
+    font-size: 18px;
 }
 
 .shop {

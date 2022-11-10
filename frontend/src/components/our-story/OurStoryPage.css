@@ -1,0 +1,26 @@
+.ritual-section {
+    height: 75vh;
+    background-color: #f2f2f2;
+    display: flex;
+}
+
+.ritual-section > div {
+    padding: 5%;
+}
+
+.ritual-section > img {
+    height: 100%;
+}
+
+.ritual-section h2 {
+    font-family: WigrumWebLight;
+    font-size: 32px;
+}
+
+.ritual-section p {
+    line-height: 30px;
+}
+
+.ritual-section p:first-of-type {
+    margin-bottom: 20px;
+}

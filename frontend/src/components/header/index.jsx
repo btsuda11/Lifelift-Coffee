@@ -32,6 +32,9 @@ const Header = ({ setShowCart, closeCart }) => {
                             </div>
                             <DropDownMenu />
                         </nav>
+                        <div>
+                            <Link to='/our-story'>Our Story</Link>
+                        </div>
                     </div>
                     <div className='logo'>
                         <Link to='/'>
