@@ -13,9 +13,18 @@
     align-items: center;
 }
 
-.product-imgs > img {
-    width: 80%;
-    height: 90%;
+.product-imgs img {
+    height: 100%;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    color: black;
+}
+
+.swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-info-div {
@@ -49,6 +58,11 @@
 .price-btn-div {
     display: flex;
     justify-content: flex-start;
+}
+
+.product-imgs > div {
+    height: 100%;
+    width: 75%;
 }
 
 .product-price-btn {

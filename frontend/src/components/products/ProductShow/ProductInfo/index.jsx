@@ -6,6 +6,10 @@ import './ProductInfo.css';
 import productImg from '../../../../assets/ProductIndex/medium-roast.jpeg';
 import { avgStarRating, avgRating } from '../../../reviews/ReviewIndex';
 import { HiCheckCircle } from 'react-icons/hi';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
     const dispatch = useDispatch();
@@ -45,14 +49,18 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
         }
     }
 
-    // <Swiper navigation={true} modules={[Navigation]} className='mySwiper'>
-    //     <SwiperSlide><img></img></SwiperSlide>
-    // </Swiper>
-
     return (
         <section className='product-info-section'>
             <div className='product-imgs'>
-                <img src={productImg} />
+                <Swiper slidesPerView={1}
+                    spaceBetween={30}
+                    loop={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    className="mySwiper">
+                    <SwiperSlide><img src={productImg} /></SwiperSlide>
+                </Swiper>
+                {/* <img src={productImg} /> */}
                 {/* <img src={product[0].photoUrls[0]}/> */}
             </div>
             <div className='product-info-div'>
