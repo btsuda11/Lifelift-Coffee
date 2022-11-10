@@ -58,7 +58,9 @@ ApplicationRecord.transaction do
     })
 
     # medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    # medium_file_1_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast-2.jpg')
     # medium_1.photos.attach(io: medium_file_1, filename: "medium-roast.jpeg")
+    # medium_1.photos.attach{[(io: medium_file_1, filename: "medium-roast.jpeg"), (io: medium_file_1_2, filename: "medium-roast.jpeg")]}
 
     dark_1 = Product.create!({
         name: 'Dark Roast',
@@ -817,6 +819,39 @@ ApplicationRecord.transaction do
 
     # adapt_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
     # adapt_3.photos.attach(io: adapt_file_3, filename: "hpadapt-adrenal-drink.jpeg")
+
+    inflamega_1 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 1,
+        description: "Inflammation Support",
+        price: 49.95
+    })
+
+    # inflamega_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_1.photos.attach(io: inflamega_file_1, filename: "inflamega.jpeg")
+
+    inflamega_2 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 3,
+        description: "Inflammation Support",
+        price: 119.85
+    })
+
+    # inflamega_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_2.photos.attach(io: inflamega_file_2, filename: "inflamega.jpeg")
+
+    inflamega_3 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 6,
+        description: "Inflammation Support",
+        price: 167.70
+    })
+
+    # inflamega_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_3.photos.attach(io: inflamega_file_3, filename: "inflamega.jpeg")
 
     puts "Done!"
 end
