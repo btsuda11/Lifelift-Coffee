@@ -7,6 +7,7 @@ import search from '../../assets/Header/search.svg';
 import cart from '../../assets/Header/cart.svg';
 import openBar from '../../assets/Header/open-bar.svg';
 import DropDownMenu from './DropDownMenu';
+import logo from '../../assets/Header/coffee-logo.png';
 
 const Header = ({ setShowCart, closeCart }) => {
     const currentUserId = useSelector(state => state.session.currentUser);
@@ -31,18 +32,25 @@ const Header = ({ setShowCart, closeCart }) => {
                             </div>
                             <DropDownMenu />
                         </nav>
+                        <div>
+                            <Link to='/our-story'>Our Story</Link>
+                        </div>
                     </div>
                     <div className='logo'>
-                        <Link to='/'><h2>Lifelift Coffee</h2></Link>
+                        <Link to='/'>
+                            <img src={logo} />
+                            <p className='lighter logo-text-big'>LIFELIFT</p>
+                            <p className='lighter logo-text-small'>coffee</p>
+                        </Link>
                     </div>
                     <div className='icon-bar'>
                         <Link to='/account'>
                             <img src={account} />
                         </Link>
-                        <Link to='#'>
+                        <Link to='/search'>
                             <img src={search} />
                         </Link>
-                        <Link to='#' className='cart-link'>
+                        <Link to='#' className='cart-link' onClick={e => e.preventDefault()}>
                             <img id='cart' src={cart} onClick={() => setShowCart(true)} />
                             <div className='items-quantity'>{numberCartItems}</div>
                         </Link>

@@ -2,7 +2,12 @@ import './ProductIndexItem.css';
 import { Link } from 'react-router-dom';
 import { avgStarRating } from '../../../reviews/ReviewIndex';
 
-const ProductIndexItem = ({ product }) => {
+const ProductIndexItem = ({ product, search }) => {
+    const trimmedDescription = () => {
+        const trimmedString = product.description.substring(0, 125);
+        return trimmedString.substring(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+    }
+
     return (
         <div className='product-container'>
             <div className='product-image-container'>
@@ -13,12 +18,15 @@ const ProductIndexItem = ({ product }) => {
             </div>
             <div className='product-index-item'>
                 <h3>{product.name}</h3>
-                <div>
-                    {avgStarRating(product.avgRating)}
-                    <div className='number-reviews-div'>
-                        <p>{product.numReviews > 1 || product.numReviews === 0 ? `${product.numReviews} reviews` : `${product.numReviews} review`}</p>
-                    </div>
-                </div>
+                { !search ?
+                    <div>
+                        {avgStarRating(product.avgRating)}
+                        <div className='number-reviews-div'>
+                            <p>{product.numReviews > 1 || product.numReviews === 0 ? `${product.numReviews} reviews` : `${product.numReviews} review`}</p>
+                        </div>
+                    </div> :
+                    <p>{trimmedDescription() + '...'}</p>
+                }
                 <Link className='red-btn' to={`/product/${dashify(product.name)}`}>View Product</Link>
             </div> 
         </div>

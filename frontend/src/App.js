@@ -10,6 +10,9 @@ import Header from './components/header';
 import ProductIndex from './components/products/ProductIndex';
 import ProductShow from './components/products/ProductShow';
 import SplashPage from './components/splash/SplashPage';
+import SearchPage from './components/search';
+import SearchIndex from './components/search/SearchIndex';
+import OurStoryPage from './components/our-story';
 import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
@@ -62,6 +65,15 @@ function App() {
         </Route>
         <Route exact path='/account/register'>
           <SignUpPage closeCart={closeCart} />
+        </Route>
+        <Route exact path='/search'>
+          <SearchPage closeCart={closeCart} />
+        </Route>
+        <Route exact path='/search-results'>
+          <SearchIndex closeCart={closeCart} />
+        </Route>
+        <Route exact path='/our-story'>
+          <OurStoryPage closeCart={closeCart} />
         </Route>
         <Route exact path='/'>
           <SplashPage showCart={showCart} setShowCart={setShowCart} closeCart={closeCart} />

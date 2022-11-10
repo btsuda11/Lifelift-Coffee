@@ -27,6 +27,11 @@
     border: 3px dashed rgb(208, 208, 208);
 }
 
+.reviews-div > .errors {
+    padding: 20px 0 20px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
 .star {
     color: #fbcd0a;
 }

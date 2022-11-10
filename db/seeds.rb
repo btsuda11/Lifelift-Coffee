@@ -58,7 +58,9 @@ ApplicationRecord.transaction do
     })
 
     # medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    # medium_file_1_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast-2.jpg')
     # medium_1.photos.attach(io: medium_file_1, filename: "medium-roast.jpeg")
+    # medium_1.photos.attach{[(io: medium_file_1, filename: "medium-roast.jpeg"), (io: medium_file_1_2, filename: "medium-roast.jpeg")]}
 
     dark_1 = Product.create!({
         name: 'Dark Roast',
@@ -638,7 +640,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 1,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 39.00
     })
 
@@ -649,7 +651,7 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 1,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 49.95
     })
 
@@ -719,7 +721,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 3,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 99.00
     })
 
@@ -730,7 +732,7 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 3,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 119.85
     })
 
@@ -800,7 +802,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 6,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 180.00
     })
 
@@ -811,12 +813,45 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 6,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 209.70
     })
 
     # adapt_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
     # adapt_3.photos.attach(io: adapt_file_3, filename: "hpadapt-adrenal-drink.jpeg")
+
+    inflamega_1 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 1,
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
+        price: 49.95
+    })
+
+    # inflamega_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_1.photos.attach(io: inflamega_file_1, filename: "inflamega.jpeg")
+
+    inflamega_2 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 3,
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
+        price: 119.85
+    })
+
+    # inflamega_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_2.photos.attach(io: inflamega_file_2, filename: "inflamega.jpeg")
+
+    inflamega_3 = Product.create!({
+        name: 'Inflamega',
+        category: 'Health Boosters',
+        amount: 6,
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
+        price: 167.70
+    })
+
+    # inflamega_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    # inflamega_3.photos.attach(io: inflamega_file_3, filename: "inflamega.jpeg")
 
     puts "Done!"
 end

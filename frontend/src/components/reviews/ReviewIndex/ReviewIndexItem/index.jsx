@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteReview } from '../../../../actions/reviewActions';
 import ReviewForm from '../../ReviewForm';
 
-const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCreateReview }) => {
+const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCreateReview, reviewErrors, setReviewErrors }) => {
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.currentUser);
 
@@ -35,6 +35,7 @@ const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCre
                     { currentUserId === review.reviewerId &&
                         <div className='modify-icon-div'>
                             <FiEdit className='edit' onClick={() => {
+                                setReviewErrors([]);
                                 setShowEditReview(!showEditReview);
                                 setShowCreateReview(false);
                             }}/>
@@ -47,7 +48,7 @@ const ReviewIndexItem = ({ review, showEditReview, setShowEditReview, setShowCre
                 </div>
             </div>
             { showEditReview && 
-                <ReviewForm review={review} setShowEditReview={setShowEditReview} />
+                <ReviewForm review={review} setShowEditReview={setShowEditReview} reviewErrors={reviewErrors} setReviewErrors={setReviewErrors} />
             }
         </>
     )

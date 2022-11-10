@@ -41,7 +41,7 @@ const ProductIndex = ({ closeCart }) => {
                     <h2 className='category-title'>{category}</h2>
                 </div>
                 <div className='product-grid'>
-                    {products.map(product => (<ProductIndexItem key={product.id} product={product} />))}
+                    {products.map(product => (<ProductIndexItem key={product.id} product={product} search={false}/>))}
                 </div>
             </section>
         </>

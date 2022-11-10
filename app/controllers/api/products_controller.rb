@@ -19,8 +19,13 @@ class Api::ProductsController < ApplicationController
     render :index
   end
 
+  def search
+    @products = Product.where('name ILIKE (?)', "%#{params[:query]}%")
+    render :search
+  end
+
   def show
-    @product = Product.where('name ILIKE (?)', capitalize_name(params[:product_name]))
+    @product = Product.where('name ILIKE (?)', capitalize_name(params[:product_name])).order(:id)
     render :show
   end
 end

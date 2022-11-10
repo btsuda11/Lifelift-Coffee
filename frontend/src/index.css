@@ -49,6 +49,11 @@ ul {
     font-weight: bold;
 }
 
+@font-face {
+    font-family: WigrumWebLight;
+    src: url(./fonts/wigrum-light.otf);
+}
+
 body, textarea, input {
     font-family: WigrumWeb;
 }
@@ -114,4 +119,8 @@ input[type="submit"] {
 .errors > li {
     color: rgba(220, 38, 38);
     text-align: center;
+}
+
+.lighter {
+    font-family: WigrumWebLight;
 }

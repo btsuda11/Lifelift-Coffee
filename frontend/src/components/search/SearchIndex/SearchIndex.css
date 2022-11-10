@@ -1,0 +1,11 @@
+.search-results > .product-grid {
+    text-align: center;
+}
+
+.search-results > p {
+    padding: 3% 7.5% 3% 7.5%;
+}
+
+.search-results {
+    background-color: #f3f4f6;
+}
