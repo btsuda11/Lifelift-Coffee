@@ -25,7 +25,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.where('name ILIKE (?)', capitalize_name(params[:product_name]))
+    @product = Product.where('name ILIKE (?)', capitalize_name(params[:product_name])).order(:id)
     render :show
   end
 end

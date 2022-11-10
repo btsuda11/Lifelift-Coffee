@@ -640,7 +640,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 1,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 39.00
     })
 
@@ -651,7 +651,7 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 1,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 49.95
     })
 
@@ -721,7 +721,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 3,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 99.00
     })
 
@@ -732,7 +732,7 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 3,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 119.85
     })
 
@@ -802,7 +802,7 @@ ApplicationRecord.transaction do
         name: 'Lifelift Fuel',
         category: 'Health Boosters',
         amount: 6,
-        description: "Fuel for the mind",
+        description: "Have you been looking for the perfect health creamer to supercharge your beverage? Well look no further than Lifelift Fuel. It is a dietary supplement that contains not only extreme health benefits, but also the same familiar taste that you have come to know and love from traditional creamers.",
         price: 180.00
     })
 
@@ -813,7 +813,7 @@ ApplicationRecord.transaction do
         name: 'HPAdapt Adrenal Drink',
         category: 'Health Boosters',
         amount: 6,
-        description: "Adrenal Support",
+        description: "Looking for a caffeine-free alternative to energy drinks that pump way too much caffeine in your body? Well look no further than the HPAdapt Adrenal Drink. It not only gives your mind the nutrients it needs to power through your day, but it also provides unbelievable adaptogenic adrenal support.",
         price: 209.70
     })
 
@@ -824,7 +824,7 @@ ApplicationRecord.transaction do
         name: 'Inflamega',
         category: 'Health Boosters',
         amount: 1,
-        description: "Inflammation Support",
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
         price: 49.95
     })
 
@@ -835,7 +835,7 @@ ApplicationRecord.transaction do
         name: 'Inflamega',
         category: 'Health Boosters',
         amount: 3,
-        description: "Inflammation Support",
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
         price: 119.85
     })
 
@@ -846,7 +846,7 @@ ApplicationRecord.transaction do
         name: 'Inflamega',
         category: 'Health Boosters',
         amount: 6,
-        description: "Inflammation Support",
+        description: "Tired of that disgusting fishy taste you get from other Omega Fatty Acids? Well look no further than Inflamega, the finest dietary supplement that gives your body an instant boost in vitamins. Oh yeah, and it also supports inflamation...",
         price: 167.70
     })
 
