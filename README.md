@@ -1,24 +1,28 @@
-# README
+# Lifelift Coffee
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Click to view!](https://lifeliftcoffee.onrender.com/)
 
-Things you may want to cover:
+## Background
 
-* Ruby version
+Lifelift Coffee is a website clone of a U.S. based health-conscious coffee company, [Lifeboost Coffee](https://lifeboostcoffee.com/).
 
-* System dependencies
+## Technologies Implemented
 
-* Configuration
+* AWS S3
+* render.com
+* HTML5 and CSS
+* JavaScript/AJAX/Jbuilder
+* React/Redux
+* Ruby on Rails
+* SwiperJS
 
-* Database creation
+## Features
 
-* Database initialization
+### User Authentication - New account creation, login, demo login
 
-* How to run the test suite
+### Product Pages/Reviews
 
-* Services (job queues, cache servers, search engines, etc.)
+### Cart 
 
-* Deployment instructions
+### Search Bar
 
-* ...
