@@ -45,6 +45,10 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
         }
     }
 
+    // <Swiper navigation={true} modules={[Navigation]} className='mySwiper'>
+    //     <SwiperSlide><img></img></SwiperSlide>
+    // </Swiper>
+
     return (
         <section className='product-info-section'>
             <div className='product-imgs'>
