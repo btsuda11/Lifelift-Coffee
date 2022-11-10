@@ -1,3 +1,19 @@
 .underline-on-hover:hover {
     text-decoration: underline;
 }
+
+.account-section {
+    height: 40vh;
+}
+
+.account-section > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-section a {
+    font-size: 19px;
+}

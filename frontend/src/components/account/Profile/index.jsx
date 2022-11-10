@@ -24,9 +24,9 @@ const Profile = ({ closeCart, showCheckoutModal, setShowCheckoutModal }) => {
                     <CheckoutModal setShowCheckoutModal={setShowCheckoutModal} />
                 </Modal>
             }
-            <section onClick={closeCart}>
+            <section className='account-section' onClick={closeCart}>
                 <div>
-                    <h3>{currentUser.firstName + ' ' + currentUser.lastName}</h3>
+                    <h1>Hello, {currentUser.firstName + ' ' + currentUser.lastName}!</h1>
                     <Link className='underline-on-hover' to='#' onClick={handleLogOut}>Log Out</Link>
                 </div>
             </section>
