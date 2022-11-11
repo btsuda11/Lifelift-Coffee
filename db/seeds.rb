@@ -57,9 +57,9 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
     # medium_file_1_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast-2.jpg')
-    # medium_1.photos.attach(io: medium_file_1, filename: "medium-roast.jpeg")
+    medium_1.photos.attach(io: medium_file_1, filename: "medium-roast.jpeg")
     # medium_1.photos.attach{[(io: medium_file_1, filename: "medium-roast.jpeg"), (io: medium_file_1_2, filename: "medium-roast.jpeg")]}
 
     dark_1 = Product.create!({
@@ -72,8 +72,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_1.photos.attach(io: dark_file_1, filename: "dark-roast.jpeg")
+    dark_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_1.photos.attach(io: dark_file_1, filename: "dark-roast.jpeg")
 
     light_1 = Product.create!({
         name: 'Light Roast',
@@ -85,8 +85,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_1.photos.attach(io: light_file_1, filename: "light-roast.jpeg")
+    light_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_1.photos.attach(io: light_file_1, filename: "light-roast.jpeg")
 
     light_decaf_1 = Product.create!({
         name: 'Light Decaf',
@@ -97,8 +97,8 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    # light_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_1.photos.attach(io: light_decaf_file_1, filename: "light-decaf.jpeg")
+    light_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_1.photos.attach(io: light_decaf_file_1, filename: "light-decaf.jpeg")
 
     medium_decaf_1 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -110,8 +110,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_1.photos.attach(io: medium_decaf_file_1, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_1.photos.attach(io: medium_decaf_file_1, filename: "medium-roast-decaf.jpeg")
 
     choc_1 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -122,8 +122,8 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    # choc_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_1.photos.attach(io: choc_file_1, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_1.photos.attach(io: choc_file_1, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_1 = Product.create!({
         name: 'Amaretto',
@@ -134,8 +134,8 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    # amaretto_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_1.photos.attach(io: amaretto_file_1, filename: "amaretto.jpeg")
+    amaretto_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_1.photos.attach(io: amaretto_file_1, filename: "amaretto.jpeg")
 
     medium_2 = Product.create!({
         name: 'Medium Roast',
@@ -147,8 +147,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_2.photos.attach(io: medium_file_2, filename: "medium-roast.jpeg")
+    medium_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_2.photos.attach(io: medium_file_2, filename: "medium-roast.jpeg")
 
     dark_2 = Product.create!({
         name: 'Dark Roast',
@@ -160,8 +160,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_2.photos.attach(io: dark_file_2, filename: "dark-roast.jpeg")
+    dark_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_2.photos.attach(io: dark_file_2, filename: "dark-roast.jpeg")
 
     light_2 = Product.create!({
         name: 'Light Roast',
@@ -173,8 +173,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_2.photos.attach(io: light_file_2, filename: "light-roast.jpeg")
+    light_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_2.photos.attach(io: light_file_2, filename: "light-roast.jpeg")
 
     light_decaf_2 = Product.create!({
         name: 'Light Decaf',
@@ -185,8 +185,8 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    # light_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_2.photos.attach(io: light_decaf_file_2, filename: "light-decaf.jpeg")
+    light_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_2.photos.attach(io: light_decaf_file_2, filename: "light-decaf.jpeg")
 
     medium_decaf_2 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -198,8 +198,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_2.photos.attach(io: medium_decaf_file_2, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_2.photos.attach(io: medium_decaf_file_2, filename: "medium-roast-decaf.jpeg")
 
     choc_2 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -210,8 +210,8 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    # choc_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_2.photos.attach(io: choc_file_2, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_2.photos.attach(io: choc_file_2, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_2 = Product.create!({
         name: 'Amaretto',
@@ -222,8 +222,8 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    # amaretto_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_2.photos.attach(io: amaretto_file_2, filename: "amaretto.jpeg")
+    amaretto_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_2.photos.attach(io: amaretto_file_2, filename: "amaretto.jpeg")
 
     medium_3 = Product.create!({
         name: 'Medium Roast',
@@ -235,8 +235,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_3.photos.attach(io: medium_file_3, filename: "medium-roast.jpeg")
+    medium_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_3.photos.attach(io: medium_file_3, filename: "medium-roast.jpeg")
 
     dark_3 = Product.create!({
         name: 'Dark Roast',
@@ -248,8 +248,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_3.photos.attach(io: dark_file_3, filename: "dark-roast.jpeg")
+    dark_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_3.photos.attach(io: dark_file_3, filename: "dark-roast.jpeg")
 
     light_3 = Product.create!({
         name: 'Light Roast',
@@ -261,8 +261,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_3.photos.attach(io: light_file_3, filename: "light-roast.jpeg")
+    light_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_3.photos.attach(io: light_file_3, filename: "light-roast.jpeg")
 
     light_decaf_3 = Product.create!({
         name: 'Light Decaf',
@@ -273,8 +273,8 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    # light_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_3.photos.attach(io: light_decaf_file_3, filename: "light-decaf.jpeg")
+    light_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_3.photos.attach(io: light_decaf_file_3, filename: "light-decaf.jpeg")
 
     medium_decaf_3 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -286,8 +286,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_3.photos.attach(io: medium_decaf_file_3, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_3.photos.attach(io: medium_decaf_file_3, filename: "medium-roast-decaf.jpeg")
 
     choc_3 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -298,8 +298,8 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    # choc_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_3.photos.attach(io: choc_file_3, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_3.photos.attach(io: choc_file_3, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_3 = Product.create!({
         name: 'Amaretto',
@@ -310,8 +310,8 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    # amaretto_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_3.photos.attach(io: amaretto_file_3, filename: "amaretto.jpeg")
+    amaretto_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_3.photos.attach(io: amaretto_file_3, filename: "amaretto.jpeg")
 
     medium_4 = Product.create!({
         name: 'Medium Roast',
@@ -323,8 +323,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_4.photos.attach(io: medium_file_4, filename: "medium-roast.jpeg")
+    medium_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_4.photos.attach(io: medium_file_4, filename: "medium-roast.jpeg")
 
     dark_4 = Product.create!({
         name: 'Dark Roast',
@@ -336,8 +336,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_4.photos.attach(io: dark_file_4, filename: "dark-roast.jpeg")
+    dark_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_4.photos.attach(io: dark_file_4, filename: "dark-roast.jpeg")
 
     light_4 = Product.create!({
         name: 'Light Roast',
@@ -349,8 +349,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_4.photos.attach(io: light_file_4, filename: "light-roast.jpeg")
+    light_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_4.photos.attach(io: light_file_4, filename: "light-roast.jpeg")
 
     light_decaf_4 = Product.create!({
         name: 'Light Decaf',
@@ -361,8 +361,8 @@ ApplicationRecord.transaction do
         price: 27.95
     })
 
-    # light_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_4.photos.attach(io: light_decaf_file_4, filename: "light-decaf.jpeg")
+    light_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_4.photos.attach(io: light_decaf_file_4, filename: "light-decaf.jpeg")
 
     medium_decaf_4 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -374,8 +374,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_4.photos.attach(io: medium_decaf_file_4, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_4.photos.attach(io: medium_decaf_file_4, filename: "medium-roast-decaf.jpeg")
 
     choc_4 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -386,8 +386,8 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    # choc_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_4.photos.attach(io: choc_file_4, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_4.photos.attach(io: choc_file_4, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_4 = Product.create!({
         name: 'Amaretto',
@@ -398,8 +398,8 @@ ApplicationRecord.transaction do
         price: 28.95
     })
 
-    # amaretto_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_4.photos.attach(io: amaretto_file_4, filename: "amaretto.jpeg")
+    amaretto_file_4 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_4.photos.attach(io: amaretto_file_4, filename: "amaretto.jpeg")
 
     medium_5 = Product.create!({
         name: 'Medium Roast',
@@ -411,8 +411,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_5.photos.attach(io: medium_file_5, filename: "medium-roast.jpeg")
+    medium_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_5.photos.attach(io: medium_file_5, filename: "medium-roast.jpeg")
 
     dark_5 = Product.create!({
         name: 'Dark Roast',
@@ -424,8 +424,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_5.photos.attach(io: dark_file_5, filename: "dark-roast.jpeg")
+    dark_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_5.photos.attach(io: dark_file_5, filename: "dark-roast.jpeg")
 
     light_5 = Product.create!({
         name: 'Light Roast',
@@ -437,8 +437,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_5.photos.attach(io: light_file_5, filename: "light-roast.jpeg")
+    light_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_5.photos.attach(io: light_file_5, filename: "light-roast.jpeg")
 
     light_decaf_5 = Product.create!({
         name: 'Light Decaf',
@@ -449,8 +449,8 @@ ApplicationRecord.transaction do
         price: 74.85
     })
 
-    # light_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_5.photos.attach(io: light_decaf_file_5, filename: "light-decaf.jpeg")
+    light_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_5.photos.attach(io: light_decaf_file_5, filename: "light-decaf.jpeg")
 
     medium_decaf_5 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -462,8 +462,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_5.photos.attach(io: medium_decaf_file_5, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_5.photos.attach(io: medium_decaf_file_5, filename: "medium-roast-decaf.jpeg")
 
     choc_5 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -474,8 +474,8 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    # choc_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_5.photos.attach(io: choc_file_5, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_5.photos.attach(io: choc_file_5, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_5 = Product.create!({
         name: 'Amaretto',
@@ -486,8 +486,8 @@ ApplicationRecord.transaction do
         price: 77.85
     })
 
-    # amaretto_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_5.photos.attach(io: amaretto_file_5, filename: "amaretto.jpeg")
+    amaretto_file_5 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_5.photos.attach(io: amaretto_file_5, filename: "amaretto.jpeg")
 
     medium_6 = Product.create!({
         name: 'Medium Roast',
@@ -499,8 +499,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_6.photos.attach(io: medium_file_6, filename: "medium-roast.jpeg")
+    medium_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_6.photos.attach(io: medium_file_6, filename: "medium-roast.jpeg")
 
     dark_6 = Product.create!({
         name: 'Dark Roast',
@@ -512,8 +512,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_6.photos.attach(io: dark_file_6, filename: "dark-roast.jpeg")
+    dark_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_6.photos.attach(io: dark_file_6, filename: "dark-roast.jpeg")
 
     light_6 = Product.create!({
         name: 'Light Roast',
@@ -525,8 +525,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # light_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
-    # light_6.photos.attach(io: light_file_6, filename: "light-roast.jpeg")
+    light_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/light-roast/light-roast.png')
+    light_6.photos.attach(io: light_file_6, filename: "light-roast.jpeg")
 
     light_decaf_6 = Product.create!({
         name: 'Light Decaf',
@@ -537,8 +537,8 @@ ApplicationRecord.transaction do
         price: 137.70
     })
 
-    # light_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
-    # light_decaf_6.photos.attach(io: light_decaf_file_6, filename: "light-decaf.jpeg")
+    light_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/light-decaf/light-decaf.png')
+    light_decaf_6.photos.attach(io: light_decaf_file_6, filename: "light-decaf.jpeg")
 
     medium_decaf_6 = Product.create!({
         name: 'Medium Roast Decaf',
@@ -550,8 +550,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
-    # medium_decaf_6.photos.attach(io: medium_decaf_file_6, filename: "medium-roast-decaf.jpeg")
+    medium_decaf_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/decaf-coffee/medium-roast-decaf/medium-roast-decaf.png')
+    medium_decaf_6.photos.attach(io: medium_decaf_file_6, filename: "medium-roast-decaf.jpeg")
 
     choc_6 = Product.create!({
         name: 'Dark Chocolate Sea Salt Caramel',
@@ -562,8 +562,8 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    # choc_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
-    # choc_6.photos.attach(io: choc_file_6, filename: "dark-chocolate-sea-salt-caramel.jpeg")
+    choc_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/dark-chocolate-sea-salt-caramel/dark-chocolate-sea-salt-caramel.png')
+    choc_6.photos.attach(io: choc_file_6, filename: "dark-chocolate-sea-salt-caramel.jpeg")
 
     amaretto_6 = Product.create!({
         name: 'Amaretto',
@@ -574,8 +574,8 @@ ApplicationRecord.transaction do
         price: 143.70
     })
 
-    # amaretto_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
-    # amaretto_6.photos.attach(io: amaretto_file_6, filename: "amaretto.jpeg")
+    amaretto_file_6 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/flavored-coffee/amaretto/amaretto.png')
+    amaretto_6.photos.attach(io: amaretto_file_6, filename: "amaretto.jpeg")
 
     medium_7 = Product.create!({
         name: 'Medium Roast',
@@ -587,8 +587,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_7.photos.attach(io: medium_file_7, filename: "medium-roast.jpeg")
+    medium_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_7.photos.attach(io: medium_file_7, filename: "medium-roast.jpeg")
 
     medium_pod_1 = Product.create!({
         name: 'Medium Roast Coffee Pods',
@@ -598,8 +598,8 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    # medium_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
-    # medium_pod_1.photos.attach(io: medium_pod_file_1, filename: "medium-roast-coffee-pods.jpeg")
+    medium_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_1.photos.attach(io: medium_pod_file_1, filename: "medium-roast-coffee-pods.jpeg")
 
     dark_pod_1 = Product.create!({
         name: 'Dark Roast Coffee Pods',
@@ -609,8 +609,8 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    # dark_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
-    # dark_pod_1.photos.attach(io: dark_pod_file_1, filename: "dark-roast-coffee-pods.jpeg")
+    dark_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_1.photos.attach(io: dark_pod_file_1, filename: "dark-roast-coffee-pods.jpeg")
 
     medium_decaf_pod_1 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
@@ -620,8 +620,8 @@ ApplicationRecord.transaction do
         price: 19.95
     })
 
-    # medium_decaf_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
-    # medium_decaf_pod_1.photos.attach(io: medium_decaf_pod_file_1, filename: "medium-roast-decaf-coffee-pods.jpeg")
+    medium_decaf_pod_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_1.photos.attach(io: medium_decaf_pod_file_1, filename: "medium-roast-decaf-coffee-pods.jpeg")
 
     dark_7 = Product.create!({
         name: 'Dark Roast',
@@ -633,8 +633,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_7.photos.attach(io: dark_file_7, filename: "dark-roast.jpeg")
+    dark_file_7 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_7.photos.attach(io: dark_file_7, filename: "dark-roast.jpeg")
 
     fuel_1 = Product.create!({
         name: 'Lifelift Fuel',
@@ -644,8 +644,8 @@ ApplicationRecord.transaction do
         price: 39.00
     })
 
-    # fuel_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
-    # fuel_1.photos.attach(io: fuel_file_1, filename: "lifelift-fuel.jpeg")
+    fuel_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
+    fuel_1.photos.attach(io: fuel_file_1, filename: "lifelift-fuel.jpeg")
 
     adapt_1 = Product.create!({
         name: 'HPAdapt Adrenal Drink',
@@ -655,8 +655,8 @@ ApplicationRecord.transaction do
         price: 49.95
     })
 
-    # adapt_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
-    # adapt_1.photos.attach(io: adapt_file_1, filename: "hpadapt-adrenal-drink.jpeg")
+    adapt_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
+    adapt_1.photos.attach(io: adapt_file_1, filename: "hpadapt-adrenal-drink.jpeg")
 
     medium_8 = Product.create!({
         name: 'Medium Roast',
@@ -668,8 +668,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_8.photos.attach(io: medium_file_8, filename: "medium-roast.jpeg")
+    medium_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_8.photos.attach(io: medium_file_8, filename: "medium-roast.jpeg")
 
     medium_pod_2 = Product.create!({
         name: 'Medium Roast Coffee Pods',
@@ -679,8 +679,8 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    # medium_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
-    # medium_pod_2.photos.attach(io: medium_pod_file_2, filename: "medium-roast-coffee-pods.jpeg")
+    medium_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_2.photos.attach(io: medium_pod_file_2, filename: "medium-roast-coffee-pods.jpeg")
 
     dark_pod_2 = Product.create!({
         name: 'Dark Roast Coffee Pods',
@@ -690,8 +690,8 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    # dark_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
-    # dark_pod_2.photos.attach(io: dark_pod_file_2, filename: "dark-roast-coffee-pods.jpeg")
+    dark_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_2.photos.attach(io: dark_pod_file_2, filename: "dark-roast-coffee-pods.jpeg")
 
     medium_decaf_pod_2 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
@@ -701,8 +701,8 @@ ApplicationRecord.transaction do
         price: 47.85
     })
 
-    # medium_decaf_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
-    # medium_decaf_pod_2.photos.attach(io: medium_decaf_pod_file_2, filename: "medium-roast-decaf-coffee-pods.jpeg")
+    medium_decaf_pod_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_2.photos.attach(io: medium_decaf_pod_file_2, filename: "medium-roast-decaf-coffee-pods.jpeg")
 
     dark_8 = Product.create!({
         name: 'Dark Roast',
@@ -714,8 +714,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_8.photos.attach(io: dark_file_8, filename: "dark-roast.jpeg")
+    dark_file_8 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_8.photos.attach(io: dark_file_8, filename: "dark-roast.jpeg")
 
     fuel_2 = Product.create!({
         name: 'Lifelift Fuel',
@@ -725,8 +725,8 @@ ApplicationRecord.transaction do
         price: 99.00
     })
 
-    # fuel_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
-    # fuel_2.photos.attach(io: fuel_file_2, filename: "lifelift-fuel.jpeg")
+    fuel_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
+    fuel_2.photos.attach(io: fuel_file_2, filename: "lifelift-fuel.jpeg")
 
     adapt_2 = Product.create!({
         name: 'HPAdapt Adrenal Drink',
@@ -736,8 +736,8 @@ ApplicationRecord.transaction do
         price: 119.85
     })
 
-    # adapt_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
-    # adapt_2.photos.attach(io: adapt_file_2, filename: "hpadapt-adrenal-drink.jpeg")
+    adapt_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
+    adapt_2.photos.attach(io: adapt_file_2, filename: "hpadapt-adrenal-drink.jpeg")
 
     medium_9 = Product.create!({
         name: 'Medium Roast',
@@ -749,8 +749,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # medium_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
-    # medium_9.photos.attach(io: medium_file_9, filename: "medium-roast.jpeg")
+    medium_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/medium-roast/medium-roast.jpeg')
+    medium_9.photos.attach(io: medium_file_9, filename: "medium-roast.jpeg")
 
     medium_pod_3 = Product.create!({
         name: 'Medium Roast Coffee Pods',
@@ -760,8 +760,8 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    # medium_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
-    # medium_pod_3.photos.attach(io: medium_pod_file_3, filename: "medium-roast-coffee-pods.jpeg")
+    medium_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-coffee-pods/medium-roast-coffee-pods.png')
+    medium_pod_3.photos.attach(io: medium_pod_file_3, filename: "medium-roast-coffee-pods.jpeg")
 
     dark_pod_3 = Product.create!({
         name: 'Dark Roast Coffee Pods',
@@ -771,8 +771,8 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    # dark_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
-    # dark_pod_3.photos.attach(io: dark_pod_file_3, filename: "dark-roast-coffee-pods.jpeg")
+    dark_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/dark-roast-coffee-pods/dark-roast-coffee-pods.png')
+    dark_pod_3.photos.attach(io: dark_pod_file_3, filename: "dark-roast-coffee-pods.jpeg")
 
     medium_decaf_pod_3 = Product.create!({
         name: 'Medium Roast Decaf Coffee Pods',
@@ -782,8 +782,8 @@ ApplicationRecord.transaction do
         price: 89.70
     })
 
-    # medium_decaf_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
-    # medium_decaf_pod_3.photos.attach(io: medium_decaf_pod_file_3, filename: "medium-roast-decaf-coffee-pods.jpeg")
+    medium_decaf_pod_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/coffee-pods/medium-roast-decaf-coffee-pods/medium-roast-decaf-coffee-pods.png')
+    medium_decaf_pod_3.photos.attach(io: medium_decaf_pod_file_3, filename: "medium-roast-decaf-coffee-pods.jpeg")
 
     dark_9 = Product.create!({
         name: 'Dark Roast',
@@ -795,8 +795,8 @@ ApplicationRecord.transaction do
         featured: true
     })
 
-    # dark_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
-    # dark_9.photos.attach(io: dark_file_9, filename: "dark-roast.jpeg")
+    dark_file_9 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/light-medium-dark-roasts/dark-roast/dark-roast.png')
+    dark_9.photos.attach(io: dark_file_9, filename: "dark-roast.jpeg")
 
     fuel_3 = Product.create!({
         name: 'Lifelift Fuel',
@@ -806,8 +806,8 @@ ApplicationRecord.transaction do
         price: 180.00
     })
 
-    # fuel_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
-    # fuel_3.photos.attach(io: fuel_file_3, filename: "lifelift-fuel.jpeg")
+    fuel_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/lifelift-fuel/lifelift-fuel.png')
+    fuel_3.photos.attach(io: fuel_file_3, filename: "lifelift-fuel.jpeg")
 
     adapt_3 = Product.create!({
         name: 'HPAdapt Adrenal Drink',
@@ -817,8 +817,8 @@ ApplicationRecord.transaction do
         price: 209.70
     })
 
-    # adapt_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
-    # adapt_3.photos.attach(io: adapt_file_3, filename: "hpadapt-adrenal-drink.jpeg")
+    adapt_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/hpadapt-adrenal-drink/hpadapt-adrenal-drink.png')
+    adapt_3.photos.attach(io: adapt_file_3, filename: "hpadapt-adrenal-drink.jpeg")
 
     inflamega_1 = Product.create!({
         name: 'Inflamega',
@@ -828,8 +828,8 @@ ApplicationRecord.transaction do
         price: 49.95
     })
 
-    # inflamega_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
-    # inflamega_1.photos.attach(io: inflamega_file_1, filename: "inflamega.jpeg")
+    inflamega_file_1 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    inflamega_1.photos.attach(io: inflamega_file_1, filename: "inflamega.jpeg")
 
     inflamega_2 = Product.create!({
         name: 'Inflamega',
@@ -839,8 +839,8 @@ ApplicationRecord.transaction do
         price: 119.85
     })
 
-    # inflamega_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
-    # inflamega_2.photos.attach(io: inflamega_file_2, filename: "inflamega.jpeg")
+    inflamega_file_2 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    inflamega_2.photos.attach(io: inflamega_file_2, filename: "inflamega.jpeg")
 
     inflamega_3 = Product.create!({
         name: 'Inflamega',
@@ -850,8 +850,8 @@ ApplicationRecord.transaction do
         price: 167.70
     })
 
-    # inflamega_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
-    # inflamega_3.photos.attach(io: inflamega_file_3, filename: "inflamega.jpeg")
+    inflamega_file_3 = URI.open('https://lifelift-coffee.s3.us-west-1.amazonaws.com/health-boosters/inflamega/inflamega.png')
+    inflamega_3.photos.attach(io: inflamega_file_3, filename: "inflamega.jpeg")
 
     puts "Done!"
 end

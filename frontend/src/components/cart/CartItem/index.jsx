@@ -25,8 +25,8 @@ const CartItem = ({ item }) => {
 
     return (
         <div className='cart-item-div'>
-            <div className='cart-item-img' />
-            {/* <div className='cart-item-img' style={{ backgroundImage: `url(${item.photoUrls[0]})` }} /> */}
+            {/* <div className='cart-item-img' /> */}
+            <div className='cart-item-img' style={{ backgroundImage: `url(${item.photoUrls[0]})` }} />
             <div className='cart-item-info'>
                 <h5>{item.name}</h5>
                 { item.productType &&

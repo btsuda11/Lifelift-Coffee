@@ -58,7 +58,7 @@ const ProductInfo = ({ product, spotlight, setShowCart, reviewsRef }) => {
                     navigation={true}
                     modules={[Navigation]}
                     className="mySwiper">
-                    <SwiperSlide><img src={productImg} /></SwiperSlide>
+                    <SwiperSlide><img src={product[0].photoUrls[0]} /></SwiperSlide>
                 </Swiper>
                 {/* <img src={productImg} /> */}
                 {/* <img src={product[0].photoUrls[0]}/> */}
@@ -125,15 +125,26 @@ export default ProductInfo;
 
 export const clickedButton = obj => {
     const keys = Object.keys(obj);
-    return keys.filter(key => obj[key])[0]
+    return keys.filter(key => obj[key] === true)[0]
 }
 
 export const clickedOption = (product, type, quantity) => {
-    return product.find(({ productType, amount }) => {
+    const foundOption = product.find(({ productType, amount }) => {
         if (productType) {
             return productType === clickedButton(type) && amount == clickedButton(quantity)
         } else {
             return amount == clickedButton(quantity)
         }
     })
+    if (!foundOption) {
+        return product.find(({ productType, amount }) => {
+            if (productType) {
+                return productType === 'Ground' && amount == 1;
+            } else {
+                return amount == 1;
+            }
+        })
+    } else {
+        return foundOption;
+    }
 }

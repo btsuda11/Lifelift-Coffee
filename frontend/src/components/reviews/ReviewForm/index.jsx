@@ -18,7 +18,6 @@ const ReviewForm = ({ product, review, setShowCreateReview, setShowEditReview, r
     
     const [reviewerName, setReviewerName] = useState(review.reviewerName);
     const [selectedNameFormat, setSelectedNameFormat] = useState('John Smith');
-    // const [email, setEmail] = useState('');
     const [clickedRating, setClickedRating] = useState(clickedStates);
     const [title, setTitle] = useState(review.title);
     const [body, setBody] = useState(review.body);
